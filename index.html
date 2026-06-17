@@ -67,12 +67,17 @@
       </a>
 
       <nav class="nav-menu" id="nav-menu">
-        <a href="#inicio" class="nav-link active">Inicio</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#tecnologias" class="nav-link">Tecnologías</a>
-        <a href="#portafolio" class="nav-link">Portafolio</a>
-        <a href="#equipo" class="nav-link">Equipo</a>
-        <a href="#contacto" class="btn btn-primary btn-nav">Contacto</a>
+        <a href="#inicio" class="nav-link active" data-i18n="nav.inicio">Inicio</a>
+        <a href="#servicios" class="nav-link" data-i18n="nav.servicios">Servicios</a>
+        <a href="#tecnologias" class="nav-link" data-i18n="nav.tecnologias">Tecnologías</a>
+        <a href="#portafolio" class="nav-link" data-i18n="nav.portafolio">Portafolio</a>
+        <a href="#equipo" class="nav-link" data-i18n="nav.equipo">Equipo</a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <span class="lang-separator">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#contacto" class="btn btn-primary btn-nav" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
@@ -86,37 +91,37 @@
     <div class="hero-bg-overlay"></div>
     <div class="hero-container">
       <div class="hero-content">
-        <div class="tag-pill">// Desarrollo Web Profesional</div>
-        <h1 class="hero-title">
+        <div class="tag-pill" data-i18n="hero.tag">// Desarrollo Web Profesional</div>
+        <h1 class="hero-title" data-i18n="hero.title">
           <span class="text-gradient">Código que Impulsa</span><br />
           <span class="text-white">el Futuro</span>
         </h1>
-        <p class="hero-subtitle">
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
           Transformamos ideas en experiencias digitales excepcionales utilizando las tecnologías más avanzadas del
           mercado. Especialistas en Angular, React, Vue, Node y Bun.
         </p>
         <div class="hero-actions">
           <a href="#contacto" class="btn btn-primary flex-btn">
-            <span>Iniciar Proyecto</span>
+            <span data-i18n="hero.btnStart">Iniciar Proyecto</span>
             <i class="ri-arrow-right-line"></i>
           </a>
-          <a href="#portafolio" class="btn btn-outline">Ver Portfolio</a>
+          <a href="#portafolio" class="btn btn-outline" data-i18n="hero.btnPortfolio">Ver Portfolio</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-num">20+</span>
-            <span class="stat-label">Proyectos Corporativos</span>
+            <span class="stat-num" data-i18n="hero.stat1Num">20+</span>
+            <span class="stat-label" data-i18n="hero.stat1Label">Proyectos Corporativos</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
-            <span class="stat-num">98%</span>
-            <span class="stat-label">Satisfacción del Cliente</span>
+            <span class="stat-num" data-i18n="hero.stat2Num">98%</span>
+            <span class="stat-label" data-i18n="hero.stat2Label">Satisfacción del Cliente</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
-            <span class="stat-num">15+</span>
-            <span class="stat-label">Años de Experiencia</span>
+            <span class="stat-num" data-i18n="hero.stat3Num">15+</span>
+            <span class="stat-label" data-i18n="hero.stat3Label">Años de Experiencia</span>
           </div>
         </div>
       </div>
@@ -158,9 +163,9 @@
   <section id="servicios" class="servicios">
     <div class="container">
       <div class="section-header">
-        <div class="tag-pill">// Nuestros Servicios</div>
-        <h2 class="section-title">Soluciones <span class="text-gradient">Profesionales</span></h2>
-        <p class="section-subtitle">
+        <div class="tag-pill" data-i18n="servicios.tag">// Nuestros Servicios</div>
+        <h2 class="section-title" data-i18n="servicios.title">Soluciones <span class="text-gradient">Profesionales</span></h2>
+        <p class="section-subtitle" data-i18n="servicios.subtitle">
           Ofrecemos servicios integrales de desarrollo web que cubren todas las necesidades de tu proyecto digital.
         </p>
       </div>
@@ -171,13 +176,13 @@
           <div class="service-icon icon-cyan">
             <i class="ri-code-s-slash-line"></i>
           </div>
-          <h3 class="service-card-title">Desarrollo Frontend</h3>
-          <p class="service-card-text">Interfaces modernas y responsivas con las últimas tecnologías.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card1.title">Desarrollo Frontend</h3>
+          <p class="service-card-text" data-i18n="servicios.card1.desc">Interfaces modernas y responsivas con las últimas tecnologías.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span>Single Page Applications</span></li>
-            <li><i class="ri-check-line"></i><span>Progressive Web Apps</span></li>
-            <li><i class="ri-check-line"></i><span>Diseño Responsivo</span></li>
-            <li><i class="ri-check-line"></i><span>Optimización de Rendimiento</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li1">Single Page Applications</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li2">Progressive Web Apps</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li3">Diseño Responsivo</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li4">Optimización de Rendimiento</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -187,13 +192,13 @@
           <div class="service-icon icon-emerald">
             <i class="ri-server-line"></i>
           </div>
-          <h3 class="service-card-title">Desarrollo Backend</h3>
-          <p class="service-card-text">APIs robustas y escalables con Node.js y NestJS para tu negocio.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card2.title">Desarrollo Backend</h3>
+          <p class="service-card-text" data-i18n="servicios.card2.desc">APIs robustas y escalables con Node.js y NestJS para tu negocio.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span>Node.js & NestJS</span></li>
-            <li><i class="ri-check-line"></i><span>RESTful APIs / GraphQL</span></li>
-            <li><i class="ri-check-line"></i><span>Microservicios</span></li>
-            <li><i class="ri-check-line"></i><span>Bases de Datos Relacionales y NoSQL</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li1">Node.js & NestJS</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li2">RESTful APIs / GraphQL</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li3">Microservicios</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li4">Bases de Datos Relacionales y NoSQL</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -203,13 +208,13 @@
           <div class="service-icon icon-cyan">
             <i class="ri-cloud-line"></i>
           </div>
-          <h3 class="service-card-title">Cloud & DevOps</h3>
-          <p class="service-card-text">Infraestructura en la nube y automatización de procesos.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card3.title">Cloud & DevOps</h3>
+          <p class="service-card-text" data-i18n="servicios.card3.desc">Infraestructura en la nube y automatización de procesos.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span>CI/CD Integrado</span></li>
-            <li><i class="ri-check-line"></i><span>Contenedores Docker</span></li>
-            <li><i class="ri-check-line"></i><span>Orquestación Kubernetes</span></li>
-            <li><i class="ri-check-line"></i><span>AWS / Azure / GCP</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li1">CI/CD Integrado</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li2">Contenedores Docker</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li3">Orquestación Kubernetes</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li4">AWS / Azure / GCP</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -219,13 +224,13 @@
           <div class="service-icon icon-emerald">
             <i class="ri-palette-line"></i>
           </div>
-          <h3 class="service-card-title">UI/UX Design</h3>
-          <p class="service-card-text">Diseños centrados en el usuario y la experiencia de navegación.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card4.title">UI/UX Design</h3>
+          <p class="service-card-text" data-i18n="servicios.card4.desc">Diseños centrados en el usuario y la experiencia de navegación.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span>Prototipado Interactivo</span></li>
-            <li><i class="ri-check-line"></i><span>Sistemas de Diseño</span></li>
-            <li><i class="ri-check-line"></i><span>Investigación de Usuarios</span></li>
-            <li><i class="ri-check-line"></i><span>Fidelidad de Wireframes</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li1">Prototipado Interactivo</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li2">Sistemas de Diseño</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li3">Investigación de Usuarios</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li4">Fidelidad de Wireframes</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -235,13 +240,13 @@
           <div class="service-icon icon-cyan">
             <i class="ri-line-chart-line"></i>
           </div>
-          <h3 class="service-card-title">Consultoría Tech</h3>
-          <p class="service-card-text">Asesoramiento estratégico para optimizar tu proyecto tecnológico.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card5.title">Consultoría Tech</h3>
+          <p class="service-card-text" data-i18n="servicios.card5.desc">Asesoramiento estratégico para optimizar tu proyecto tecnológico.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span>Arquitectura de Software</span></li>
-            <li><i class="ri-check-line"></i><span>Revisiones de Código</span></li>
-            <li><i class="ri-check-line"></i><span>Auditorías Técnicas</span></li>
-            <li><i class="ri-check-line"></i><span>Mentoring a Equipos</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li1">Arquitectura de Software</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li2">Revisiones de Código</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li3">Auditorías Técnicas</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li4">Mentoring a Equipos</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -251,13 +256,13 @@
           <div class="service-icon icon-emerald">
             <i class="ri-database-2-line"></i>
           </div>
-          <h3 class="service-card-title">Arquitectura & APIs</h3>
-          <p class="service-card-text">Diseño de sistemas escalables y APIs de alto rendimiento.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card6.title">Arquitectura & APIs</h3>
+          <p class="service-card-text" data-i18n="servicios.card6.desc">Diseño de sistemas escalables y APIs de alto rendimiento.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span>Diseño Limpio de APIs</span></li>
-            <li><i class="ri-check-line"></i><span>Arquitectura Hexagonal</span></li>
-            <li><i class="ri-check-line"></i><span>Event-Driven Architectures</span></li>
-            <li><i class="ri-check-line"></i><span>Optimización de Consultas SQL</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li1">Diseño Limpio de APIs</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li2">Arquitectura Hexagonal</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li3">Event-Driven Architectures</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li4">Optimización de Consultas SQL</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -270,9 +275,9 @@
     <div class="tecnologias-grid-pattern"></div>
     <div class="container">
       <div class="section-header">
-        <div class="tag-pill tag-emerald">// Stack Tecnológico</div>
-        <h2 class="section-title">Nuestras <span class="text-gradient">Especialidades</span></h2>
-        <p class="section-subtitle">
+        <div class="tag-pill tag-emerald" data-i18n="tecnologias.tag">// Stack Tecnológico</div>
+        <h2 class="section-title" data-i18n="tecnologias.title">Nuestras <span class="text-gradient">Especialidades</span></h2>
+        <p class="section-subtitle" data-i18n="tecnologias.subtitle">
           Dominamos las tecnologías más demandadas del mercado para crear soluciones de vanguardia.
         </p>
       </div>
@@ -287,13 +292,13 @@
               </div>
               <span class="badge badge-red">Expert</span>
             </div>
-            <h3 class="tech-title">Angular</h3>
-            <p class="tech-desc">Framework robusto para aplicaciones empresariales escalables.</p>
+            <h3 class="tech-title" data-i18n="tecnologias.angular.title">Angular</h3>
+            <p class="tech-desc" data-i18n="tecnologias.angular.desc">Framework robusto para aplicaciones empresariales escalables.</p>
             <div class="tech-tags">
-              <span><span class="dot-indicator bg-red"></span>TypeScript</span>
-              <span><span class="dot-indicator bg-red"></span>RxJS</span>
-              <span><span class="dot-indicator bg-red"></span>Inyección de Dependencias</span>
-              <span><span class="dot-indicator bg-red"></span>CLI Potente</span>
+              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag1">TypeScript</span></span>
+              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag2">RxJS</span></span>
+              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag3">Inyección de Dependencias</span></span>
+              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag4">CLI Potente</span></span>
             </div>
           </div>
         </div>
@@ -307,13 +312,13 @@
               </div>
               <span class="badge badge-cyan">Expert</span>
             </div>
-            <h3 class="tech-title">React</h3>
-            <p class="tech-desc">Biblioteca flexible para interfaces de usuario altamente dinámicas.</p>
+            <h3 class="tech-title" data-i18n="tecnologias.react.title">React</h3>
+            <p class="tech-desc" data-i18n="tecnologias.react.desc">Biblioteca flexible para interfaces de usuario altamente dinámicas.</p>
             <div class="tech-tags">
-              <span><span class="dot-indicator bg-cyan"></span>Hooks</span>
-              <span><span class="dot-indicator bg-cyan"></span>Virtual DOM</span>
-              <span><span class="dot-indicator bg-cyan"></span>Basado en Componentes</span>
-              <span><span class="dot-indicator bg-cyan"></span>Ecosistema Amplio</span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag1">Hooks</span></span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag2">Virtual DOM</span></span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag3">Basado en Componentes</span></span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag4">Ecosistema Amplio</span></span>
             </div>
           </div>
         </div>
@@ -327,13 +332,13 @@
               </div>
               <span class="badge badge-gray">Expert</span>
             </div>
-            <h3 class="tech-title">Next.js</h3>
-            <p class="tech-desc">Framework React con renderizado en el servidor y estático optimizado.</p>
+            <h3 class="tech-title" data-i18n="tecnologias.next.title">Next.js</h3>
+            <p class="tech-desc" data-i18n="tecnologias.next.desc">Framework React con renderizado en el servidor y estático optimizado.</p>
             <div class="tech-tags">
-              <span><span class="dot-indicator bg-gray"></span>SSR / SSG</span>
-              <span><span class="dot-indicator bg-gray"></span>Rutas de API</span>
-              <span><span class="dot-indicator bg-gray"></span>Optimización de Imágenes</span>
-              <span><span class="dot-indicator bg-gray"></span>División de Código</span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag1">SSR / SSG</span></span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag2">Rutas de API</span></span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag3">Optimización de Imágenes</span></span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag4">División de Código</span></span>
             </div>
           </div>
         </div>
@@ -347,14 +352,14 @@
               </div>
               <span class="badge badge-green">Expert</span>
             </div>
-            <h3 class="tech-title">Node.js / NestJS</h3>
-            <p class="tech-desc">Entorno de ejecución y framework estructurado para desarrollo backend de alto
+            <h3 class="tech-title" data-i18n="tecnologias.node.title">Node.js / NestJS</h3>
+            <p class="tech-desc" data-i18n="tecnologias.node.desc">Entorno de ejecución y framework estructurado para desarrollo backend de alto
               rendimiento.</p>
             <div class="tech-tags">
-              <span><span class="dot-indicator bg-green"></span>Event-Driven</span>
-              <span><span class="dot-indicator bg-green"></span>I/O No Bloqueante</span>
-              <span><span class="dot-indicator bg-green"></span>Ecosistema NPM</span>
-              <span><span class="dot-indicator bg-green"></span>Altamente Escalable</span>
+              <span><span class="dot-indicator bg-green"></span><span data-i18n="tecnologias.node.tag1">Event-Driven</span></span>
+              <span><span class="dot-indicator bg-green"></span><span data-i18n="tecnologias.node.tag2">I/O No Bloqueante</span></span>
+              <span><span class="dot-indicator bg-green"></span><span data-i18n="tecnologias.node.tag3">Ecosistema NPM</span></span>
+              <span><span class="dot-indicator bg-green"></span><span data-i18n="tecnologias.node.tag4">Altamente Escalable</span></span>
             </div>
           </div>
         </div>
@@ -368,20 +373,20 @@
               </div>
               <span class="badge badge-yellow">Expert</span>
             </div>
-            <h3 class="tech-title">Bun</h3>
-            <p class="tech-desc">Runtime ultrarrápido y toolkit todo-en-uno para Javascript moderno.</p>
+            <h3 class="tech-title" data-i18n="tecnologias.bun.title">Bun</h3>
+            <p class="tech-desc" data-i18n="tecnologias.bun.desc">Runtime ultrarrápido y toolkit todo-en-uno para Javascript moderno.</p>
             <div class="tech-tags">
-              <span><span class="dot-indicator bg-yellow"></span>Velocidad Extrema</span>
-              <span><span class="dot-indicator bg-yellow"></span>Empaquetador Integrado</span>
-              <span><span class="dot-indicator bg-yellow"></span>TypeScript Nativo</span>
-              <span><span class="dot-indicator bg-yellow"></span>Compatibilidad de Drop-in</span>
+              <span><span class="dot-indicator bg-yellow"></span><span data-i18n="tecnologias.bun.tag1">Velocidad Extrema</span></span>
+              <span><span class="dot-indicator bg-yellow"></span><span data-i18n="tecnologias.bun.tag2">Empaquetador Integrado</span></span>
+              <span><span class="dot-indicator bg-yellow"></span><span data-i18n="tecnologias.bun.tag3">TypeScript Nativo</span></span>
+              <span><span class="dot-indicator bg-yellow"></span><span data-i18n="tecnologias.bun.tag4">Compatibilidad de Drop-in</span></span>
             </div>
           </div>
         </div>
       </div>
 
       <div class="tech-secondary">
-        <p class="secondary-title">También trabajamos con</p>
+        <p class="secondary-title" data-i18n="tecnologias.secondary">También trabajamos con</p>
         <div class="secondary-badges">
           <span class="sec-badge">TypeScript</span>
           <span class="sec-badge">GraphQL</span>
@@ -400,16 +405,16 @@
   <section id="portafolio" class="portafolio">
     <div class="container">
       <div class="section-header">
-        <div class="tag-pill">// Nuestro Trabajo</div>
-        <h2 class="section-title">Proyectos <span class="text-gradient">Corporativos</span></h2>
-        <p class="section-subtitle">
+        <div class="tag-pill" data-i18n="portfolio.tag">// Nuestro Trabajo</div>
+        <h2 class="section-title" data-i18n="portfolio.title">Proyectos <span class="text-gradient">Corporativos</span></h2>
+        <p class="section-subtitle" data-i18n="portfolio.subtitle">
           Soluciones empresariales desarrolladas para diferentes sectores industriales y corporativos.
         </p>
 
         <div class="portfolio-filters" id="portfolio-filters">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="react">React</button>
-          <button class="filter-btn" data-filter="angular">Angular</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filterAll">Todos</button>
+          <button class="filter-btn" data-filter="react" data-i18n="portfolio.filterReact">React</button>
+          <button class="filter-btn" data-filter="angular" data-i18n="portfolio.filterAngular">Angular</button>
         </div>
       </div>
 
@@ -419,11 +424,11 @@
           <div class="card-image-wrapper">
             <img src="assets/project1.jpg" alt="Gestión de Renovación de Tuberías" class="portfolio-image" />
             <div class="card-overlay"></div>
-            <span class="card-tag">Energía</span>
+            <span class="card-tag" data-i18n="portfolio.project1.tag">Energía</span>
           </div>
           <div class="card-details">
-            <h3 class="card-title">Gestión de Renovación de Tuberías</h3>
-            <p class="card-text">
+            <h3 class="card-title" data-i18n="portfolio.project1.title">Gestión de Renovación de Tuberías</h3>
+            <p class="card-text" data-i18n="portfolio.project1.desc">
               Aplicación para la planificación y gestión de proyectos de renovación de tuberías en el sector energético.
               Sistema completo de seguimiento y control de obras.
             </p>
@@ -433,7 +438,7 @@
               <span class="tag">Node.js</span>
             </div>
             <a href="#contacto" class="details-link">
-              <span>Ver detalles</span>
+              <span data-i18n="portfolio.project1.details">Ver detalles</span>
               <i class="ri-arrow-right-line"></i>
             </a>
           </div>
@@ -444,11 +449,11 @@
           <div class="card-image-wrapper">
             <img src="assets/project2.jpg" alt="Planificación de Anaqueles" class="portfolio-image" />
             <div class="card-overlay"></div>
-            <span class="card-tag">Retail</span>
+            <span class="card-tag" data-i18n="portfolio.project2.tag">Retail</span>
           </div>
           <div class="card-details">
-            <h3 class="card-title">Planificación de Anaqueles</h3>
-            <p class="card-text">
+            <h3 class="card-title" data-i18n="portfolio.project2.title">Planificación de Anaqueles</h3>
+            <p class="card-text" data-i18n="portfolio.project2.desc">
               Sistema de planificación y optimización de anaqueles para supermercados. Gestión de espacios y
               distribución de productos para maximizar ventas.
             </p>
@@ -458,7 +463,7 @@
               <span class="tag">RxJS</span>
             </div>
             <a href="#contacto" class="details-link">
-              <span>Ver detalles</span>
+              <span data-i18n="portfolio.project2.details">Ver detalles</span>
               <i class="ri-arrow-right-line"></i>
             </a>
           </div>
@@ -469,11 +474,11 @@
           <div class="card-image-wrapper">
             <img src="assets/project3.jpg" alt="Predicción de Fallos en Tuberías" class="portfolio-image" />
             <div class="card-overlay"></div>
-            <span class="card-tag">Energía</span>
+            <span class="card-tag" data-i18n="portfolio.project3.tag">Energía</span>
           </div>
           <div class="card-details">
-            <h3 class="card-title">Predicción de Fallos en Tuberías</h3>
-            <p class="card-text">
+            <h3 class="card-title" data-i18n="portfolio.project3.title">Predicción de Fallos en Tuberías</h3>
+            <p class="card-text" data-i18n="portfolio.project3.desc">
               Aplicación de predicción de fallos y fugas en redes de tuberías utilizando algoritmos de machine learning
               para mantenimiento preventivo.
             </p>
@@ -483,7 +488,7 @@
               <span class="tag">IA/ML</span>
             </div>
             <a href="#contacto" class="details-link">
-              <span>Ver detalles</span>
+              <span data-i18n="portfolio.project3.details">Ver detalles</span>
               <i class="ri-arrow-right-line"></i>
             </a>
           </div>
@@ -494,11 +499,11 @@
           <div class="card-image-wrapper">
             <img src="assets/project4.jpg" alt="Gestión Académica con IA" class="portfolio-image" />
             <div class="card-overlay"></div>
-            <span class="card-tag">Académico</span>
+            <span class="card-tag" data-i18n="portfolio.project4.tag">Académico</span>
           </div>
           <div class="card-details">
-            <h3 class="card-title">Gestión Académica con IA</h3>
-            <p class="card-text">
+            <h3 class="card-title" data-i18n="portfolio.project4.title">Gestión Académica con IA</h3>
+            <p class="card-text" data-i18n="portfolio.project4.desc">
               Sistema de catalogación y gobierno del ciclo de vida de consultas lingüísticas con inteligencia artificial
               para una institución académica de referencia.
             </p>
@@ -508,7 +513,7 @@
               <span class="tag">Node.js</span>
             </div>
             <a href="#contacto" class="details-link">
-              <span>Ver detalles</span>
+              <span data-i18n="portfolio.project4.details">Ver detalles</span>
               <i class="ri-arrow-right-line"></i>
             </a>
           </div>
@@ -519,11 +524,11 @@
           <div class="card-image-wrapper">
             <img src="assets/project5.jpg" alt="Control de Siniestros de Flota" class="portfolio-image" />
             <div class="card-overlay"></div>
-            <span class="card-tag">Transporte</span>
+            <span class="card-tag" data-i18n="portfolio.project5.tag">Transporte</span>
           </div>
           <div class="card-details">
-            <h3 class="card-title">Control de Siniestros de Flota</h3>
-            <p class="card-text">
+            <h3 class="card-title" data-i18n="portfolio.project5.title">Control de Siniestros de Flota</h3>
+            <p class="card-text" data-i18n="portfolio.project5.desc">
               Aplicación para el control y gestión de siniestros de una flota de autobuses. Seguimiento de incidentes,
               reportes detallados y análisis estadístico.
             </p>
@@ -533,7 +538,7 @@
               <span class="tag">PostgreSQL</span>
             </div>
             <a href="#contacto" class="details-link">
-              <span>Ver detalles</span>
+              <span data-i18n="portfolio.project5.details">Ver detalles</span>
               <i class="ri-arrow-right-line"></i>
             </a>
           </div>
@@ -544,11 +549,11 @@
           <div class="card-image-wrapper">
             <img src="assets/project6.jpg" alt="Suite Bancaria BPM" class="portfolio-image" />
             <div class="card-overlay"></div>
-            <span class="card-tag">Banca</span>
+            <span class="card-tag" data-i18n="portfolio.project6.tag">Banca</span>
           </div>
           <div class="card-details">
-            <h3 class="card-title">Suite Bancaria BPM</h3>
-            <p class="card-text">
+            <h3 class="card-title" data-i18n="portfolio.project6.title">Suite Bancaria BPM</h3>
+            <p class="card-text" data-i18n="portfolio.project6.desc">
               Conjunto de aplicaciones bancarias: gestión BPM, monitorización de casos, gestión de crimen financiero y
               control de riesgo reputacional.
             </p>
@@ -558,7 +563,7 @@
               <span class="tag">Oracle</span>
             </div>
             <a href="#contacto" class="details-link">
-              <span>Ver detalles</span>
+              <span data-i18n="portfolio.project6.details">Ver detalles</span>
               <i class="ri-arrow-right-line"></i>
             </a>
           </div>
@@ -573,9 +578,9 @@
     <div class="equipo-glow-2"></div>
     <div class="container">
       <div class="section-header">
-        <div class="tag-pill tag-emerald">// Quién soy</div>
-        <h2 class="section-title">El <span class="text-gradient">Desarrollador</span> detrás de CodeDevPro</h2>
-        <p class="section-subtitle">
+        <div class="tag-pill tag-emerald" data-i18n="equipo.tag">// Quién soy</div>
+        <h2 class="section-title" data-i18n="equipo.title">El <span class="text-gradient">Desarrollador</span> detrás de CodeDevPro</h2>
+        <p class="section-subtitle" data-i18n="equipo.subtitle">
           Un profesional comprometido con la excelencia técnica y la innovación digital.
         </p>
       </div>
@@ -587,14 +592,14 @@
             <div class="developer-image-overlay"></div>
           </div>
           <div class="developer-info">
-            <div class="dev-role">// Architect & Lead Developer</div>
+            <div class="dev-role" data-i18n="equipo.role">// Architect & Lead Developer</div>
             <h3 class="dev-name">Marcos Luna</h3>
-            <p class="dev-bio">
+            <p class="dev-bio" data-i18n="equipo.bio">
               Arquitecto, Líder Técnico y Senior Frontend Engineer con más de <b>15 años de experiencia</b> entregando
               aplicaciones web escalables, diseñando soluciones técnicas complejas y liderando equipos de desarrollo
               multidisciplinares.
             </p>
-            <p class="dev-bio-extra">
+            <p class="dev-bio-extra" data-i18n="equipo.bioExtra">
               Con una formación única que combina Ingeniería Naval en Electrónica y Telecomunicaciones con
               Administración de Sistemas Informáticos, me especializo en conectar infraestructuras robustas, seguridad
               de sistemas y el stack de desarrollo web moderno.
@@ -632,16 +637,16 @@
     <div class="contacto-glow-2"></div>
     <div class="container">
       <div class="section-header">
-        <div class="tag-pill">// Hablemos</div>
-        <h2 class="section-title">Comienza tu <span class="text-gradient">Proyecto</span></h2>
-        <p class="section-subtitle">
-          Estamos listos para convertir tu idea en realidad. Cuéntanos sobre tu proyecto.
+        <div class="tag-pill" data-i18n="contacto.tag">// Hablemos</div>
+        <h2 class="section-title" data-i18n="contacto.title">Comienza tu <span class="text-gradient">Proyecto</span></h2>
+        <p class="section-subtitle" data-i18n="contacto.subtitle">
+          Estamos listos para convertir tu idea en reality. Cuéntanos sobre tu proyecto.
         </p>
       </div>
 
       <div class="contacto-wrapper">
         <div class="contacto-info-card glassmorphism">
-          <h3 class="info-card-title">Información de Contacto</h3>
+          <h3 class="info-card-title" data-i18n="contacto.infoTitle">Información de Contacto</h3>
 
           <div class="info-list">
             <div class="info-item">
@@ -649,7 +654,7 @@
                 <i class="ri-mail-line"></i>
               </div>
               <div class="info-details">
-                <h4>Email</h4>
+                <h4 data-i18n="contacto.emailLabel">Email</h4>
                 <p><a href="mailto:info@codedevpro.com">info@codedevpro.com</a></p>
               </div>
             </div>
@@ -659,7 +664,7 @@
                 <i class="ri-phone-line"></i>
               </div>
               <div class="info-details">
-                <h4>Teléfono</h4>
+                <h4 data-i18n="contacto.phoneLabel">Teléfono</h4>
                 <p><a href="tel:+34622380215">+34 622 380 215</a></p>
               </div>
             </div>
@@ -669,15 +674,15 @@
                 <i class="ri-time-line"></i>
               </div>
               <div class="info-details">
-                <h4>Horario</h4>
-                <p>Lunes - Viernes: 9:00 - 18:00</p>
-                <p>Sábado: 10:00 - 14:00</p>
+                <h4 data-i18n="contacto.hoursLabel">Horario</h4>
+                <p data-i18n="contacto.hoursWeek">Lunes - Viernes: 9:00 - 18:00</p>
+                <p data-i18n="contacto.hoursSaturday">Sábado: 10:00 - 14:00</p>
               </div>
             </div>
           </div>
 
           <div class="info-socials-wrapper">
-            <h4>Síguenos</h4>
+            <h4 data-i18n="contacto.followUs">Síguenos</h4>
             <div class="info-socials">
               <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener"
                 aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
@@ -692,47 +697,47 @@
           <form id="contact-form" class="contact-form">
             <div class="form-row">
               <div class="form-group">
-                <label for="name" class="form-label">Nombre completo *</label>
-                <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre" />
+                <label for="name" class="form-label" data-i18n="contacto.formName">Nombre completo *</label>
+                <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre" data-i18n-placeholder="contacto.placeholderName" />
               </div>
               <div class="form-group">
-                <label for="email" class="form-label">Email *</label>
-                <input type="email" id="email" name="email" required class="form-input" placeholder="tu@email.com" />
+                <label for="email" class="form-label" data-i18n="contacto.formEmail">Email *</label>
+                <input type="email" id="email" name="email" required class="form-input" placeholder="tu@email.com" data-i18n-placeholder="contacto.placeholderEmail" />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="phone" class="form-label">Teléfono</label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" />
+                <label for="phone" class="form-label" data-i18n="contacto.formPhone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" data-i18n-placeholder="contacto.placeholderPhone" />
               </div>
               <div class="form-group">
-                <label for="company" class="form-label">Empresa</label>
-                <input type="text" id="company" name="company" class="form-input" placeholder="Tu empresa" />
+                <label for="company" class="form-label" data-i18n="contacto.formCompany">Empresa</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="Tu empresa" data-i18n-placeholder="contacto.placeholderCompany" />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="service" class="form-label">Servicio de interés *</label>
+              <label for="service" class="form-label" data-i18n="contacto.formService">Servicio de interés *</label>
               <select id="service" name="service" required class="form-select">
-                <option value="">Selecciona un servicio</option>
-                <option value="frontend">Desarrollo Frontend</option>
-                <option value="backend">Desarrollo Backend (Node.js / NestJS)</option>
-                <option value="cloud">Cloud & DevOps</option>
-                <option value="design">UI/UX Design</option>
-                <option value="apis">Arquitectura & APIs</option>
-                <option value="consulting">Consultoría Tech</option>
+                <option value="" data-i18n="contacto.formServiceSelect">Selecciona un servicio</option>
+                <option value="frontend" data-i18n="contacto.formServiceFrontend">Desarrollo Frontend</option>
+                <option value="backend" data-i18n="contacto.formServiceBackend">Desarrollo Backend (Node.js / NestJS)</option>
+                <option value="cloud" data-i18n="contacto.formServiceCloud">Cloud & DevOps</option>
+                <option value="design" data-i18n="contacto.formServiceDesign">UI/UX Design</option>
+                <option value="apis" data-i18n="contacto.formServiceApis">Arquitectura & APIs</option>
+                <option value="consulting" data-i18n="contacto.formServiceConsulting">Consultoría Tech</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label">Mensaje *</label>
+              <label for="message" class="form-label" data-i18n="contacto.formMessage">Mensaje *</label>
               <textarea id="message" name="message" required maxlength="500" rows="5" class="form-textarea"
-                placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-              <div class="char-count"><span id="char-count-num">0</span>/500 caracteres</div>
+                placeholder="Cuéntanos sobre tu proyecto..." data-i18n-placeholder="contacto.placeholderMessage"></textarea>
+              <div class="char-count"><span id="char-count-num">0</span>/<span data-i18n="contacto.charLabel">caracteres</span></div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
-              <span class="btn-text">Enviar Mensaje</span>
+              <span class="btn-text" data-i18n="contacto.formSubmit">Enviar Mensaje</span>
               <span class="btn-spinner hidden"></span>
             </button>
 
@@ -753,7 +758,7 @@
             <img src="assets/logo.jpeg" alt="CodeDevPro" class="footer-logo-img" />
             <span class="footer-logo-text">CodeDevPro</span>
           </div>
-          <p class="footer-desc">
+          <p class="footer-desc" data-i18n="footer.brandDesc">
             Código que Impulsa el Futuro. Transformamos ideas en experiencias digitales excepcionales.
           </p>
           <!-- <div class="footer-socials">
@@ -765,28 +770,28 @@
         </div>
 
         <div class="footer-links">
-          <h4 class="footer-title">Enlaces Rápidos</h4>
+          <h4 class="footer-title" data-i18n="footer.quickLinks">Enlaces Rápidos</h4>
           <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#tecnologias">Tecnologías</a></li>
-            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+            <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+            <li><a href="#tecnologias" data-i18n="nav.tecnologias">Tecnologías</a></li>
+            <li><a href="#portafolio" data-i18n="nav.portafolio">Portafolio</a></li>
           </ul>
         </div>
 
         <div class="footer-links">
-          <h4 class="footer-title">Servicios</h4>
+          <h4 class="footer-title" data-i18n="footer.services">Servicios</h4>
           <ul>
-            <li><a href="#servicios">Frontend</a></li>
-            <li><a href="#servicios">Backend</a></li>
-            <li><a href="#servicios">DevOps</a></li>
-            <li><a href="#servicios">Arquitectura</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card1.title">Frontend</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card2.title">Backend</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card3.title">DevOps</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card6.title">Arquitectura</a></li>
           </ul>
         </div>
 
         <div class="footer-newsletter">
-          <h4 class="footer-title">Boletín Informativo</h4>
-          <p>Próximamente...</p>
+          <h4 class="footer-title" data-i18n="footer.newsletter">Boletín Informativo</h4>
+          <p data-i18n="footer.newsletterStatus">Próximamente...</p>
           <!-- <p>Mantente al día con las últimas novedades tecnológicas.</p>
           <form class="newsletter-form" id="newsletter-form">
             <input type="email" placeholder="Tu correo electrónico" required class="newsletter-input" />
@@ -799,15 +804,16 @@
         </div>
 
         <div class="footer-bottom">
-          <p class="copyright">&copy; 2026 CodeDevPro. Todos los derechos reservados.</p>
+          <p class="copyright" data-i18n="footer.copyright">&copy; 2026 CodeDevPro. Todos los derechos reservados.</p>
           <div class="footer-bottom-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
+            <a href="#" data-i18n="footer.privacy">Privacidad</a>
+            <a href="#" data-i18n="footer.terms">Términos</a>
           </div>
         </div>
       </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="app.js"></script>
 </body>
 

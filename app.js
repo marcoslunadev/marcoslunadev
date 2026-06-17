@@ -4,6 +4,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Dynamic language state
+  let currentLang = localStorage.getItem('preferredLanguage') || 'es';
+
   /* --------------------------------------------------------------------------
      1. MENU RESPONSIVE (MOBILE TOGGLE)
      -------------------------------------------------------------------------- */
@@ -245,7 +248,7 @@ bootstrap();`,
 
       // Deshabilitar botón y mostrar spinner
       submitBtn.disabled = true;
-      btnText.textContent = 'Enviando...';
+      btnText.textContent = translations[currentLang].contacto.formSubmitting;
       btnSpinner.classList.remove('hidden');
       formFeedback.className = 'form-feedback hidden';
 
@@ -262,12 +265,12 @@ bootstrap();`,
         })
         .then(() => {
           submitBtn.disabled = false;
-          btnText.textContent = 'Enviar Mensaje';
+          btnText.textContent = translations[currentLang].contacto.formSubmit;
           btnSpinner.classList.add('hidden');
 
           formFeedback.classList.remove('hidden');
           formFeedback.classList.add('success');
-          formFeedback.textContent = '¡Gracias! Tu mensaje ha sido enviado correctamente por correo. Nos pondremos en contacto contigo pronto.';
+          formFeedback.textContent = translations[currentLang].contacto.feedbackSuccess;
 
           // Limpiar formulario
           contactForm.reset();
@@ -280,12 +283,12 @@ bootstrap();`,
         })
         .catch((error) => {
           submitBtn.disabled = false;
-          btnText.textContent = 'Enviar Mensaje';
+          btnText.textContent = translations[currentLang].contacto.formSubmit;
           btnSpinner.classList.add('hidden');
 
           formFeedback.classList.remove('hidden');
           formFeedback.classList.add('error');
-          formFeedback.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o envíanos un correo directo.';
+          formFeedback.textContent = translations[currentLang].contacto.feedbackError;
           console.error('EmailJS Error:', error);
 
           setTimeout(() => {
@@ -315,7 +318,7 @@ bootstrap();`,
         button.style.opacity = '1';
 
         newsletterFeedback.className = 'newsletter-feedback success';
-        newsletterFeedback.textContent = '¡Suscrito con éxito!';
+        newsletterFeedback.textContent = currentLang === 'es' ? '¡Suscrito con éxito!' : 'Subscribed successfully!';
 
         input.value = '';
 
@@ -353,4 +356,96 @@ bootstrap();`,
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  /* --------------------------------------------------------------------------
+     9. MULTI-LANGUAGE SYSTEM (i18n)
+     -------------------------------------------------------------------------- */
+  // Function to translate the page DOM
+  const translatePage = (lang) => {
+    // 1. Update HTML lang attribute
+    document.documentElement.setAttribute('lang', lang);
+
+    // 2. Translate elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const text = getNestedValue(translations[lang], key);
+      if (text !== undefined) {
+        element.innerHTML = text;
+      }
+    });
+
+    // 3. Translate elements with data-i18n-placeholder attribute
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+      const key = element.getAttribute('data-i18n-placeholder');
+      const text = getNestedValue(translations[lang], key);
+      if (text !== undefined) {
+        element.setAttribute('placeholder', text);
+      }
+    });
+
+    // 4. Update page SEO meta tags and Title
+    if (translations[lang].meta) {
+      document.title = translations[lang].meta.title;
+      
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang].meta.description);
+
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) metaKeywords.setAttribute('content', translations[lang].meta.keywords);
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', translations[lang].meta.ogTitle);
+
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', translations[lang].meta.ogDesc);
+
+      const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute('content', translations[lang].meta.ogTitle);
+
+      const twitterDesc = document.querySelector('meta[property="twitter:description"]');
+      if (twitterDesc) twitterDesc.setAttribute('content', translations[lang].meta.ogDesc);
+    }
+  };
+
+  // Helper to retrieve nested object values from string key path (e.g. "hero.title")
+  const getNestedValue = (obj, path) => {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+  };
+
+  // Function to change current language
+  const setLanguage = (lang) => {
+    currentLang = lang;
+    localStorage.setItem('preferredLanguage', lang);
+    translatePage(lang);
+
+    // Update switcher buttons active state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  };
+
+  // Hook up language switch event listeners
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const selectedLang = e.target.getAttribute('data-lang');
+      setLanguage(selectedLang);
+    });
+  });
+
+  // Initialize page in selected language
+  if (currentLang !== 'es') {
+    translatePage(currentLang);
+    // Sync the active class in lang buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === currentLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
 });

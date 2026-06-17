@@ -1771,3 +1771,65 @@ button, input, select, textarea {
 .footer-bottom-links a:hover {
   color: var(--accent-cyan);
 }
+
+/* --------------------------------------------------------------------------
+   15. LANGUAGE SWITCHER
+   -------------------------------------------------------------------------- */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.lang-switch:hover {
+  border-color: rgba(6, 182, 212, 0.2);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.05);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.05em;
+}
+
+.lang-btn:hover {
+  color: var(--text-white);
+}
+
+.lang-btn.active {
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.12);
+}
+
+.lang-separator {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.6875rem;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .lang-switch {
+    margin: 0.5rem 0;
+    padding: 0.3rem 0.6rem;
+  }
+  .lang-btn {
+    font-size: 0.8125rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
