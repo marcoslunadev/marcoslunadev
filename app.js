@@ -250,10 +250,10 @@ bootstrap();`,
       formFeedback.className = 'form-feedback hidden';
 
       // Reemplaza 'service_vlp91on' y 'template_62a7zww' con tus IDs de EmailJS
-      const serviceId = 'service_vlp91on';
-      const templateAdminId = 'template_9d2huaq';
+      const serviceId = '___EMAILJS_SERVICE_ID___';
+      const templateAdminId = '___EMAILJS_TEMPLATE_ADMIN_ID___';
       // Si creas una plantilla de auto-respuesta para el cliente en EmailJS, pon su ID aquí:
-      const templateAutoId = 'template_62a7zww';
+      const templateAutoId = '___EMAILJS_TEMPLATE_AUTO_ID___';
 
       emailjs.sendForm(serviceId, templateAdminId, contactForm)
         .then(() => {

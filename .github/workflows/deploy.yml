@@ -23,6 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Inject EmailJS Secrets
+        run: |
+          sed -i 's/___EMAILJS_SERVICE_ID___/${{ secrets.EMAILJS_SERVICE_ID }}/g' app.js
+          sed -i 's/___EMAILJS_TEMPLATE_ADMIN_ID___/${{ secrets.EMAILJS_TEMPLATE_ADMIN_ID }}/g' app.js
+          sed -i 's/___EMAILJS_TEMPLATE_AUTO_ID___/${{ secrets.EMAILJS_TEMPLATE_AUTO_ID }}/g' app.js
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
