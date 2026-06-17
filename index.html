@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeDevPro - Desarrollo Web Profesional Angular React Vue Node Bun</title>
+
+  <!-- Meta SEO -->
+  <meta name="description"
+    content="CodeDevPro ofrece servicios profesionales de desarrollo web con Angular, React, Vue, Node.js y Bun. Transformamos ideas en experiencias digitales excepcionales con código de calidad y soluciones escalables para tu negocio." />
+  <meta name="keywords"
+    content="desarrollo web, Angular, React, Vue, Node.js, Bun, desarrollo frontend, desarrollo backend, aplicaciones web, CodeDevPro, Marcos Luna" />
+  <link rel="canonical" href="https://codedevpro.es/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CodeDevPro - Desarrollo Web Profesional" />
+  <meta property="og:description"
+    content="Servicios profesionales de desarrollo web con Angular, React, Vue, Node.js y Bun por Marcos Luna." />
+  <meta property="og:image" content="assets/logo.jpeg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="CodeDevPro - Desarrollo Web Profesional" />
+  <meta property="twitter:description"
+    content="Servicios profesionales de desarrollo web con Angular, React, Vue, Node.js y Bun por Marcos Luna." />
+  <meta property="twitter:image" content="assets/logo.jpeg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Google Fonts: Outfit (headings) & Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Evitar Flash de unstyled dark mode -->
+  <meta name="color-scheme" content="dark" />
+
+  <!-- EmailJS Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      // Reemplaza "TU_PUBLIC_KEY" con tu clave pública de EmailJS
+      emailjs.init({
+        publicKey: "BCb6ULlp9WI9P7lNe",
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#inicio" class="logo">
+        <img src="assets/logo.jpeg" alt="CodeDevPro Logo" class="logo-img" />
+        <span class="logo-text">CodeDevPro</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#tecnologias" class="nav-link">Tecnologías</a>
+        <a href="#portafolio" class="nav-link">Portafolio</a>
+        <a href="#equipo" class="nav-link">Equipo</a>
+        <a href="#contacto" class="btn btn-primary btn-nav">Contacto</a>
+      </nav>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+        <i class="ri-menu-line"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="tag-pill">// Desarrollo Web Profesional</div>
+        <h1 class="hero-title">
+          <span class="text-gradient">Código que Impulsa</span><br />
+          <span class="text-white">el Futuro</span>
+        </h1>
+        <p class="hero-subtitle">
+          Transformamos ideas en experiencias digitales excepcionales utilizando las tecnologías más avanzadas del
+          mercado. Especialistas en Angular, React, Vue, Node y Bun.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary flex-btn">
+            <span>Iniciar Proyecto</span>
+            <i class="ri-arrow-right-line"></i>
+          </a>
+          <a href="#portafolio" class="btn btn-outline">Ver Portfolio</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Proyectos Corporativos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">98%</span>
+            <span class="stat-label">Satisfacción del Cliente</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="glow-effect"></div>
+        <div class="code-editor-mockup">
+          <div class="editor-header">
+            <div class="editor-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="editor-tab">app.js</div>
+          </div>
+          <div class="editor-body">
+            <pre><code><span class="keyword">const</span> <span class="function">buildFuture</span> = () =&gt; {
+  <span class="keyword">return</span> {
+    <span class="property">technologies</span>: [
+      <span class="string">'Angular'</span>,
+      <span class="string">'React'</span>,
+      <span class="string">'Vue'</span>,
+      <span class="string">'Node'</span>,
+      <span class="string">'Bun'</span>
+    ],
+    <span class="property">quality</span>: <span class="string">'exceptional'</span>
+  };
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#servicios" class="scroll-down" aria-label="Ir a Servicios">
+      <i class="ri-arrow-down-line"></i>
+    </a>
+  </section>
+
+  <!-- SERVICIOS SECTION -->
+  <section id="servicios" class="servicios">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-pill">// Nuestros Servicios</div>
+        <h2 class="section-title">Soluciones <span class="text-gradient">Profesionales</span></h2>
+        <p class="section-subtitle">
+          Ofrecemos servicios integrales de desarrollo web que cubren todas las necesidades de tu proyecto digital.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Card 1 -->
+        <div class="service-card glassmorphism">
+          <div class="service-icon icon-cyan">
+            <i class="ri-code-s-slash-line"></i>
+          </div>
+          <h3 class="service-card-title">Desarrollo Frontend</h3>
+          <p class="service-card-text">Interfaces modernas y responsivas con las últimas tecnologías.</p>
+          <ul class="service-list">
+            <li><i class="ri-check-line"></i><span>Single Page Applications</span></li>
+            <li><i class="ri-check-line"></i><span>Progressive Web Apps</span></li>
+            <li><i class="ri-check-line"></i><span>Diseño Responsivo</span></li>
+            <li><i class="ri-check-line"></i><span>Optimización de Rendimiento</span></li>
+          </ul>
+          <div class="card-bg-gradient"></div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card glassmorphism">
+          <div class="service-icon icon-emerald">
+            <i class="ri-server-line"></i>
+          </div>
+          <h3 class="service-card-title">Desarrollo Backend</h3>
+          <p class="service-card-text">APIs robustas y escalables con Node.js y NestJS para tu negocio.</p>
+          <ul class="service-list">
+            <li><i class="ri-check-line"></i><span>Node.js & NestJS</span></li>
+            <li><i class="ri-check-line"></i><span>RESTful APIs / GraphQL</span></li>
+            <li><i class="ri-check-line"></i><span>Microservicios</span></li>
+            <li><i class="ri-check-line"></i><span>Bases de Datos Relacionales y NoSQL</span></li>
+          </ul>
+          <div class="card-bg-gradient"></div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card glassmorphism">
+          <div class="service-icon icon-cyan">
+            <i class="ri-cloud-line"></i>
+          </div>
+          <h3 class="service-card-title">Cloud & DevOps</h3>
+          <p class="service-card-text">Infraestructura en la nube y automatización de procesos.</p>
+          <ul class="service-list">
+            <li><i class="ri-check-line"></i><span>CI/CD Integrado</span></li>
+            <li><i class="ri-check-line"></i><span>Contenedores Docker</span></li>
+            <li><i class="ri-check-line"></i><span>Orquestación Kubernetes</span></li>
+            <li><i class="ri-check-line"></i><span>AWS / Azure / GCP</span></li>
+          </ul>
+          <div class="card-bg-gradient"></div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card glassmorphism">
+          <div class="service-icon icon-emerald">
+            <i class="ri-palette-line"></i>
+          </div>
+          <h3 class="service-card-title">UI/UX Design</h3>
+          <p class="service-card-text">Diseños centrados en el usuario y la experiencia de navegación.</p>
+          <ul class="service-list">
+            <li><i class="ri-check-line"></i><span>Prototipado Interactivo</span></li>
+            <li><i class="ri-check-line"></i><span>Sistemas de Diseño</span></li>
+            <li><i class="ri-check-line"></i><span>Investigación de Usuarios</span></li>
+            <li><i class="ri-check-line"></i><span>Fidelidad de Wireframes</span></li>
+          </ul>
+          <div class="card-bg-gradient"></div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card glassmorphism">
+          <div class="service-icon icon-cyan">
+            <i class="ri-line-chart-line"></i>
+          </div>
+          <h3 class="service-card-title">Consultoría Tech</h3>
+          <p class="service-card-text">Asesoramiento estratégico para optimizar tu proyecto tecnológico.</p>
+          <ul class="service-list">
+            <li><i class="ri-check-line"></i><span>Arquitectura de Software</span></li>
+            <li><i class="ri-check-line"></i><span>Revisiones de Código</span></li>
+            <li><i class="ri-check-line"></i><span>Auditorías Técnicas</span></li>
+            <li><i class="ri-check-line"></i><span>Mentoring a Equipos</span></li>
+          </ul>
+          <div class="card-bg-gradient"></div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="service-card glassmorphism">
+          <div class="service-icon icon-emerald">
+            <i class="ri-database-2-line"></i>
+          </div>
+          <h3 class="service-card-title">Arquitectura & APIs</h3>
+          <p class="service-card-text">Diseño de sistemas escalables y APIs de alto rendimiento.</p>
+          <ul class="service-list">
+            <li><i class="ri-check-line"></i><span>Diseño Limpio de APIs</span></li>
+            <li><i class="ri-check-line"></i><span>Arquitectura Hexagonal</span></li>
+            <li><i class="ri-check-line"></i><span>Event-Driven Architectures</span></li>
+            <li><i class="ri-check-line"></i><span>Optimización de Consultas SQL</span></li>
+          </ul>
+          <div class="card-bg-gradient"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS SECTION -->
+  <section id="tecnologias" class="tecnologias">
+    <div class="tecnologias-grid-pattern"></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-pill tag-emerald">// Stack Tecnológico</div>
+        <h2 class="section-title">Nuestras <span class="text-gradient">Especialidades</span></h2>
+        <p class="section-subtitle">
+          Dominamos las tecnologías más demandadas del mercado para crear soluciones de vanguardia.
+        </p>
+      </div>
+
+      <div class="tech-grid">
+        <!-- Angular -->
+        <div class="tech-card-wrapper border-red">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-red">
+                <i class="ri-angularjs-line"></i>
+              </div>
+              <span class="badge badge-red">Expert</span>
+            </div>
+            <h3 class="tech-title">Angular</h3>
+            <p class="tech-desc">Framework robusto para aplicaciones empresariales escalables.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-red"></span>TypeScript</span>
+              <span><span class="dot-indicator bg-red"></span>RxJS</span>
+              <span><span class="dot-indicator bg-red"></span>Inyección de Dependencias</span>
+              <span><span class="dot-indicator bg-red"></span>CLI Potente</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- React -->
+        <div class="tech-card-wrapper border-cyan">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-cyan">
+                <i class="ri-reactjs-line"></i>
+              </div>
+              <span class="badge badge-cyan">Expert</span>
+            </div>
+            <h3 class="tech-title">React</h3>
+            <p class="tech-desc">Biblioteca flexible para interfaces de usuario altamente dinámicas.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-cyan"></span>Hooks</span>
+              <span><span class="dot-indicator bg-cyan"></span>Virtual DOM</span>
+              <span><span class="dot-indicator bg-cyan"></span>Basado en Componentes</span>
+              <span><span class="dot-indicator bg-cyan"></span>Ecosistema Amplio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next.js -->
+        <div class="tech-card-wrapper border-gray">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-gray">
+                <i class="ri-nextjs-line"></i>
+              </div>
+              <span class="badge badge-gray">Expert</span>
+            </div>
+            <h3 class="tech-title">Next.js</h3>
+            <p class="tech-desc">Framework React con renderizado en el servidor y estático optimizado.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-gray"></span>SSR / SSG</span>
+              <span><span class="dot-indicator bg-gray"></span>Rutas de API</span>
+              <span><span class="dot-indicator bg-gray"></span>Optimización de Imágenes</span>
+              <span><span class="dot-indicator bg-gray"></span>División de Código</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node.js -->
+        <div class="tech-card-wrapper border-green lg-col-span-2">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-green">
+                <i class="ri-nodejs-line"></i>
+              </div>
+              <span class="badge badge-green">Expert</span>
+            </div>
+            <h3 class="tech-title">Node.js / NestJS</h3>
+            <p class="tech-desc">Entorno de ejecución y framework estructurado para desarrollo backend de alto
+              rendimiento.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-green"></span>Event-Driven</span>
+              <span><span class="dot-indicator bg-green"></span>I/O No Bloqueante</span>
+              <span><span class="dot-indicator bg-green"></span>Ecosistema NPM</span>
+              <span><span class="dot-indicator bg-green"></span>Altamente Escalable</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bun -->
+        <div class="tech-card-wrapper border-yellow">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-yellow">
+                <i class="ri-flashlight-line"></i>
+              </div>
+              <span class="badge badge-yellow">Expert</span>
+            </div>
+            <h3 class="tech-title">Bun</h3>
+            <p class="tech-desc">Runtime ultrarrápido y toolkit todo-en-uno para Javascript moderno.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-yellow"></span>Velocidad Extrema</span>
+              <span><span class="dot-indicator bg-yellow"></span>Empaquetador Integrado</span>
+              <span><span class="dot-indicator bg-yellow"></span>TypeScript Nativo</span>
+              <span><span class="dot-indicator bg-yellow"></span>Compatibilidad de Drop-in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-secondary">
+        <p class="secondary-title">También trabajamos con</p>
+        <div class="secondary-badges">
+          <span class="sec-badge">TypeScript</span>
+          <span class="sec-badge">GraphQL</span>
+          <span class="sec-badge">MongoDB</span>
+          <span class="sec-badge">PostgreSQL</span>
+          <span class="sec-badge">Docker</span>
+          <span class="sec-badge">AWS</span>
+          <span class="sec-badge">Tailwind CSS</span>
+          <span class="sec-badge">Vite</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO SECTION -->
+  <section id="portafolio" class="portafolio">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-pill">// Nuestro Trabajo</div>
+        <h2 class="section-title">Proyectos <span class="text-gradient">Corporativos</span></h2>
+        <p class="section-subtitle">
+          Soluciones empresariales desarrolladas para diferentes sectores industriales y corporativos.
+        </p>
+
+        <div class="portfolio-filters" id="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="react">React</button>
+          <button class="filter-btn" data-filter="angular">Angular</button>
+        </div>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid">
+        <!-- Proyecto 1 (React) -->
+        <div class="portfolio-card" data-category="react">
+          <div class="card-image-wrapper">
+            <img src="assets/project1.jpg" alt="Gestión de Renovación de Tuberías" class="portfolio-image" />
+            <div class="card-overlay"></div>
+            <span class="card-tag">Energía</span>
+          </div>
+          <div class="card-details">
+            <h3 class="card-title">Gestión de Renovación de Tuberías</h3>
+            <p class="card-text">
+              Aplicación para la planificación y gestión de proyectos de renovación de tuberías en el sector energético.
+              Sistema completo de seguimiento y control de obras.
+            </p>
+            <div class="card-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <a href="#contacto" class="details-link">
+              <span>Ver detalles</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 (Angular) -->
+        <div class="portfolio-card" data-category="angular">
+          <div class="card-image-wrapper">
+            <img src="assets/project2.jpg" alt="Planificación de Anaqueles" class="portfolio-image" />
+            <div class="card-overlay"></div>
+            <span class="card-tag">Retail</span>
+          </div>
+          <div class="card-details">
+            <h3 class="card-title">Planificación de Anaqueles</h3>
+            <p class="card-text">
+              Sistema de planificación y optimización de anaqueles para supermercados. Gestión de espacios y
+              distribución de productos para maximizar ventas.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">RxJS</span>
+            </div>
+            <a href="#contacto" class="details-link">
+              <span>Ver detalles</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 (Angular) -->
+        <div class="portfolio-card" data-category="angular">
+          <div class="card-image-wrapper">
+            <img src="assets/project3.jpg" alt="Predicción de Fallos en Tuberías" class="portfolio-image" />
+            <div class="card-overlay"></div>
+            <span class="card-tag">Energía</span>
+          </div>
+          <div class="card-details">
+            <h3 class="card-title">Predicción de Fallos en Tuberías</h3>
+            <p class="card-text">
+              Aplicación de predicción de fallos y fugas en redes de tuberías utilizando algoritmos de machine learning
+              para mantenimiento preventivo.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Angular</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">IA/ML</span>
+            </div>
+            <a href="#contacto" class="details-link">
+              <span>Ver detalles</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 4 (React) -->
+        <div class="portfolio-card" data-category="react">
+          <div class="card-image-wrapper">
+            <img src="assets/project4.jpg" alt="Gestión Académica con IA" class="portfolio-image" />
+            <div class="card-overlay"></div>
+            <span class="card-tag">Académico</span>
+          </div>
+          <div class="card-details">
+            <h3 class="card-title">Gestión Académica con IA</h3>
+            <p class="card-text">
+              Sistema de catalogación y gobierno del ciclo de vida de consultas lingüísticas con inteligencia artificial
+              para una institución académica de referencia.
+            </p>
+            <div class="card-tags">
+              <span class="tag">React</span>
+              <span class="tag">IA/ML</span>
+              <span class="tag">Node.js</span>
+            </div>
+            <a href="#contacto" class="details-link">
+              <span>Ver detalles</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 5 (React) -->
+        <div class="portfolio-card" data-category="react">
+          <div class="card-image-wrapper">
+            <img src="assets/project5.jpg" alt="Control de Siniestros de Flota" class="portfolio-image" />
+            <div class="card-overlay"></div>
+            <span class="card-tag">Transporte</span>
+          </div>
+          <div class="card-details">
+            <h3 class="card-title">Control de Siniestros de Flota</h3>
+            <p class="card-text">
+              Aplicación para el control y gestión de siniestros de una flota de autobuses. Seguimiento de incidentes,
+              reportes detallados y análisis estadístico.
+            </p>
+            <div class="card-tags">
+              <span class="tag">React</span>
+              <span class="tag">Express</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <a href="#contacto" class="details-link">
+              <span>Ver detalles</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 6 (Angular) -->
+        <div class="portfolio-card" data-category="angular">
+          <div class="card-image-wrapper">
+            <img src="assets/project6.jpg" alt="Suite Bancaria BPM" class="portfolio-image" />
+            <div class="card-overlay"></div>
+            <span class="card-tag">Banca</span>
+          </div>
+          <div class="card-details">
+            <h3 class="card-title">Suite Bancaria BPM</h3>
+            <p class="card-text">
+              Conjunto de aplicaciones bancarias: gestión BPM, monitorización de casos, gestión de crimen financiero y
+              control de riesgo reputacional.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Angular</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">Oracle</span>
+            </div>
+            <a href="#contacto" class="details-link">
+              <span>Ver detalles</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO SECTION (Acerca de Marcos Luna) -->
+  <section id="equipo" class="equipo">
+    <div class="equipo-glow-1"></div>
+    <div class="equipo-glow-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-pill tag-emerald">// Quién soy</div>
+        <h2 class="section-title">El <span class="text-gradient">Desarrollador</span> detrás de CodeDevPro</h2>
+        <p class="section-subtitle">
+          Un profesional comprometido con la excelencia técnica y la innovación digital.
+        </p>
+      </div>
+
+      <div class="developer-profile-wrapper">
+        <div class="developer-profile-card glassmorphism">
+          <div class="developer-visual">
+            <img src="https://avatars.githubusercontent.com/u/26864932?v=4" alt="Marcos Luna" class="developer-img" />
+            <div class="developer-image-overlay"></div>
+          </div>
+          <div class="developer-info">
+            <div class="dev-role">// Architect & Lead Developer</div>
+            <h3 class="dev-name">Marcos Luna</h3>
+            <p class="dev-bio">
+              Arquitecto, Líder Técnico y Senior Frontend Engineer con más de <b>15 años de experiencia</b> entregando
+              aplicaciones web escalables, diseñando soluciones técnicas complejas y liderando equipos de desarrollo
+              multidisciplinares.
+            </p>
+            <p class="dev-bio-extra">
+              Con una formación única que combina Ingeniería Naval en Electrónica y Telecomunicaciones con
+              Administración de Sistemas Informáticos, me especializo en conectar infraestructuras robustas, seguridad
+              de sistemas y el stack de desarrollo web moderno.
+            </p>
+
+            <div class="developer-skills">
+              <span class="dev-badge">Angular</span>
+              <span class="dev-badge">React</span>
+              <span class="dev-badge">Next.js</span>
+              <span class="dev-badge">Node.js</span>
+              <span class="dev-badge">NestJS</span>
+              <span class="dev-badge">TypeScript</span>
+              <span class="dev-badge">Cloud & DevOps</span>
+              <span class="dev-badge">AI Integration</span>
+            </div>
+
+            <div class="developer-socials">
+              <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener"
+                class="social-link" aria-label="LinkedIn">
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a href="mailto:mdluna.moddo@gmail.com" class="social-link" aria-label="Email">
+                <i class="ri-mail-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO SECTION -->
+  <section id="contacto" class="contacto">
+    <div class="contacto-glow-1"></div>
+    <div class="contacto-glow-2"></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-pill">// Hablemos</div>
+        <h2 class="section-title">Comienza tu <span class="text-gradient">Proyecto</span></h2>
+        <p class="section-subtitle">
+          Estamos listos para convertir tu idea en realidad. Cuéntanos sobre tu proyecto.
+        </p>
+      </div>
+
+      <div class="contacto-wrapper">
+        <div class="contacto-info-card glassmorphism">
+          <h3 class="info-card-title">Información de Contacto</h3>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon bg-cyan-alpha">
+                <i class="ri-mail-line"></i>
+              </div>
+              <div class="info-details">
+                <h4>Email</h4>
+                <p><a href="mailto:info@codedevpro.com">info@codedevpro.com</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon bg-emerald-alpha">
+                <i class="ri-phone-line"></i>
+              </div>
+              <div class="info-details">
+                <h4>Teléfono</h4>
+                <p><a href="tel:+34622380215">+34 622 380 215</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon bg-emerald-alpha">
+                <i class="ri-time-line"></i>
+              </div>
+              <div class="info-details">
+                <h4>Horario</h4>
+                <p>Lunes - Viernes: 9:00 - 18:00</p>
+                <p>Sábado: 10:00 - 14:00</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-socials-wrapper">
+            <h4>Síguenos</h4>
+            <div class="info-socials">
+              <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="#" aria-label="Github"><i class="ri-github-fill"></i></a>
+              <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+              <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacto-form-card glassmorphism">
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Nombre completo *</label>
+                <input type="text" id="name" name="name" required class="form-input" placeholder="Tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email *</label>
+                <input type="email" id="email" name="email" required class="form-input" placeholder="tu@email.com" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone" class="form-label">Teléfono</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" />
+              </div>
+              <div class="form-group">
+                <label for="company" class="form-label">Empresa</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="Tu empresa" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service" class="form-label">Servicio de interés *</label>
+              <select id="service" name="service" required class="form-select">
+                <option value="">Selecciona un servicio</option>
+                <option value="frontend">Desarrollo Frontend</option>
+                <option value="backend">Desarrollo Backend (Node.js / NestJS)</option>
+                <option value="cloud">Cloud & DevOps</option>
+                <option value="design">UI/UX Design</option>
+                <option value="apis">Arquitectura & APIs</option>
+                <option value="consulting">Consultoría Tech</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Mensaje *</label>
+              <textarea id="message" name="message" required maxlength="500" rows="5" class="form-textarea"
+                placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+              <div class="char-count"><span id="char-count-num">0</span>/500 caracteres</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+              <span class="btn-text">Enviar Mensaje</span>
+              <span class="btn-spinner hidden"></span>
+            </button>
+
+            <div class="form-feedback hidden" id="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom-decor">CodeDevPro</div>
+    <div class="container relative-z">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="flex-logo mb-4">
+            <img src="assets/logo.jpeg" alt="CodeDevPro" class="footer-logo-img" />
+            <span class="footer-logo-text">CodeDevPro</span>
+          </div>
+          <p class="footer-desc">
+            Código que Impulsa el Futuro. Transformamos ideas en experiencias digitales excepcionales.
+          </p>
+          <!-- <div class="footer-socials">
+              <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="#" aria-label="Github"><i class="ri-github-fill"></i></a>
+              <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+              <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+            </div> -->
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-title">Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-title">Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Frontend</a></li>
+            <li><a href="#servicios">Backend</a></li>
+            <li><a href="#servicios">DevOps</a></li>
+            <li><a href="#servicios">Arquitectura</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Boletín Informativo</h4>
+          <p>Próximamente...</p>
+          <!-- <p>Mantente al día con las últimas novedades tecnológicas.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required class="newsletter-input" />
+            <button type="submit" class="btn-newsletter-submit" aria-label="Suscribirse">
+              <i class="ri-send-plane-line"></i>
+            </button>
+          </form>
+          <div class="newsletter-feedback hidden" id="newsletter-feedback"></div>
+        </div> -->
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2026 CodeDevPro. Todos los derechos reservados.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
