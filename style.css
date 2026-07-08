@@ -1384,6 +1384,45 @@ button, input, select, textarea {
   color: var(--accent-cyan);
 }
 
+.contact-phone-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.contact-phone-link {
+  transition: var(--transition-fast);
+}
+
+.contact-phone-link:hover {
+  color: var(--accent-cyan);
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--accent-emerald) !important;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  background: var(--accent-emerald);
+  color: var(--text-white) !important;
+  border-color: var(--accent-emerald);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
 .info-socials-wrapper {
   margin-top: auto;
   padding-top: 2.5rem;
