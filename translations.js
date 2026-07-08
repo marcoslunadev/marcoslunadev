@@ -20,7 +20,7 @@ const translations = {
       contacto: "Contacto"
     },
     hero: {
-      tag: "// Desarrollo Web Profesional",
+      tag: "&lt;Desarrollo Web Profesional /&gt;",
       title: '<span class="text-gradient">Código que Impulsa</span><br /><span class="text-white">el Futuro</span>',
       subtitle: "Transformamos ideas en experiencias digitales excepcionales utilizando las tecnologías más avanzadas del mercado. Especialistas en Angular, React, Vue, Node y Bun.",
       btnStart: "Iniciar Proyecto",
@@ -33,7 +33,7 @@ const translations = {
       stat3Label: "Años de Experiencia"
     },
     servicios: {
-      tag: "// Nuestros Servicios",
+      tag: "&lt;Nuestros Servicios /&gt;",
       title: 'Soluciones <span class="text-gradient">Profesionales</span>',
       subtitle: "Ofrecemos servicios integrales de desarrollo web que cubren todas las necesidades de tu proyecto digital.",
       card1: {
@@ -86,7 +86,7 @@ const translations = {
       }
     },
     tecnologias: {
-      tag: "// Stack Tecnológico",
+      tag: "&lt;Stack Tecnológico /&gt;",
       title: 'Nuestras <span class="text-gradient">Especialidades</span>',
       subtitle: "Dominamos las tecnologías más demandadas del mercado para crear soluciones de vanguardia.",
       angular: {
@@ -132,7 +132,7 @@ const translations = {
       secondary: "También trabajamos con"
     },
     portfolio: {
-      tag: "// Nuestro Trabajo",
+      tag: "&lt;Nuestro Trabajo /&gt;",
       title: 'Proyectos <span class="text-gradient">Corporativos</span>',
       subtitle: "Soluciones empresariales desarrolladas para diferentes sectores industriales y corporativos.",
       filterAll: "Todos",
@@ -176,15 +176,15 @@ const translations = {
       }
     },
     equipo: {
-      tag: "// Quién soy",
+      tag: "&lt;Quién soy /&gt;",
       title: 'El <span class="text-gradient">Desarrollador</span> detrás de CodeDevPro',
       subtitle: "Un profesional comprometido con la excelencia técnica y la innovación digital.",
-      role: "// Architect & Lead Developer",
+      role: "&lt;Architect &amp; Lead Developer /&gt;",
       bio: "Arquitecto, Líder Técnico y Senior Frontend Engineer con más de <b>15 años de experiencia</b> entregando aplicaciones web escalables, diseñando soluciones técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
       bioExtra: "Con una formación única que combina Ingeniería Naval en Electrónica y Telecomunicaciones con Administración de Sistemas Informáticos, me especializo en conectar infraestructuras robustas, seguridad de sistemas y el stack de desarrollo web moderno."
     },
     contacto: {
-      tag: "// Hablemos",
+      tag: "&lt;Hablemos /&gt;",
       title: 'Comienza tu <span class="text-gradient">Proyecto</span>',
       subtitle: "Estamos listos para convertir tu idea en realidad. Cuéntanos sobre tu proyecto.",
       infoTitle: "Información de Contacto",
@@ -316,7 +316,7 @@ const translations = {
       contacto: "Contact"
     },
     hero: {
-      tag: "// Professional Web Development",
+      tag: "&lt;Professional Web Development /&gt;",
       title: '<span class="text-gradient">Code that Drives</span><br /><span class="text-white">the Future</span>',
       subtitle: "We transform ideas into exceptional digital experiences using the most advanced technologies in the market. Specialists in Angular, React, Vue, Node, and Bun.",
       btnStart: "Start Project",
@@ -329,7 +329,7 @@ const translations = {
       stat3Label: "Years of Experience"
     },
     servicios: {
-      tag: "// Our Services",
+      tag: "&lt;Our Services /&gt;",
       title: 'Professional <span class="text-gradient">Solutions</span>',
       subtitle: "We offer comprehensive web development services that cover all the needs of your digital project.",
       card1: {
@@ -382,7 +382,7 @@ const translations = {
       }
     },
     tecnologias: {
-      tag: "// Tech Stack",
+      tag: "&lt;Tech Stack /&gt;",
       title: 'Our <span class="text-gradient">Specialties</span>',
       subtitle: "We master the most in-demand technologies in the market to create cutting-edge solutions.",
       angular: {
@@ -428,7 +428,7 @@ const translations = {
       secondary: "We also work with"
     },
     portfolio: {
-      tag: "// Our Work",
+      tag: "&lt;Our Work /&gt;",
       title: 'Corporate <span class="text-gradient">Projects</span>',
       subtitle: "Enterprise solutions developed for different industrial and corporate sectors.",
       filterAll: "All",
@@ -472,15 +472,15 @@ const translations = {
       }
     },
     equipo: {
-      tag: "// About Me",
+      tag: "&lt;About Me /&gt;",
       title: 'The <span class="text-gradient">Developer</span> behind CodeDevPro',
       subtitle: "A professional committed to technical excellence and digital innovation.",
-      role: "// Architect & Lead Developer",
+      role: "&lt;Architect &amp; Lead Developer /&gt;",
       bio: "Architect, Technical Leader, and Senior Frontend Engineer with more than <b>15 years of experience</b> delivering scalable web applications, designing complex technical solutions, and leading multidisciplinary development teams.",
       bioExtra: "With a unique background combining Naval Engineering in Electronics and Telecommunications with Computer Systems Administration, I specialize in connecting robust infrastructures, systems security, and the modern web development stack."
     },
     contacto: {
-      tag: "// Let's Talk",
+      tag: "&lt;Let's Talk /&gt;",
       title: 'Start Your <span class="text-gradient">Project</span>',
       subtitle: "We are ready to turn your idea into reality. Tell us about your project.",
       infoTitle: "Contact Information",
