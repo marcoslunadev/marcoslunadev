@@ -63,6 +63,7 @@ html {
   scroll-padding-top: var(--header-height);
   font-size: 16px;
   accent-color: var(--accent-cyan);
+  overflow-x: hidden;
 }
 
 body {
@@ -71,6 +72,7 @@ body {
   font-family: var(--font-family-body);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -337,7 +339,7 @@ button, input, select, textarea {
   display: block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .nav-menu {
     display: flex;
     align-items: center;
@@ -350,7 +352,7 @@ button, input, select, textarea {
 }
 
 /* Mobile Menu Open */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .nav-menu.open {
     display: flex;
     flex-direction: column;
@@ -1302,6 +1304,7 @@ button, input, select, textarea {
   padding-top: 6rem;
   padding-bottom: 6rem;
   position: relative;
+  overflow: hidden;
 }
 
 .contacto-glow-1 {
@@ -1953,6 +1956,7 @@ button, input, select, textarea {
   padding-bottom: 6rem;
   position: relative;
   min-height: 80vh;
+  overflow: hidden;
 }
 
 .privacy-glow-1 {
@@ -2077,6 +2081,7 @@ button, input, select, textarea {
   position: relative;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
 }
 
 .metodologia-glow {
