@@ -442,6 +442,21 @@ button, input, select, textarea {
   margin-bottom: 3.5rem;
 }
 
+.hero-promise-wrapper {
+  width: 100%;
+  margin-top: -0.5rem;
+  padding-left: 0.25rem;
+}
+
+.hero-promise {
+  font-size: 0.875rem;
+  color: var(--accent-emerald);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 .hero-stats {
   display: flex;
   flex-wrap: wrap;
@@ -1441,8 +1456,8 @@ button, input, select, textarea {
 }
 
 .info-socials a {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
@@ -1693,7 +1708,7 @@ button, input, select, textarea {
 
 @media (min-width: 992px) {
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
   }
 }
 
@@ -2051,4 +2066,236 @@ button, input, select, textarea {
   .privacy-card h1.section-title {
     font-size: 2rem;
   }
+}
+
+/* --------------------------------------------------------------------------
+   14. METODOLOGIA / COMO TRABAJO SECTION
+   -------------------------------------------------------------------------- */
+.metodologia {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.metodologia-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.metodologia-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 576px) {
+  .metodologia-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .metodologia-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.metodologia-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.metodologia-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
+}
+
+.metodologia-step-num {
+  font-family: var(--font-family-headings);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-emerald) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
+}
+
+.metodologia-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-white);
+}
+
+.metodologia-card-text {
+  font-size: 0.875rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   15. AI & AGENTIC STACK SECTION
+   -------------------------------------------------------------------------- */
+.ai-stack-section {
+  margin-top: 5rem;
+  padding-top: 5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.ai-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ai-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+}
+
+@media (min-width: 576px) {
+  .ai-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .ai-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ai-card.hidden {
+  display: none;
+}
+
+.ai-card {
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ai-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.25);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.08);
+}
+
+.ai-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ai-logo-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+}
+
+.logo-bg-white {
+  background-color: #ffffff !important;
+}
+
+.ai-logo-wrapper svg,
+.ai-logo-wrapper img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+}
+
+.ai-card:hover .ai-logo-wrapper svg,
+.ai-card:hover .ai-logo-wrapper img {
+  transform: scale(1.1);
+}
+
+.ai-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.ai-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+}
+
+.tag-category {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+}
+
+.tag-deploy {
+  color: #ffffff;
+}
+
+.tag-local {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: var(--accent-emerald);
+}
+
+.tag-cloud {
+  background-color: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.2);
+  color: var(--accent-cyan);
+}
+
+.tag-hybrid {
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+  color: #a78bfa;
+}
+
+.ai-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+}
+
+.ai-desc {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.5;
 }

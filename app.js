@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------------------------------------------------
      3. PORTFOLIO FILTERING
      -------------------------------------------------------------------------- */
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll('#portfolio-filters .filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');
 
   if (filterButtons.length > 0 && portfolioCards.length > 0) {
@@ -82,7 +82,45 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioCards.forEach(card => {
           const cardCategory = card.getAttribute('data-category');
 
-          if (filterValue === 'all' || cardCategory === filterValue) {
+          if (filterValue === 'all' || (cardCategory && cardCategory.split(/[\s,]+/).includes(filterValue))) {
+            // Mostrar tarjeta con animación suave
+            card.classList.remove('hidden');
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            // Ocultar tarjeta
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              card.classList.add('hidden');
+            }, 300); // Esperar que termine la transición CSS
+          }
+        });
+      });
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     3b. AI STACK FILTERING
+     -------------------------------------------------------------------------- */
+  const aiFilterButtons = document.querySelectorAll('#ai-filters .filter-btn');
+  const aiCards = document.querySelectorAll('.ai-card');
+
+  if (aiFilterButtons.length > 0 && aiCards.length > 0) {
+    aiFilterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remover clase activa de todos los botones y agregar al actual
+        aiFilterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        aiCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+
+          if (filterValue === 'all' || (cardCategory && cardCategory.split(/[\s,]+/).includes(filterValue))) {
             // Mostrar tarjeta con animación suave
             card.classList.remove('hidden');
             setTimeout(() => {
@@ -332,7 +370,7 @@ bootstrap();`,
   /* --------------------------------------------------------------------------
      8. SCROLL REVEAL (FADE-IN ANIMATION)
      -------------------------------------------------------------------------- */
-  const revealElements = document.querySelectorAll('.service-card, .tech-card-wrapper, .portfolio-card, .developer-profile-card, .contacto-info-card, .contacto-form-card');
+  const revealElements = document.querySelectorAll('.service-card, .tech-card-wrapper, .portfolio-card, .metodologia-card, .ai-card, .developer-profile-card, .contacto-info-card, .contacto-form-card');
 
   // Agregar clase inicial para la transición CSS
   revealElements.forEach(el => {
@@ -386,7 +424,7 @@ bootstrap();`,
     // 4. Update page SEO meta tags and Title
     if (translations[lang].meta) {
       document.title = translations[lang].meta.title;
-      
+
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute('content', translations[lang].meta.description);
 
@@ -437,15 +475,13 @@ bootstrap();`,
   });
 
   // Initialize page in selected language
-  if (currentLang !== 'es') {
-    translatePage(currentLang);
-    // Sync the active class in lang buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      if (btn.getAttribute('data-lang') === currentLang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  }
+  translatePage(currentLang);
+  // Sync the active class in lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if (btn.getAttribute('data-lang') === currentLang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
 });
