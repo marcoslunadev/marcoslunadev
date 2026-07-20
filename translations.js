@@ -5,11 +5,11 @@
 const translations = {
   es: {
     meta: {
-      title: "CodeDevPro | Arquitectura Frontend, Consultoría Angular y Node/NestJS",
-      description: "En CodeDevPro ayudamos a empresas a construir frontends Angular/React escalables, APIs Node/NestJS y arquitecturas robustas, potenciados por desarrollo asistido por IA y Spec-Driven Development. ¡Hablemos!",
-      keywords: "desarrollo web, Angular, React, Vue, Node.js, NestJS, desarrollo frontend, desarrollo backend, aplicaciones web, CodeDevPro, Marcos Luna, arquitectura web, Spec-Driven Development, Inteligencia Artificial",
-      ogTitle: "CodeDevPro | Arquitectura Frontend & Backend",
-      ogDesc: "En CodeDevPro ayudamos a empresas a construir frontends Angular/React escalables, APIs Node/NestJS y arquitecturas robustas listas para producción.",
+      title: "MarcosLunaDev | Arquitectura Frontend, Consultoría Angular y Node/NestJS",
+      description: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables, APIs Node/NestJS y arquitecturas robustas, potenciados por desarrollo asistido por IA y Spec-Driven Development. ¡Hablemos!",
+      keywords: "desarrollo web, Angular, React, Vue, Node.js, NestJS, desarrollo frontend, desarrollo backend, aplicaciones web, MarcosLunaDev, Marcos Luna, arquitectura web, Spec-Driven Development, Inteligencia Artificial",
+      ogTitle: "MarcosLunaDev | Arquitectura Frontend & Backend",
+      ogDesc: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables, APIs Node/NestJS y arquitecturas robustas listas para producción.",
     },
     nav: {
       inicio: "Inicio",
@@ -22,7 +22,7 @@ const translations = {
     hero: {
       tag: "Frontend Architecture & Backend Consulting",
       title: '<span class="text-gradient">Código que Impulsa</span><br /><span class="text-white">el Futuro</span>',
-      subtitle: "En CodeDevPro ayudamos a empresas a construir frontends Angular/React escalables y APIs Node/NestJS, potenciando el desarrollo con herramientas de IA y Spec‑Driven Development para asegurar calidad y velocidad.",
+      subtitle: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables y APIs Node/NestJS, potenciando el desarrollo con herramientas de IA y Spec‑Driven Development para asegurar calidad y velocidad.",
       btnStart: "Iniciar Proyecto",
       btnPortfolio: "Ver Portafolio",
       promise: "⚡ Respuesta en 48-72h",
@@ -34,7 +34,7 @@ const translations = {
       stat3Label: "Años de Experiencia"
     },
     servicios: {
-      tag: "&lt; Servicios de CodeDevPro /&gt;",
+      tag: "&lt; Servicios de MarcosLunaDev /&gt;",
       title: 'Soluciones <span class="text-gradient">Profesionales</span>',
       subtitle: "Ofrecemos servicios integrales de desarrollo web que cubren todas las necesidades de tu proyecto digital.",
       card1: {
@@ -225,7 +225,7 @@ const translations = {
     },
     equipo: {
       tag: "&lt; Fundador /&gt;",
-      title: 'El Especialista detrás de <span class="text-gradient">CodeDevPro</span>',
+      title: 'El Especialista detrás de <span class="text-gradient">MarcosLunaDev</span>',
       subtitle: "Un profesional comprometido con la excelencia técnica y la innovación digital.",
       role: "&lt; Founder &amp; Lead Consultant /&gt;",
       bio: "Arquitecto, Líder Técnico y Senior Frontend Engineer con más de <b>15 años de experiencia</b> entregando aplicaciones web escalables, diseñando soluciones técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
@@ -259,16 +259,16 @@ const translations = {
       brandDesc: "Desarrollo de software y arquitectura web de alto rendimiento. Apalancados en desarrollo asistido por IA y Spec-Driven Development.",
       quickLinks: "Enlaces Rápidos",
       services: "Servicios",
-      copyright: "&copy; 2026 CodeDevPro. Todos los derechos reservados.",
+      copyright: "&copy; 2026 MarcosLunaDev. Todos los derechos reservados.",
       privacy: "Políticas de privacidad",
       terms: "Aviso Legal"
     },
     privacy: {
-      metaTitle: "Políticas de Privacidad - CodeDevPro",
+      metaTitle: "Políticas de Privacidad - MarcosLunaDev",
       title: "Políticas de Privacidad",
       subtitle: "Última actualización: 8 de julio de 2026",
       sec1Title: "1. Responsable del tratamiento",
-      sec1Text: "<strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br><strong>Domicilio:</strong> Madrid, España<br><strong>Correo de contacto en materia de protección de datos:</strong> info@codedevpro.com",
+      sec1Text: "<strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br><strong>Domicilio:</strong> Madrid, España<br><strong>Correo de contacto en materia de protección de datos:</strong> info@MarcosLunaDev.com",
       sec2Title: "2. Datos tratados, origen y finalidad",
       sec2Text1: "En esta web únicamente se recaban datos personales a través del formulario de contacto.",
       sec2Text2: "Los datos que se pueden solicitar son: nombre, dirección de correo electrónico y el contenido del mensaje que el usuario decida enviar.",
@@ -291,7 +291,7 @@ const translations = {
       sec6Li4: "Derecho de oposición al tratamiento.",
       sec6Li5: "Derecho a solicitar la limitación del tratamiento de sus datos.",
       sec6Li6: "Derecho a la portabilidad de los datos en los casos previstos en la normativa.",
-      sec6Text2: "El ejercicio de estos derechos puede realizarse enviando un correo electrónico a info@codedevpro.com, indicando el derecho que se desea ejercer y adjuntando una copia de un documento identificativo válido (DNI, NIE, pasaporte).",
+      sec6Text2: "El ejercicio de estos derechos puede realizarse enviando un correo electrónico a info@MarcosLunaDev.com, indicando el derecho que se desea ejercer y adjuntando una copia de un documento identificativo válido (DNI, NIE, pasaporte).",
       sec6Text3: "Asimismo, si el usuario considera que el tratamiento de sus datos no se ajusta a la normativa vigente, puede presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) a través de su web <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.",
       sec7Title: "7. Cookies y otros datos",
       sec7Text1: "Actualmente esta web no utiliza cookies propias para finalidades de seguimiento, analítica o publicidad.",
@@ -301,11 +301,11 @@ const translations = {
       sec8Text2: "Entre otras medidas, se utilizarán conexiones cifradas (HTTPS) cuando el servicio de alojamiento lo permita y se mantendrán actualizados los sistemas utilizados para la gestión de la web."
     },
     legal: {
-      metaTitle: "Aviso Legal - CodeDevPro",
+      metaTitle: "Aviso Legal - MarcosLunaDev",
       title: "Aviso Legal y Condiciones de Uso",
       subtitle: "Última actualización: 8 de julio de 2026",
       sec1Title: "1. Información general",
-      sec1Text: "En cumplimiento del deber de información establecido en el artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI‑CE), se indica a continuación la información general del sitio web:<br><br><strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br><strong>Domicilio:</strong> Madrid, España<br><strong>Correo electrónico de contacto:</strong> info@codedevpro.com<br><br>Este sitio web tiene carácter personal y divulgativo, y su finalidad principal es mostrar información sobre la actividad profesional y proyectos de su titular, así como facilitar un medio de contacto.",
+      sec1Text: "En cumplimiento del deber de información establecido en el artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI‑CE), se indica a continuación la información general del sitio web:<br><br><strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br><strong>Domicilio:</strong> Madrid, España<br><strong>Correo electrónico de contacto:</strong> info@MarcosLunaDev.com<br><br>Este sitio web tiene carácter personal y divulgativo, y su finalidad principal es mostrar información sobre la actividad profesional y proyectos de su titular, así como facilitar un medio de contacto.",
       sec2Title: "2. Condiciones de acceso y uso del sitio web",
       sec2Text1: "El acceso y/o uso de este sitio web atribuye la condición de usuario, que acepta desde dicho acceso y/o uso las presentes condiciones generales.",
       sec2Text2: "El usuario se compromete a utilizar el sitio web de forma diliente, correcta y lícita, y a no realizar actividades que puedan dañar la imagen, los intereses o los derechos del titular o de terceros.",
@@ -335,11 +335,11 @@ const translations = {
   },
   en: {
     meta: {
-      title: "CodeDevPro | Frontend Architecture, Angular Consulting & Node/NestJS",
-      description: "At CodeDevPro, we help companies build scalable Angular/React frontends, Node/NestJS APIs, and robust architectures, boosted by AI-assisted coding and Spec-Driven Development. Let's talk!",
-      keywords: "web development, Angular, React, Vue, Node.js, NestJS, frontend development, backend development, web applications, CodeDevPro, Marcos Luna, web architecture, Spec-Driven Development, Artificial Intelligence",
-      ogTitle: "CodeDevPro | Frontend Architecture & Backend Consulting",
-      ogDesc: "At CodeDevPro, we help companies build scalable Angular/React frontends, Node/NestJS APIs, and robust production-ready architectures.",
+      title: "MarcosLunaDev | Frontend Architecture, Angular Consulting & Node/NestJS",
+      description: "At MarcosLunaDev, we help companies build scalable Angular/React frontends, Node/NestJS APIs, and robust architectures, boosted by AI-assisted coding and Spec-Driven Development. Let's talk!",
+      keywords: "web development, Angular, React, Vue, Node.js, NestJS, frontend development, backend development, web applications, MarcosLunaDev, Marcos Luna, web architecture, Spec-Driven Development, Artificial Intelligence",
+      ogTitle: "MarcosLunaDev | Frontend Architecture & Backend Consulting",
+      ogDesc: "At MarcosLunaDev, we help companies build scalable Angular/React frontends, Node/NestJS APIs, and robust production-ready architectures.",
     },
     nav: {
       inicio: "Home",
@@ -352,7 +352,7 @@ const translations = {
     hero: {
       tag: "Frontend Architecture & Backend Consulting",
       title: '<span class="text-gradient">Code that Drives</span><br /><span class="text-white">the Future</span>',
-      subtitle: "At CodeDevPro, we help companies build scalable Angular/React frontends and Node/NestJS APIs, leveraging AI tools and Spec‑Driven Development to ensure quality and speed.",
+      subtitle: "At MarcosLunaDev, we help companies build scalable Angular/React frontends and Node/NestJS APIs, leveraging AI tools and Spec‑Driven Development to ensure quality and speed.",
       btnStart: "Start Project",
       btnPortfolio: "View Portfolio",
       promise: "⚡ Response in 48-72h",
@@ -364,7 +364,7 @@ const translations = {
       stat3Label: "Years of Experience"
     },
     servicios: {
-      tag: "&lt; CodeDevPro Services /&gt;",
+      tag: "&lt; MarcosLunaDev Services /&gt;",
       title: 'Professional <span class="text-gradient">Solutions</span>',
       subtitle: "We offer comprehensive web development services that cover all the needs of your digital project.",
       card1: {
@@ -555,7 +555,7 @@ const translations = {
     },
     equipo: {
       tag: "&lt; Founder /&gt;",
-      title: 'The Specialist behind CodeDevPro',
+      title: 'The Specialist behind MarcosLunaDev',
       subtitle: "A professional committed to technical excellence and digital innovation.",
       role: "&lt; Founder &amp; Principal Consultant /&gt;",
       bio: "Architect, Technical Leader, and Senior Frontend Engineer with more than <b>15 years of experience</b> delivering scalable web applications, designing complex technical solutions, and leading multidisciplinary development teams.",
@@ -589,7 +589,7 @@ const translations = {
       brandDesc: "High-performance software development and web architecture. Boosted by AI-assisted coding and Spec-Driven Development.",
       quickLinks: "Quick Links",
       services: "Services",
-      copyright: "&copy; 2026 CodeDevPro. All rights reserved.",
+      copyright: "&copy; 2026 MarcosLunaDev. All rights reserved.",
       privacy: "Privacy Policy",
       terms: "Legal Notice"
     }
