@@ -484,4 +484,72 @@ bootstrap();`,
       btn.classList.remove('active');
     }
   });
+
+  /* --------------------------------------------------------------------------
+     10. LOGO LIGHTBOX MODAL (VENTANA FLOTANTE AMPLIDA)
+     -------------------------------------------------------------------------- */
+  const createLogoModal = () => {
+    let modal = document.getElementById('logo-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'logo-modal';
+      modal.className = 'logo-modal-overlay';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.innerHTML = `
+        <div class="logo-modal-content">
+          <button class="logo-modal-close" aria-label="Cerrar">&times;</button>
+          <img id="logo-modal-img" src="" alt="MarcosLunaDev Logo Ampliado" />
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const closeModal = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      // Close on backdrop click (clicking outside image) or close button click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.classList.contains('logo-modal-close')) {
+          closeModal();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    }
+    return modal;
+  };
+
+  // Attach click listener to logo images
+  const logoElements = document.querySelectorAll('.logo-img, .footer-logo-img, .logo');
+  logoElements.forEach(logoEl => {
+    logoEl.style.cursor = 'pointer';
+    logoEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const modal = createLogoModal();
+      const modalImg = modal.querySelector('#logo-modal-img');
+
+      let imgSrc = 'assets/logo.png';
+      if (logoEl.tagName === 'IMG') {
+        imgSrc = logoEl.getAttribute('src');
+      } else {
+        const img = logoEl.querySelector('img');
+        if (img) imgSrc = img.getAttribute('src');
+      }
+
+      modalImg.src = imgSrc;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
 });
+
