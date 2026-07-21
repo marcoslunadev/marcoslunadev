@@ -298,10 +298,6 @@ bootstrap();`,
 
       emailjs.sendForm(serviceId, templateAdminId, contactForm)
         .then(() => {
-          // Si el primer correo se envió correctamente, enviamos el segundo (auto-respuesta) si está configurado
-          return emailjs.sendForm(serviceId, templateAutoId, contactForm);
-        })
-        .then(() => {
           submitBtn.disabled = false;
           btnText.textContent = translations[currentLang].contacto.formSubmit;
           btnSpinner.classList.add('hidden');
@@ -527,7 +523,7 @@ bootstrap();`,
   };
 
   // Attach click listener to logo images
-  const logoElements = document.querySelectorAll('.logo-img, .footer-logo-img, .logo');
+  const logoElements = document.querySelectorAll('.logo-img, .footer-logo-img');
   logoElements.forEach(logoEl => {
     logoEl.style.cursor = 'pointer';
     logoEl.addEventListener('click', (e) => {
