@@ -229,7 +229,7 @@ const translations = {
       subtitle: "Un profesional comprometido con la excelencia técnica y la innovación digital.",
       role: "&lt; Founder &amp; Lead Consultant /&gt;",
       bio: "Arquitecto, Líder Técnico y Senior Frontend Engineer con más de <b>15 años de experiencia</b> entregando aplicaciones web escalables, diseñando soluciones técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
-      bioExtra: "Con una formación única que combina Ingeniería Naval en Electrónica y Telecomunicaciones con Administración de Sistemas Informáticos, me especializo en conectar infraestructuras robustas, seguridad de sistemas y el stack de desarrollo web moderno, optimizado mediante desarrollo asistido por IA y metodologías de Spec‑Driven Development."
+      bioExtra: "Con una formación de base única que combina Ciencias y Artes Navales, Electrónica y Telecomunicaciones y Administración de Sistemas Informáticos, inicialmente orientada a infraestructuras y seguridad de sistemas, he evolucionado y me he adaptado hacia la programación y el desarrollo web moderno. Hoy me especializo en conectar infraestructuras robustas, seguridad de sistemas y el stack de desarrollo web contemporáneo, optimizado mediante desarrollo asistido por IA y metodologías de Spec‑Driven Development (desarrollo guiado por especificaciones)."
     },
     contacto: {
       tag: "&lt; Hablemos /&gt;",
@@ -563,7 +563,7 @@ const translations = {
       subtitle: "A professional committed to technical excellence and digital innovation.",
       role: "&lt; Founder &amp; Principal Consultant /&gt;",
       bio: "Architect, Technical Leader, and Senior Frontend Engineer with more than <b>15 years of experience</b> delivering scalable web applications, designing complex technical solutions, and leading multidisciplinary development teams.",
-      bioExtra: "With a unique background combining Naval Engineering in Electronics and Telecommunications with Computer Systems Administration, I specialize in connecting robust infrastructures, systems security, and the modern web development stack, optimized through AI-assisted coding and Spec-Driven Development methodologies."
+      bioExtra: "With a unique foundational background that combines Naval Sciences and Arts, Electronics and Telecommunications, and IT Systems Administration, initially focused on infrastructure and systems security, I later transitioned and adapted to modern web development. Today I specialize in connecting robust infrastructures, system security, and the contemporary web development stack, optimized through AI‑assisted development and Spec‑Driven Development methodologies."
     },
     contacto: {
       tag: "&lt; Let's Talk /&gt;",
