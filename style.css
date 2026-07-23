@@ -871,6 +871,13 @@ textarea {
   transition: transform var(--transition-normal);
 }
 
+.tech-icon-svg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
 .tech-card:hover .tech-icon-bg {
   transform: rotate(6deg);
 }
@@ -893,6 +900,14 @@ textarea {
 
 .bg-yellow {
   background: linear-gradient(135deg, #fef08a, var(--color-bun));
+}
+
+.bg-orange {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.bg-blue {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
 
 .badge {
@@ -922,6 +937,14 @@ textarea {
 
 .badge-yellow {
   background-color: #ca8a04;
+}
+
+.badge-orange {
+  background-color: #ea580c;
+}
+
+.badge-blue {
+  background-color: #2563eb;
 }
 
 .tech-title {
@@ -978,6 +1001,14 @@ textarea {
   background-color: var(--color-bun);
 }
 
+.dot-indicator.bg-orange {
+  background-color: #ea580c;
+}
+
+.dot-indicator.bg-blue {
+  background-color: #2563eb;
+}
+
 /* Glow hovers */
 .tech-card-wrapper.border-red:hover {
   background: linear-gradient(135deg, #f43f5e, var(--color-angular));
@@ -1007,6 +1038,18 @@ textarea {
   background: linear-gradient(135deg, #fef08a, var(--color-bun));
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(250, 204, 21, 0.25);
+}
+
+.tech-card-wrapper.border-orange:hover {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.25);
+}
+
+.tech-card-wrapper.border-blue:hover {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
 }
 
 .tech-secondary {

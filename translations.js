@@ -122,13 +122,21 @@ const translations = {
         tag3: "Ecosistema NPM",
         tag4: "Altamente Escalable"
       },
-      bun: {
-        title: "Bun",
-        desc: "Runtime ultrarrápido y toolkit todo-en-uno para Javascript moderno.",
-        tag1: "Velocidad Extrema",
-        tag2: "Empaquetador Integrado",
-        tag3: "TypeScript Nativo",
-        tag4: "Compatibilidad de Drop-in"
+      java: {
+        title: "Java / Spring Boot",
+        desc: "Arquitectura backend empresarial robusta, escalable y segura.",
+        tag1: "Spring Boot",
+        tag2: "Spring Cloud",
+        tag3: "JPA / Hibernate",
+        tag4: "Microservicios"
+      },
+      python: {
+        title: "Python",
+        desc: "Scripting, automatización de procesos y APIs de alto rendimiento.",
+        tag1: "FastAPI / Django",
+        tag2: "Scripting & Scraping",
+        tag3: "Análisis de Datos",
+        tag4: "Automatización IA"
       },
       secondary: "También trabajamos con",
       aiTag: "&lt; IA Aplicada /&gt;",
@@ -456,13 +464,21 @@ const translations = {
         tag3: "NPM Ecosystem",
         tag4: "Highly Scalable"
       },
-      bun: {
-        title: "Bun",
-        desc: "Ultrafast runtime and all-in-one toolkit for modern JavaScript.",
-        tag1: "Extreme Speed",
-        tag2: "Built-in Bundler",
-        tag3: "Native TypeScript",
-        tag4: "Drop-in Compatibility"
+      java: {
+        title: "Java / Spring Boot",
+        desc: "Robust, scalable, and secure enterprise backend architecture.",
+        tag1: "Spring Boot",
+        tag2: "Spring Cloud",
+        tag3: "JPA / Hibernate",
+        tag4: "Microservices"
+      },
+      python: {
+        title: "Python",
+        desc: "Scripting, process automation, and high-performance APIs.",
+        tag1: "FastAPI / Django",
+        tag2: "Scripting & Scraping",
+        tag3: "Data Analysis",
+        tag4: "AI Automation"
       },
       secondary: "We also work with",
       aiTag: "&lt; Applied AI /&gt;",
