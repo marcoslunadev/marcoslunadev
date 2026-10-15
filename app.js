@@ -522,8 +522,8 @@ bootstrap();`,
     return modal;
   };
 
-  // Attach click listener to logo images
-  const logoElements = document.querySelectorAll('.logo-img, .footer-logo-img');
+  // Attach click listener to footer logo image
+  const logoElements = document.querySelectorAll('.footer-logo-img');
   logoElements.forEach(logoEl => {
     logoEl.style.cursor = 'pointer';
     logoEl.addEventListener('click', (e) => {
@@ -533,7 +533,7 @@ bootstrap();`,
       const modal = createLogoModal();
       const modalImg = modal.querySelector('#logo-modal-img');
 
-      let imgSrc = 'assets/logo.png';
+      let imgSrc = 'assets/logo-horizontal-oscuro.png';
       if (logoEl.tagName === 'IMG') {
         imgSrc = logoEl.getAttribute('src');
       } else {
