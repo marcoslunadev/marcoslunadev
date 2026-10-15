@@ -23,11 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Inject EmailJS Secrets
-        run: |
-          sed -i 's/___EMAILJS_SERVICE_ID___/${{ secrets.EMAILJS_SERVICE_ID }}/g' app.js
-          sed -i 's/___EMAILJS_TEMPLATE_ADMIN_ID___/${{ secrets.EMAILJS_TEMPLATE_ADMIN_ID }}/g' app.js
-          sed -i 's/___EMAILJS_TEMPLATE_AUTO_ID___/${{ secrets.EMAILJS_TEMPLATE_AUTO_ID }}/g' app.js
       - name: Cache Busting (Inject version timestamp)
         run: |
           VERSION=$(date +%Y%m%d%H%M%S)

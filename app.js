@@ -275,6 +275,20 @@ bootstrap();`,
     });
   }
 
+  // Tiempo de inicialización para Time-gate anti-bot
+  const formInitTime = Date.now();
+
+  // Función auxiliar para resetear Turnstile si está activo
+  function resetTurnstile() {
+    if (window.turnstile && typeof window.turnstile.reset === 'function') {
+      try {
+        window.turnstile.reset();
+      } catch (err) {
+        console.warn('Error al resetear Turnstile:', err);
+      }
+    }
+  }
+
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -284,20 +298,84 @@ bootstrap();`,
       const btnSpinner = submitBtn.querySelector('.btn-spinner');
       const formFeedback = document.getElementById('form-feedback');
 
+      // 1. TRAMPA HONEYPOT: Si el campo oculto contiene algún valor, es un bot
+      const honeypot = contactForm.querySelector('#contact-website-field');
+      if (honeypot && honeypot.value.trim() !== '') {
+        console.warn('Bot detectado y neutralizado mediante trampa honeypot.');
+        contactForm.reset();
+        if (charCountNum) charCountNum.textContent = '0';
+        resetTurnstile();
+        formFeedback.className = 'form-feedback success';
+        formFeedback.textContent = translations[currentLang].contacto.feedbackSuccess;
+        setTimeout(() => {
+          formFeedback.className = 'form-feedback hidden';
+        }, 6000);
+        return;
+      }
+
+      // 2. TIME-GATE: Detecta envíos sobrehumanos (< 2.5 segundos)
+      const elapsedSeconds = (Date.now() - formInitTime) / 1000;
+      if (elapsedSeconds < 2.5) {
+        formFeedback.className = 'form-feedback error';
+        formFeedback.textContent = translations[currentLang].contacto.feedbackError;
+        return;
+      }
+
+      // 3. RATE LIMIT LOCAL: 1 envío cada 90 segundos por navegador
+      const RATE_LIMIT_KEY = 'mld_contact_last_submit';
+      const lastSubmit = localStorage.getItem(RATE_LIMIT_KEY);
+      if (lastSubmit) {
+        const timeDiff = Date.now() - parseInt(lastSubmit, 10);
+        if (timeDiff < 90000) {
+          formFeedback.className = 'form-feedback error';
+          formFeedback.textContent = translations[currentLang].contacto.feedbackRateLimit;
+          return;
+        }
+      }
+
+      // 4. CLOUDFLARE TURNSTILE: Validar que se ha completado la verificación
+      const turnstileToken = contactForm.querySelector('[name="cf-turnstile-response"]')?.value
+        || (window.turnstile && typeof window.turnstile.getResponse === 'function' ? window.turnstile.getResponse() : null);
+
+      if (!turnstileToken) {
+        formFeedback.className = 'form-feedback error';
+        formFeedback.textContent = translations[currentLang].contacto.feedbackTurnstileRequired;
+        return;
+      }
+
       // Deshabilitar botón y mostrar spinner
       submitBtn.disabled = true;
       btnText.textContent = translations[currentLang].contacto.formSubmitting;
       btnSpinner.classList.remove('hidden');
       formFeedback.className = 'form-feedback hidden';
 
-      // Reemplaza 'service_vlp91on' y 'template_62a7zww' con tus IDs de EmailJS
-      const serviceId = '___EMAILJS_SERVICE_ID___';
-      const templateAdminId = '___EMAILJS_TEMPLATE_ADMIN_ID___';
-      // Si creas una plantilla de auto-respuesta para el cliente en EmailJS, pon su ID aquí:
-      const templateAutoId = '___EMAILJS_TEMPLATE_AUTO_ID___';
+      const WORKER_ENDPOINT = 'https://marcoslunadev-contact-api.mdlunadev.workers.dev/';
 
-      emailjs.sendForm(serviceId, templateAdminId, contactForm)
-        .then(() => {
+      const payload = {
+        name: (contactForm.name?.value || '').trim(),
+        email: (contactForm.email?.value || '').trim(),
+        phone: (contactForm.phone?.value || '').trim(),
+        company: (contactForm.company?.value || '').trim(),
+        service: contactForm.service?.value || '',
+        message: (contactForm.message?.value || '').trim(),
+        honeypot: honeypot ? honeypot.value.trim() : '',
+        turnstileToken: turnstileToken,
+        elapsedSeconds: elapsedSeconds
+      };
+
+      fetch(WORKER_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+        .then(async (response) => {
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.success) {
+            throw new Error(result.error || `HTTP ${response.status}`);
+          }
+
           submitBtn.disabled = false;
           btnText.textContent = translations[currentLang].contacto.formSubmit;
           btnSpinner.classList.add('hidden');
@@ -306,9 +384,13 @@ bootstrap();`,
           formFeedback.classList.add('success');
           formFeedback.textContent = translations[currentLang].contacto.feedbackSuccess;
 
-          // Limpiar formulario
+          // Registrar timestamp para el control de frecuencia
+          localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
+
+          // Limpiar formulario y resetear Turnstile (tokens son de un solo uso)
           contactForm.reset();
           if (charCountNum) charCountNum.textContent = '0';
+          resetTurnstile();
 
           // Ocultar mensaje de éxito después de 6 segundos
           setTimeout(() => {
@@ -323,7 +405,10 @@ bootstrap();`,
           formFeedback.classList.remove('hidden');
           formFeedback.classList.add('error');
           formFeedback.textContent = translations[currentLang].contacto.feedbackError;
-          console.error('EmailJS Error:', error);
+          console.error('Contact Form Worker Error:', error);
+
+          // Resetear widget para permitir un nuevo intento
+          resetTurnstile();
 
           setTimeout(() => {
             formFeedback.className = 'form-feedback hidden';

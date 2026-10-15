@@ -48,20 +48,13 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20261015104352" />
+  <link rel="stylesheet" href="style.css?v=20261015115400" />
 
   <!-- Evitar Flash de unstyled dark mode -->
   <meta name="color-scheme" content="dark" />
 
-  <!-- EmailJS Integration -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init({
-        publicKey: "BCb6ULlp9WI9P7lNe",
-      });
-    })();
-  </script>
+  <!-- Cloudflare Turnstile Anti-Bot Protection -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -1083,6 +1076,12 @@
 
         <div class="contacto-form-card glassmorphism">
           <form id="contact-form" class="contact-form">
+            <!-- Honeypot invisible para humanos (trampa anti-bot) -->
+            <div class="ohnohoney" aria-hidden="true">
+              <label for="contact-website-field">Si eres humano, deja este campo vacío</label>
+              <input type="text" id="contact-website-field" name="_website_trap" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="form-row">
               <div class="form-group">
                 <label for="name" class="form-label" data-i18n="contacto.formName">Nombre completo *</label>
@@ -1138,6 +1137,11 @@
               <label for="privacy-accept" class="checkbox-label" data-i18n="contacto.privacyAcceptLabel">
                 He leído y acepto la <a href="politica-privacidad.html" target="_blank">Política de privacidad</a> *
               </label>
+            </div>
+
+            <!-- Cloudflare Turnstile Verification Widget -->
+            <div class="turnstile-wrapper">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAFXZvz6DSyucxCwx" data-action="contact" data-theme="dark"></div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
@@ -1205,8 +1209,8 @@
       </div>
   </footer>
 
-  <script src="translations.js?v=20261015104352"></script>
-  <script src="app.js?v=20261015104352"></script>
+  <script src="translations.js?v=20261015115400"></script>
+  <script src="app.js?v=20261015115400"></script>
 </body>
 
 </html>

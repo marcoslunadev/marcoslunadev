@@ -265,6 +265,8 @@ const translations = {
       formSubmitting: "Enviando...",
       feedbackSuccess: "¡Gracias! Tu mensaje ha sido enviado correctamente por correo. Nos pondremos en contacto contigo pronto.",
       feedbackError: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o envíanos un correo directo.",
+      feedbackTurnstileRequired: "Por favor, completa la verificación de seguridad antes de enviar.",
+      feedbackRateLimit: "Has enviado un mensaje recientemente. Por favor, espera unos minutos antes de volver a intentarlo.",
       privacyAcceptLabel: "He leído y acepto la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a> *"
     },
     footer: {
@@ -607,6 +609,8 @@ const translations = {
       formSubmitting: "Sending...",
       feedbackSuccess: "Thank you! Your message has been successfully sent by email. We will contact you soon.",
       feedbackError: "There was an error sending your message. Please try again or send us an email directly.",
+      feedbackTurnstileRequired: "Please complete the security verification before sending.",
+      feedbackRateLimit: "You have recently submitted a message. Please wait a few minutes before trying again.",
       privacyAcceptLabel: "I have read and accept the <a href=\"privacy-policy.html\" target=\"_blank\">Privacy Policy</a> *"
     },
     footer: {
