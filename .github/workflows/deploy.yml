@@ -28,6 +28,18 @@ jobs:
           sed -i 's/___EMAILJS_SERVICE_ID___/${{ secrets.EMAILJS_SERVICE_ID }}/g' app.js
           sed -i 's/___EMAILJS_TEMPLATE_ADMIN_ID___/${{ secrets.EMAILJS_TEMPLATE_ADMIN_ID }}/g' app.js
           sed -i 's/___EMAILJS_TEMPLATE_AUTO_ID___/${{ secrets.EMAILJS_TEMPLATE_AUTO_ID }}/g' app.js
+      - name: Cache Busting (Inject version timestamp)
+        run: |
+          VERSION=$(date +%Y%m%d%H%M%S)
+          python3 -c "
+          import glob, re
+          for path in glob.glob('*.html'):
+              with open(path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              content = re.sub(r'(href|src)=([\"\'])(style\.css|app\.js|translations\.js)(\?[^\"\']*)?\2', r'\1=\2\3?v=$VERSION\2', content)
+              with open(path, 'w', encoding='utf-8') as f:
+                  f.write(content)
+          "
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
