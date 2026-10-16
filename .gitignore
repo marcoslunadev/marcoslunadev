@@ -1,1 +1,18 @@
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.local
+!.dev.vars.example
+
+# Cloudflare Wrangler
+.wrangler/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db

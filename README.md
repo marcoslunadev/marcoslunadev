@@ -59,5 +59,33 @@ Active pioneer in integrating AI into software engineering workflows.
 ### 📞 Let's Connect!
 
 * **LinkedIn:** [Marcos D. Luna Rodríguez](https://www.linkedin.com/in/marcosdlunarodriguez/)
-* **Email:** [mdluna.moddo@gmail.com](mailto:mdluna.moddo@gmail.com)
-* **Website:** [https://marcoslunadev.github.io/marcoslunadev/](https://marcoslunadev.github.io/marcoslunadev/)
+* **Email:** [info@marcoslunadev.com](mailto:info@marcoslunadev.com)
+* **Website:** [https://marcoslunadev.com](https://marcoslunadev.com)
+
+---
+
+### 📂 Repository Structure
+
+This repository is organized as a decoupled monorepo:
+
+```text
+marcoslunadev/
+├── frontend/                  # Static web application
+│   ├── assets/                # Brand logos, icons, diagrams
+│   ├── index.html             # Main landing page
+│   ├── aviso-legal.html       # Legal notice
+│   ├── politica-privacidad.html # Privacy policy
+│   ├── style.css              # Design tokens & glassmorphism system
+│   ├── app.js                 # Frontend logic, Turnstile & form gating
+│   ├── translations.js        # Multilingual dictionaries (ES / EN)
+│   └── CNAME                  # Custom domain configuration (marcoslunadev.com)
+│
+├── worker/                    # Cloudflare Worker (Serverless Backend)
+│   ├── src/index.js           # Contact API with Turnstile verification & EmailJS dispatch
+│   ├── wrangler.toml          # Cloudflare Wrangler configuration
+│   ├── package.json           # Worker scripts (dev, deploy, tail)
+│   └── .dev.vars.example      # Local development environment template
+│
+└── .github/workflows/
+    └── deploy.yml             # Automated GitHub Pages CI/CD from ./frontend
+```

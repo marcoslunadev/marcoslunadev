@@ -1,0 +1,10 @@
+# Variables de entorno para desarrollo local con `wrangler dev`
+# Copia este archivo a `.dev.vars` (ignorado en git) y completa con tus valores reales
+
+TURNSTILE_SECRET_KEY="tu_turnstile_secret_key"
+
+EMAILJS_SERVICE_ID="service_xxx"
+EMAILJS_TEMPLATE_ADMIN_ID="template_xxx"
+EMAILJS_TEMPLATE_AUTO_ID="template_auto_xxx" # Opcional
+EMAILJS_PUBLIC_KEY="tu_public_key"
+EMAILJS_PRIVATE_KEY="tu_private_key"
