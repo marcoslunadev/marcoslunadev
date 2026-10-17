@@ -5,11 +5,11 @@
 const translations = {
   es: {
     meta: {
-      title: "MarcosLunaDev | Arquitectura Frontend, Consultoría Angular y Node/NestJS",
-      description: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables, APIs Node/NestJS y arquitecturas robustas, potenciados por desarrollo asistido por IA y Spec-Driven Development. ¡Hablemos!",
-      keywords: "desarrollo web, Angular, React, Vue, Node.js, NestJS, desarrollo frontend, desarrollo backend, aplicaciones web, MarcosLunaDev, Marcos Luna, arquitectura web, Spec-Driven Development, Inteligencia Artificial",
-      ogTitle: "MarcosLunaDev | Arquitectura Frontend & Backend",
-      ogDesc: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables, APIs Node/NestJS y arquitecturas robustas listas para producción.",
+      title: "MarcosLunaDev | Arquitecto de Software & Desarrollador Full Stack | IA, SDD & Cloud",
+      description: "Arquitecto de Software y Desarrollador Full Stack con más de 15 años de experiencia. Especialista en arquitecturas escalables, APIs robustas (Node/NestJS), ecosistemas modernos (Angular/React), desarrollo impulsado por IA y Spec-Driven Development (SDD).",
+      keywords: "arquitecto de software, software architect, desarrollador full stack, full stack developer, arquitectura de software, inteligencia artificial, desarrollo con IA, spec-driven development, SDD, SSD, Node.js, NestJS, Angular, React, TypeScript, APIs escalables, cloud, microservicios, MarcosLunaDev, Marcos Luna",
+      ogTitle: "MarcosLunaDev | Arquitecto de Software & Desarrollador Full Stack | IA & SDD",
+      ogDesc: "Arquitecto de Software y Desarrollador Full Stack. Especialista en arquitecturas escalables, APIs Node/NestJS, ecosistemas modernos y soluciones potenciadas por Inteligencia Artificial y Spec-Driven Development (SDD).",
     },
     nav: {
       inicio: "Inicio",
@@ -20,7 +20,7 @@ const translations = {
       contacto: "Contacto"
     },
     hero: {
-      tag: "Frontend Architecture & Backend Consulting",
+      tag: "Software Architecture & Full Stack Consulting",
       title: '<span class="text-gradient">Código que Impulsa</span><br /><span class="text-white">el Futuro</span>',
       subtitle: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables y APIs Node/NestJS, potenciando el desarrollo con herramientas de IA y Spec‑Driven Development para asegurar calidad y velocidad.",
       btnStart: "Iniciar Proyecto",
@@ -236,7 +236,7 @@ const translations = {
       title: 'El Especialista detrás de <span class="text-gradient">MarcosLunaDev</span>',
       subtitle: "Un profesional comprometido con la excelencia técnica y la innovación digital.",
       role: "&lt; Founder &amp; Lead Consultant /&gt;",
-      bio: "Arquitecto, Líder Técnico y Senior Frontend Engineer con más de <b>15 años de experiencia</b> entregando aplicaciones web escalables, diseñando soluciones técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
+      bio: "Arquitecto de Software, Líder Técnico y Desarrollador Full Stack con más de <b>15 años de experiencia</b> entregando soluciones escalables de extremo a extremo, diseñando arquitecturas técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
       bioExtra: "Con una formación de base única que combina Ciencias y Artes Navales, Electrónica y Telecomunicaciones y Administración de Sistemas Informáticos, inicialmente orientada a infraestructuras y seguridad de sistemas, he evolucionado y me he adaptado hacia la programación y el desarrollo web moderno. Hoy me especializo en conectar infraestructuras robustas, seguridad de sistemas y el stack de desarrollo web contemporáneo, optimizado mediante desarrollo asistido por IA y metodologías de Spec‑Driven Development (desarrollo guiado por especificaciones)."
     },
     contacto: {
@@ -349,11 +349,11 @@ const translations = {
   },
   en: {
     meta: {
-      title: "MarcosLunaDev | Frontend Architecture, Angular Consulting & Node/NestJS",
-      description: "At MarcosLunaDev, we help companies build scalable Angular/React frontends, Node/NestJS APIs, and robust architectures, boosted by AI-assisted coding and Spec-Driven Development. Let's talk!",
-      keywords: "web development, Angular, React, Vue, Node.js, NestJS, frontend development, backend development, web applications, MarcosLunaDev, Marcos Luna, web architecture, Spec-Driven Development, Artificial Intelligence",
-      ogTitle: "MarcosLunaDev | Frontend Architecture & Backend Consulting",
-      ogDesc: "At MarcosLunaDev, we help companies build scalable Angular/React frontends, Node/NestJS APIs, and robust production-ready architectures.",
+      title: "MarcosLunaDev | Software Architect & Full Stack Developer | AI, SDD & Cloud",
+      description: "Software Architect and Senior Full Stack Developer with 15+ years of experience. Specializing in scalable architectures, robust APIs (Node/NestJS), modern frontends (Angular/React), AI-powered engineering, and Spec-Driven Development (SDD).",
+      keywords: "software architect, full stack developer, software architecture, artificial intelligence, AI development, spec-driven development, SDD, SSD, Node.js, NestJS, Angular, React, TypeScript, scalable APIs, cloud, microservices, MarcosLunaDev, Marcos Luna",
+      ogTitle: "MarcosLunaDev | Software Architect & Full Stack Developer | AI & SDD",
+      ogDesc: "Software Architect and Full Stack Developer. Specializing in scalable architectures, Node/NestJS APIs, modern frontends, and solutions powered by Artificial Intelligence and Spec-Driven Development (SDD).",
     },
     nav: {
       inicio: "Home",
@@ -364,7 +364,7 @@ const translations = {
       contacto: "Contact"
     },
     hero: {
-      tag: "Frontend Architecture & Backend Consulting",
+      tag: "Software Architecture & Full Stack Consulting",
       title: '<span class="text-gradient">Code that Drives</span><br /><span class="text-white">the Future</span>',
       subtitle: "At MarcosLunaDev, we help companies build scalable Angular/React frontends and Node/NestJS APIs, leveraging AI tools and Spec‑Driven Development to ensure quality and speed.",
       btnStart: "Start Project",
@@ -580,7 +580,7 @@ const translations = {
       title: 'The Specialist behind MarcosLunaDev',
       subtitle: "A professional committed to technical excellence and digital innovation.",
       role: "&lt; Founder &amp; Principal Consultant /&gt;",
-      bio: "Architect, Technical Leader, and Senior Frontend Engineer with more than <b>15 years of experience</b> delivering scalable web applications, designing complex technical solutions, and leading multidisciplinary development teams.",
+      bio: "Software Architect, Technical Leader, and Full Stack Developer with more than <b>15 years of experience</b> delivering scalable end-to-end solutions, designing complex technical architectures, and leading multidisciplinary development teams.",
       bioExtra: "With a unique foundational background that combines Naval Sciences and Arts, Electronics and Telecommunications, and IT Systems Administration, initially focused on infrastructure and systems security, I later transitioned and adapted to modern web development. Today I specialize in connecting robust infrastructures, system security, and the contemporary web development stack, optimized through AI‑assisted development and Spec‑Driven Development methodologies."
     },
     contacto: {
