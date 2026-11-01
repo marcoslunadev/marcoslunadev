@@ -421,8 +421,13 @@ textarea {
    -------------------------------------------------------------------------- */
 .hero {
   position: relative;
-  min-h-screen: 100vh;
+  /* Ocupa siempre el viewport completo: la siguiente sección no asoma.
+     lvh = altura con las barras del navegador móvil ocultas, así tampoco
+     asoma cuando la barra de Safari/Chrome se recoge. */
+  min-height: 100vh;
+  min-height: 100lvh;
   display: flex;
+  align-items: center;
   align-items: center;
   justify-content: center;
   padding-top: calc(var(--header-height) + 2rem);
@@ -1870,7 +1875,6 @@ textarea {
   padding-bottom: 2rem;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid var(--border-color);
   border-radius: 40px 40px 0 0;
 }
 
@@ -2626,21 +2630,104 @@ textarea {
   }
 }
 
-.metodologia-progress {
-  position: relative;
-  z-index: 2;
-  height: 2px;
-  margin-bottom: 2rem;
-  background: var(--border-color);
-  border-radius: 2px;
-  overflow: hidden;
+/* --------------------------------------------------------------------------
+   FLUJO DE ENERGÍA SDD
+   animations.js inyecta .sdd-flow dentro de .metodologia-grid: una pista que
+   corre por el borde superior de las cards, un haz de luz que la recorre en
+   loop y chispas eléctricas en los huecos. Va por encima de las cards (sin
+   eventos de puntero) para que el haz se vea entero sin tapar el texto.
+   -------------------------------------------------------------------------- */
+.metodologia-card {
+  z-index: 1;
 }
 
-.metodologia-progress-bar {
-  display: block;
+.metodologia-card.is-charged {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 32px rgba(6, 182, 212, 0.28), inset 0 0 24px rgba(16, 185, 129, 0.08);
+}
+
+.metodologia-card.is-charged .metodologia-step-num {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.75));
+}
+
+.sdd-flow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sdd-track {
+  position: absolute;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.06), rgba(16, 185, 129, 0.28), rgba(6, 182, 212, 0.06));
+}
+
+.sdd-flow.is-vertical .sdd-track {
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.06), rgba(16, 185, 129, 0.28), rgba(6, 182, 212, 0.06));
+}
+
+.sdd-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.sdd-beam-core {
+  position: relative;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-emerald) 100%);
-  transform-origin: left center;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.55) 55%, rgba(16, 185, 129, 0.9) 85%, #e6fffb 100%);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.9), 0 0 26px rgba(16, 185, 129, 0.55);
+}
+
+.sdd-flow.is-vertical .sdd-beam-core {
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 182, 212, 0.55) 55%, rgba(16, 185, 129, 0.9) 85%, #e6fffb 100%);
+}
+
+/* Cabeza del haz: el punto más brillante */
+.sdd-beam-core::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff, 0 0 18px var(--accent-cyan), 0 0 32px var(--accent-emerald);
+}
+
+.sdd-flow.is-vertical .sdd-beam-core::after {
+  right: auto;
+  top: auto;
+  left: 50%;
+  bottom: -5px;
+  margin: 0 0 0 -5px;
+}
+
+.sdd-spark {
+  position: absolute;
+  overflow: visible;
+  opacity: 0;
+  filter: drop-shadow(0 0 3px var(--accent-cyan)) drop-shadow(0 0 8px var(--accent-emerald));
+}
+
+.sdd-spark polyline {
+  fill: none;
+  stroke: #ccfbf1;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+/* Por debajo de 992px el flujo es vertical: una columna con la pista a la izquierda */
+.metodologia-grid.is-flow-vertical {
+  grid-template-columns: 1fr;
+  padding-left: 2rem;
 }
 
 .metodologia-principles {
@@ -2918,5 +3005,375 @@ textarea {
 
   .ai-filters .filter-btn {
     white-space: nowrap;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   19. AJUSTE MÓVIL (≤575px)
+   Escala tipográfica más contenida, menos aire vertical, cards y botones más
+   compactos y formulario que nunca supera el ancho de pantalla.
+   -------------------------------------------------------------------------- */
+@media (max-width: 575px) {
+  /* Layout base */
+  .container,
+  .hero-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .servicios,
+  .tecnologias,
+  .portafolio,
+  .metodologia,
+  .equipo,
+  .contacto {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  /* Tipografía: títulos que informan, no que gritan */
+  .tag-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.625rem;
+    line-height: 1.2;
+    margin-bottom: 0.625rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .service-card-title,
+  .tech-title,
+  .card-title,
+  .info-card-title,
+  .metodologia-card-title {
+    font-size: 1.0625rem;
+  }
+
+  .service-card-text,
+  .tech-desc,
+  .card-text,
+  .metodologia-card-text {
+    font-size: 0.875rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: calc(var(--header-height) + 1rem);
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-stack {
+    font-size: 0.8125rem;
+    margin-top: -0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .stat-num {
+    font-size: 1.625rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  /* Con el hero compacto la flecha se solapaba con las cifras */
+  .scroll-down {
+    display: none;
+  }
+
+  /* Botones */
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .portfolio-filters {
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  /* Cards más compactas */
+  .grid,
+  .tech-grid,
+  .portfolio-grid {
+    gap: 1rem;
+  }
+
+  .portfolio-grid {
+    margin-top: 2rem;
+  }
+
+  .service-card,
+  .tech-card {
+    padding: 1.5rem;
+  }
+
+  .card-image-wrapper {
+    height: 170px;
+  }
+
+  .card-details {
+    padding: 1.25rem;
+  }
+
+  .metodologia-card {
+    padding: 1.25rem;
+  }
+
+  .metodologia-step-num {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .metodologia-principles {
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .metodologia-principles li {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .sec-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .secondary-badges {
+    gap: 0.5rem;
+  }
+
+  /* Perfil */
+  .developer-visual {
+    height: 240px;
+  }
+
+  .developer-info {
+    padding: 1.5rem;
+  }
+
+  .dev-name {
+    font-size: 1.5rem;
+  }
+
+  /* Contacto: los hijos del grid pueden encoger por debajo de su contenido */
+  .contacto-wrapper {
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .contacto-wrapper > * {
+    min-width: 0;
+  }
+
+  .contacto-info-card,
+  .contacto-form-card {
+    padding: 1.25rem;
+  }
+
+  .form-row {
+    gap: 1rem;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  /* 16px evita el zoom automático de iOS al enfocar un campo */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* El widget de Turnstile mide 300px fijos: en pantallas muy estrechas se escala */
+@media (max-width: 359px) {
+  .cf-turnstile {
+    transform: scale(0.9);
+    transform-origin: left top;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   20. FONDO VIVO UNIFICADO
+   background.js pinta un único canvas fijo (rejilla + corriente) detrás de
+   toda la página. Las secciones dejan de pintar su propio fondo para que no
+   haya saltos de color entre ellas.
+   -------------------------------------------------------------------------- */
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.tecnologias,
+.metodologia {
+  background: transparent;
+}
+
+.metodologia {
+  border-bottom: none;
+}
+
+.hero-bg-overlay,
+.tecnologias-grid-pattern,
+.metodologia-glow,
+.equipo-glow-1,
+.equipo-glow-2,
+.contacto-glow-1,
+.contacto-glow-2 {
+  display: none;
+}
+
+/* El footer se funde con el fondo en lugar de empezar con un corte */
+.footer {
+  background: linear-gradient(180deg, rgba(3, 5, 8, 0) 0%, rgba(3, 5, 8, 0.85) 35%, #030508 100%);
+}
+
+/* En móvil, backdrop-filter sobre un fondo animado obliga a re-desenfocar
+   cada card en cada frame: se sustituye por un cristal más opaco */
+@media (max-width: 991px) {
+  .glassmorphism {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(15, 20, 32, 0.85);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   21. FOOTER: FIRMA "MarcosLunaDev" Y VERSIÓN MÓVIL COMPACTA
+   La firma escala con el ancho de pantalla para leerse siempre entera y el
+   footer le reserva su hueco al pie (antes quedaba cortada y casi invisible).
+   -------------------------------------------------------------------------- */
+:root {
+  --footer-decor-size: min(11.5vw, 9rem);
+}
+
+.footer {
+  padding-bottom: calc(var(--footer-decor-size) * 1.1 + 1rem);
+}
+
+.footer-bottom-decor {
+  bottom: calc(var(--footer-decor-size) * 0.08);
+  font-family: var(--font-family-headings);
+  font-size: var(--footer-decor-size);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-emerald) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.14;
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding-top: 2.5rem;
+    border-radius: 24px 24px 0 0;
+  }
+
+  /* Marca a lo ancho; las dos listas de enlaces, lado a lado */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-logo-img {
+    height: 36px;
+  }
+
+  .footer-desc {
+    max-width: none;
+    margin: 0.75rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .footer-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links ul {
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8125rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.625rem;
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom-links {
+    gap: 1.25rem;
   }
 }

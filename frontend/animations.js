@@ -144,24 +144,172 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ------------------------------------------------------------------------
-       4. METODOLOGÍA SDD: barra de progreso ligada al scroll
+       4. METODOLOGÍA SDD: flujo de energía entre las cards
        ------------------------------------------------------------------------ */
-    gsap.fromTo('.metodologia-progress-bar', { scaleX: 0 }, {
-      scaleX: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.metodologia-grid',
-        start: 'top 85%',
-        end: 'bottom 55%',
-        scrub: 0.6
-      }
-    });
+    initSddFlow();
 
     /* ------------------------------------------------------------------------
        5. CARRUSEL 3D DEL STACK IA
        ------------------------------------------------------------------------ */
     initAiCarousel();
   });
+
+  /* --------------------------------------------------------------------------
+     FLUJO DE ENERGÍA SDD
+     Un haz de luz recorre las cards de izquierda a derecha (de arriba abajo
+     por debajo de 992px) en un loop de 10s. Al pasar, cada card se "carga" y
+     en los huecos saltan chispas eléctricas. La geometría se mide con
+     offsetLeft/offsetTop (ignora los transforms del reveal y del hover) y se
+     recalcula cuando cambia el tamaño del grid.
+     -------------------------------------------------------------------------- */
+  function initSddFlow() {
+    const grid = document.querySelector('.metodologia-grid');
+    if (!grid) return;
+
+    const cards = gsap.utils.toArray('.metodologia-card', grid);
+    if (cards.length < 2) return;
+
+    const LOOP = 10;         // segundos por ciclo completo
+    const TRAVEL = 7.6;      // segundos que tarda el haz en cruzar; el resto es pausa
+    const CHARGE_HOLD = 1.6; // segundos que una card permanece iluminada
+    const desktopQuery = window.matchMedia('(min-width: 992px)');
+
+    const flow = document.createElement('div');
+    flow.className = 'sdd-flow';
+    flow.setAttribute('aria-hidden', 'true');
+    flow.innerHTML = '<div class="sdd-track"></div><div class="sdd-beam"><div class="sdd-beam-core"></div></div>';
+    grid.prepend(flow);
+
+    const track = flow.querySelector('.sdd-track');
+    const beam = flow.querySelector('.sdd-beam');
+    const beamCore = flow.querySelector('.sdd-beam-core');
+
+    let timeline = null;
+    let isOnScreen = false;
+
+    // Zigzag aleatorio para que cada chispa sea distinta
+    const zigzag = (length, amplitude, vertical) => {
+      const segments = 7;
+      const points = [];
+      for (let i = 0; i <= segments; i++) {
+        const along = (length / segments) * i;
+        const across = i === 0 || i === segments ? 0 : gsap.utils.random(-amplitude, amplitude);
+        points.push(vertical ? `${across},${along}` : `${along},${across}`);
+      }
+      return points.join(' ');
+    };
+
+    const build = () => {
+      if (timeline) timeline.kill();
+      flow.querySelectorAll('.sdd-spark').forEach(el => el.remove());
+      cards.forEach(card => card.classList.remove('is-charged'));
+
+      const horizontal = desktopQuery.matches;
+      grid.classList.toggle('is-flow-vertical', !horizontal);
+      flow.classList.toggle('is-vertical', !horizontal);
+
+      const first = cards[0];
+      const last = cards[cards.length - 1];
+      const beamLength = horizontal ? 180 : 140;
+      let trackStart, trackLength;
+      const stops = [];  // posición (en la pista) del centro de cada card
+      const gaps = [];   // { at, size } de cada hueco entre cards
+
+      if (horizontal) {
+        // Pista horizontal sobre el borde superior de las cards
+        const y = first.offsetTop;
+        trackStart = first.offsetLeft;
+        trackLength = last.offsetLeft + last.offsetWidth - trackStart;
+        gsap.set(track, { left: trackStart, top: y - 1, width: trackLength, height: 2 });
+        gsap.set(beam, { width: beamLength, height: 3, top: y - 1.5, left: trackStart });
+        cards.forEach((card, i) => {
+          stops.push(card.offsetLeft + card.offsetWidth / 2 - trackStart);
+          if (i < cards.length - 1) {
+            const end = card.offsetLeft + card.offsetWidth;
+            gaps.push({ at: (end + cards[i + 1].offsetLeft) / 2 - trackStart, size: cards[i + 1].offsetLeft - end, y });
+          }
+        });
+      } else {
+        // Pista vertical en el margen izquierdo, de la primera a la última card
+        const x = 12;
+        trackStart = first.offsetTop + 16;
+        trackLength = last.offsetTop + last.offsetHeight - 16 - trackStart;
+        gsap.set(track, { left: x - 1, top: trackStart, width: 2, height: trackLength });
+        gsap.set(beam, { width: 3, height: beamLength, left: x - 1.5, top: trackStart });
+        cards.forEach(card => stops.push(card.offsetTop + card.offsetHeight / 2 - trackStart));
+      }
+
+      // Chispas en los huecos (solo en horizontal: en vertical la pista va por fuera)
+      const sparks = gaps.map(gap => {
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        const width = gap.size + 24;
+        svg.setAttribute('class', 'sdd-spark');
+        svg.setAttribute('width', width);
+        svg.setAttribute('height', 1);
+        svg.style.left = `${gap.at + trackStart - width / 2}px`;
+        svg.style.top = `${gap.y}px`;
+        svg.appendChild(line);
+        flow.appendChild(svg);
+        return { svg, line, width, at: gap.at };
+      });
+
+      // Momento en que la cabeza del haz alcanza una posición de la pista
+      const timeAt = position => TRAVEL * (position + beamLength) / (trackLength + beamLength);
+      const axis = horizontal ? 'x' : 'y';
+
+      timeline = gsap.timeline({ repeat: -1, paused: !isOnScreen });
+      timeline
+        .fromTo(beam, { [axis]: -beamLength }, { [axis]: trackLength, duration: TRAVEL, ease: 'none' }, 0)
+        .fromTo(beam, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25 }, 0)
+        .to(beam, { autoAlpha: 0, duration: 0.3 }, TRAVEL - 0.3)
+        // Parpadeo eléctrico del haz durante el recorrido
+        .fromTo(beamCore, { opacity: 1 }, { opacity: 0.6, duration: 0.06, repeat: Math.floor(TRAVEL / 0.06) - 1, yoyo: true, ease: 'none' }, 0)
+        .set({}, {}, LOOP); // relleno: el ciclo dura exactamente LOOP segundos
+
+      cards.forEach((card, i) => {
+        const t = timeAt(stops[i]);
+        timeline
+          .call(() => card.classList.add('is-charged'), null, t)
+          .call(() => card.classList.remove('is-charged'), null, Math.min(t + CHARGE_HOLD, LOOP - 0.05));
+      });
+
+      sparks.forEach(spark => {
+        const t = timeAt(spark.at);
+        timeline
+          .call(() => spark.line.setAttribute('points', zigzag(spark.width, 7, false)), null, t - 0.02)
+          .fromTo(spark.svg, { opacity: 0 }, { opacity: 1, duration: 0.04, ease: 'none' }, t)
+          .to(spark.svg, { opacity: 0.25, duration: 0.05, ease: 'none' }, t + 0.06)
+          .call(() => spark.line.setAttribute('points', zigzag(spark.width, 7, false)), null, t + 0.11)
+          .to(spark.svg, { opacity: 1, duration: 0.04, ease: 'none' }, t + 0.12)
+          .to(spark.svg, { opacity: 0, duration: 0.3, ease: 'power2.out' }, t + 0.18);
+      });
+    };
+
+    build();
+
+    // Solo corre mientras la sección está en pantalla
+    ScrollTrigger.create({
+      trigger: grid,
+      start: 'top bottom',
+      end: 'bottom top',
+      onToggle: self => {
+        isOnScreen = self.isActive;
+        if (timeline) isOnScreen ? timeline.play() : timeline.pause();
+      }
+    });
+
+    // Recalcular si cambia el layout (resize, breakpoint, cambio de idioma...)
+    let lastSize = `${grid.offsetWidth}x${grid.offsetHeight}`;
+    let rebuildCall = null;
+    new ResizeObserver(() => {
+      const size = `${grid.offsetWidth}x${grid.offsetHeight}`;
+      if (size === lastSize) return;
+      lastSize = size;
+      if (rebuildCall) rebuildCall.kill();
+      rebuildCall = gsap.delayedCall(0.15, build);
+    }).observe(grid);
+  }
 
   function initAiCarousel() {
     const ring = document.querySelector('.ai-grid');
