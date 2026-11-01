@@ -31,13 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Cerrar menú al hacer click en un enlace
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) icon.className = 'ri-menu-line';
-      });
+    // Cerrar menú al pulsar cualquier item (enlaces, Contacto, idioma...)
+    navMenu.addEventListener('click', (e) => {
+      if (!e.target.closest('a, button')) return;
+      navMenu.classList.remove('open');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) icon.className = 'ri-menu-line';
     });
 
     // Cerrar menú al hacer click fuera
