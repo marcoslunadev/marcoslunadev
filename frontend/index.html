@@ -38,17 +38,13 @@
   <link rel="icon" type="image/png" href="assets/favicon-512.png" />
   <link rel="apple-touch-icon" href="assets/favicon-512.png" />
 
-  <!-- Remix Icon CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Fuentes e iconos autoalojados (sin conexiones a Google Fonts ni CDNs al cargar) -->
+  <link rel="preload" href="assets/vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/vendor/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/vendor/fonts/fonts.css?v=20261101223000" />
+  <link rel="stylesheet" href="assets/vendor/remixicon/remixicon.css?v=20261101223000" />
 
-  <!-- Google Fonts: Outfit (headings) & Inter (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css?v=20261101218000" />
+  <link rel="stylesheet" href="style.css?v=20261101223000" />
 
   <!-- GSAP: cargado con defer (no bloquea el render). Si el usuario prefiere
        movimiento reducido no se oculta nada; si GSAP no llega en 3s se muestra todo. -->
@@ -58,8 +54,8 @@
       setTimeout(function () { document.documentElement.classList.remove('anim-pending'); }, 3000);
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/gsap/gsap.min.js?v=3.13.0" defer></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js?v=3.13.0" defer></script>
 
   <!-- Evitar Flash de unstyled dark mode -->
   <meta name="color-scheme" content="dark" />
@@ -70,8 +66,7 @@
   <!-- Robots Indexing Directives -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-  <!-- Cloudflare Turnstile Anti-Bot Protection -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Cloudflare Turnstile: app.js lo carga solo cuando el visitante llega al formulario -->
 
   <!-- Datos Estructurados (Schema.org / JSON-LD) para Google Rich Results -->
   <script type="application/ld+json">
@@ -107,25 +102,6 @@
           "Cloud & Microservices",
           "Frontend Architecture"
         ]
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://marcoslunadev.com/#organization",
-        "name": "MarcosLunaDev",
-        "url": "https://marcoslunadev.com",
-        "logo": "https://marcoslunadev.com/assets/logo-horizontal-claro.png",
-        "image": "https://marcoslunadev.com/assets/logo-vertical-oscuro.png",
-        "description": "Arquitectura de software y desarrollo Full Stack de alto rendimiento, diseño de sistemas escalables, APIs Node/NestJS, ecosistemas modernos y soluciones potenciadas por Inteligencia Artificial y Spec-Driven Development (SDD).",
-        "founder": {
-          "@id": "https://marcoslunadev.com/#person"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Madrid",
-          "addressCountry": "ES"
-        },
-        "email": "info@marcoslunadev.com",
-        "priceRange": "$$"
       },
       {
         "@type": "WebSite",
@@ -191,12 +167,12 @@
         <p class="hero-stack" data-anim data-i18n="hero.stack">Frontend · Backend · Datos · Cloud · IA</p>
         <div class="hero-actions" data-anim>
           <a href="#contacto" class="btn btn-primary flex-btn">
-            <span data-i18n="hero.btnStart">Iniciar Proyecto</span>
+            <span data-i18n="hero.btnStart">Contacto</span>
             <i class="ri-arrow-right-line"></i>
           </a>
           <a href="#portafolio" class="btn btn-outline" data-i18n="hero.btnPortfolio">Ver Portafolio</a>
           <div class="hero-promise-wrapper">
-            <span class="hero-promise" data-i18n="hero.promise">⚡ Respuesta en 48-72h</span>
+            <span class="hero-promise" data-i18n="hero.hook">🧭 Primera conversación sin compromiso</span>
           </div>
         </div>
 
@@ -1038,7 +1014,7 @@
       <div class="developer-profile-wrapper">
         <div class="developer-profile-card glassmorphism">
           <div class="developer-visual">
-            <img src="https://avatars.githubusercontent.com/u/26864932?v=4" alt="Marcos Luna" class="developer-img" />
+            <img src="assets/marcos-luna.jpg" alt="Marcos Luna" width="460" height="460" class="developer-img" />
             <div class="developer-image-overlay"></div>
           </div>
           <div class="developer-info">
@@ -1105,7 +1081,7 @@
         <h2 class="section-title" data-i18n="contacto.title">Comienza tu <span class="text-gradient">Proyecto</span>
         </h2>
         <p class="section-subtitle" data-i18n="contacto.subtitle">
-          Estamos listos para convertir tu reto técnico en realidad. Responderemos en un plazo de 48-72h.
+          Cuéntame tu reto técnico y vemos juntos cómo abordarlo.
         </p>
       </div>
 
@@ -1226,9 +1202,15 @@
             <div class="form-group-checkbox">
               <input type="checkbox" id="privacy-accept" name="privacy_accept" required class="form-checkbox" />
               <label for="privacy-accept" class="checkbox-label" data-i18n="contacto.privacyAcceptLabel">
-                He leído y acepto la <a href="politica-privacidad.html" target="_blank">Política de privacidad</a> *
+                Declaro ser mayor de 18 años y he leído y acepto la <a href="politica-privacidad.html"
+                  target="_blank">Política de privacidad</a> *
               </label>
             </div>
+
+            <!-- Primera capa informativa (RGPD art. 13, recomendación AEPD) -->
+            <p class="form-privacy-info" data-i18n="contacto.privacyInfo">
+              <strong>Información básica sobre protección de datos.</strong> <strong>Responsable:</strong> Marcos Daniel Luna Rodríguez. <strong>Finalidad:</strong> responder a tu mensaje. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos; Cloudflare y EmailJS intervienen como encargados del tratamiento. <strong>Derechos:</strong> acceso, rectificación, supresión y otros, escribiendo a info@marcoslunadev.com. Más información en la <a href="politica-privacidad.html" target="_blank">Política de privacidad</a>.
+            </p>
 
             <!-- Cloudflare Turnstile Verification Widget -->
             <div class="turnstile-wrapper">
@@ -1299,10 +1281,10 @@
     </div>
   </footer>
 
-  <script src="translations.js?v=20261101218000"></script>
-  <script src="app.js?v=20261101218000"></script>
-  <script src="animations.js?v=20261101218000" defer></script>
-  <script src="background.js?v=20261101218000" defer></script>
+  <script src="translations.js?v=20261101223000"></script>
+  <script src="app.js?v=20261101223000"></script>
+  <script src="animations.js?v=20261101223000" defer></script>
+  <script src="background.js?v=20261101223000" defer></script>
 </body>
 
 </html>

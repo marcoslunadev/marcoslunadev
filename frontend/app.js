@@ -325,6 +325,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // Tiempo de inicialización para Time-gate anti-bot
   const formInitTime = Date.now();
 
+  // Cloudflare Turnstile se carga solo cuando el visitante se acerca al formulario
+  // (o lo enfoca): así no se contacta con Cloudflare desde el resto de la web.
+  // Al cargarse, el script renderiza automáticamente el widget .cf-turnstile.
+  const loadTurnstile = () => {
+    if (document.querySelector('script[data-turnstile]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    script.dataset.turnstile = '';
+    document.head.appendChild(script);
+  };
+
+  if (contactForm) {
+    contactForm.addEventListener('focusin', loadTurnstile, { once: true });
+    const turnstileObserver = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        loadTurnstile();
+        turnstileObserver.disconnect();
+      }
+    }, { rootMargin: '600px 0px' });
+    turnstileObserver.observe(contactForm);
+  }
+
   // Función auxiliar para resetear Turnstile si está activo
   function resetTurnstile() {
     if (window.turnstile && typeof window.turnstile.reset === 'function') {
@@ -552,8 +576,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 4. Update page SEO meta tags and Title
-    if (translations[lang].meta) {
+    // 4. Update page SEO meta tags and Title (solo en la home: las páginas legales
+    //    traducen su propio <title data-i18n> y no deben heredar los metadatos de la home)
+    if (translations[lang].meta && !document.querySelector('title[data-i18n]')) {
       document.title = translations[lang].meta.title;
 
       const metaDesc = document.querySelector('meta[name="description"]');
