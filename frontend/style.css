@@ -3377,3 +3377,26 @@ textarea {
     gap: 1.25rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   22. PRIMERA CAPA INFORMATIVA RGPD BAJO EL FORMULARIO
+   -------------------------------------------------------------------------- */
+.form-privacy-info {
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--text-main);
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.form-privacy-info strong {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.form-privacy-info a {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}

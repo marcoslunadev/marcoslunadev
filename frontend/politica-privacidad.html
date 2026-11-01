@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="privacy.metaTitle">Políticas de Privacidad - MarcosLunaDev</title>
+  <title data-i18n="privacy.metaTitle">Política de Privacidad - MarcosLunaDev</title>
 
   <!-- Meta SEO -->
   <meta name="description"
@@ -36,17 +36,13 @@
   <link rel="icon" type="image/png" href="assets/favicon-512.png" />
   <link rel="apple-touch-icon" href="assets/favicon-512.png" />
 
-  <!-- Remix Icon CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Fuentes e iconos autoalojados (sin conexiones a Google Fonts ni CDNs al cargar) -->
+  <link rel="preload" href="assets/vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/vendor/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/vendor/fonts/fonts.css?v=20261101221000" />
+  <link rel="stylesheet" href="assets/vendor/remixicon/remixicon.css?v=20261101221000" />
 
-  <!-- Google Fonts: Outfit (headings) & Inter (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css?v=20261101218000" />
+  <link rel="stylesheet" href="style.css?v=20261101221000" />
 
   <!-- Evitar Flash de unstyled dark mode -->
   <meta name="color-scheme" content="dark" />
@@ -86,99 +82,113 @@
     <div class="privacy-glow-2"></div>
     <div class="container relative-z">
       <div class="privacy-card glassmorphism">
-        <h1 class="section-title" data-i18n="privacy.title">Políticas de Privacidad</h1>
-        <p class="last-updated" data-i18n="privacy.subtitle">Última actualización: 8 de julio de 2026</p>
+        <h1 class="section-title" data-i18n="privacy.title">Política de Privacidad</h1>
+        <p class="last-updated" data-i18n="privacy.subtitle">Última actualización: 1 de noviembre de 2026</p>
 
         <div class="privacy-content">
           <section class="privacy-section">
-            <h2 data-i18n="privacy.sec1Title">1. Responsable del tratamiento</h2>
-            <p data-i18n="privacy.sec1Text">
-              <strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br>
-              <strong>Domicilio:</strong> Madrid, España<br>
-              <strong>Correo de contacto en materia de protección de datos:</strong> info@marcoslunadev.com
-            </p>
+            <h2 data-i18n="privacy.s1.title">1. Responsable del tratamiento</h2>
+            <div data-i18n="privacy.s1.body">
+            <p><strong>Titular:</strong> Marcos Daniel Luna Rodríguez (persona física)<br><strong>Ubicación:</strong> Madrid, España<br><strong>Contacto:</strong> <a href="mailto:info@marcoslunadev.com">info@marcoslunadev.com</a></p>
+            <p>Este sitio es el portafolio profesional y la marca personal de su titular. No pertenece a ninguna empresa y a través de él no se vende ningún producto ni servicio.</p>
+            </div>
           </section>
 
           <section class="privacy-section">
-            <h2 data-i18n="privacy.sec2Title">2. Datos tratados, origen y finalidad</h2>
-            <p data-i18n="privacy.sec2Text1">En esta web únicamente se recaban datos personales a través del formulario
-              de contacto.</p>
-            <p data-i18n="privacy.sec2Text2">Los datos que se pueden solicitar son: nombre, dirección de correo
-              electrónico y el contenido del mensaje que el usuario decida enviar.</p>
-            <p data-i18n="privacy.sec2Text3">La finalidad del tratamiento es atender las consultas, solicitudes o
-              comentarios que el usuario remita y poder responderle por correo electrónico.</p>
-            <p data-i18n="privacy.sec2Text4">No se realizan perfiles, no se envía publicidad ni newsletters, ni se
-              utilizan los datos con fines comerciales distintos a responder a la solicitud del usuario.</p>
+            <h2 data-i18n="privacy.s2.title">2. Qué datos se tratan y para qué</h2>
+            <div data-i18n="privacy.s2.body">
+            <p><strong>Formulario de contacto.</strong> Nombre y email (obligatorios), teléfono y empresa (opcionales), servicio de interés y el mensaje que escribas. Se usan para atender y responder tu consulta y, en su caso, conversar sobre una posible colaboración profesional. Al enviarlo recibirás un correo automático de confirmación en la dirección indicada.</p>
+            <p><strong>Seguridad del formulario.</strong> Para evitar spam y abusos, Cloudflare Turnstile analiza señales técnicas del navegador y la dirección IP cuando llegas al formulario, y el servidor de envío registra datos técnicos (IP, fecha y hora y resultado de la verificación).</p>
+            <p><strong>Visita a la web.</strong> El servicio de alojamiento recibe los datos técnicos de conexión (dirección IP y navegador) necesarios para mostrarte la página.</p>
+            <p>No se elaboran perfiles, no se toman decisiones automatizadas, no se envía publicidad ni newsletters y los datos no se venden ni se ceden.</p>
+            </div>
           </section>
 
           <section class="privacy-section">
-            <h2 data-i18n="privacy.sec3Title">3. Base jurídica del tratamiento</h2>
-            <p data-i18n="privacy.sec3Text">La base legal para el tratamiento de los datos es el consentimiento del
-              usuario, manifestado al remitir voluntariamente el formulario de contacto y aceptar la presente política
-              de privacidad.</p>
-          </section>
-
-          <section class="privacy-section">
-            <h2 data-i18n="privacy.sec4Title">4. Conservación de los datos</h2>
-            <p data-i18n="privacy.sec4Text1">Los datos personales se conservarán únicamente durante el tiempo necesario
-              para gestionar la consulta o comunicación enviada y, en su caso, durante los plazos exigidos por la
-              normativa aplicable.</p>
-            <p data-i18n="privacy.sec4Text2">Una vez finalizada la gestión de la consulta, los datos podrán ser
-              eliminados o archivados de forma bloqueada según corresponda.</p>
-          </section>
-
-          <section class="privacy-section">
-            <h2 data-i18n="privacy.sec5Title">5. Destinatarios y encargados de tratamiento</h2>
-            <p data-i18n="privacy.sec5Text1">Los datos no se ceden a terceros, salvo obligación legal.</p>
-            <p data-i18n="privacy.sec5Text2">El envío del formulario genera un correo electrónico dirigido a la cuenta
-              personal del titular, gestionada por el proveedor de servicios de correo y de alojamiento que corresponda
-              (por ejemplo GitHub Pages para la web y tu proveedor de email), los cuales pueden actuar como encargados
-              de tratamiento al prestarte servicios de alojamiento y correo.</p>
-            <p data-i18n="privacy.sec5Text3">No están previstas transferencias internacionales de datos distintas de las
-              derivadas del uso de los servicios de alojamiento y correo electrónico indicados, que se realizan bajo las
-              condiciones de protección de datos establecidas por dichos proveedores.</p>
-          </section>
-
-          <section class="privacy-section">
-            <h2 data-i18n="privacy.sec6Title">6. Derechos de los usuarios</h2>
-            <p data-i18n="privacy.sec6Text1">Cualquier persona tiene derecho a obtener confirmación sobre si se están
-              tratando datos personales que le conciernen, así como a ejercer los siguientes derechos:</p>
+            <h2 data-i18n="privacy.s3.title">3. Base jurídica</h2>
+            <div data-i18n="privacy.s3.body">
             <ul class="privacy-list">
-              <li data-i18n="privacy.sec6Li1">Derecho de acceso a sus datos personales.</li>
-              <li data-i18n="privacy.sec6Li2">Derecho de rectificación de los datos inexactos.</li>
-              <li data-i18n="privacy.sec6Li3">Derecho de supresión cuando, entre otros motivos, los datos ya no sean
-                necesarios para los fines para los que fueron recogidos.</li>
-              <li data-i18n="privacy.sec6Li4">Derecho de oposición al tratamiento.</li>
-              <li data-i18n="privacy.sec6Li5">Derecho a solicitar la limitación del tratamiento de sus datos.</li>
-              <li data-i18n="privacy.sec6Li6">Derecho a la portabilidad de los datos en los casos previstos en la
-                normativa.</li>
+            <li><strong>Formulario de contacto:</strong> tu consentimiento (art. 6.1.a RGPD), que prestas al marcar la casilla y enviar el formulario. Puedes retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.</li>
+            <li><strong>Seguridad y alojamiento:</strong> el interés legítimo del titular en mantener la web disponible y proteger el formulario frente a abusos (art. 6.1.f RGPD).</li>
             </ul>
-            <p data-i18n="privacy.sec6Text2">El ejercicio de estos derechos puede realizarse enviando un correo
-              electrónico a info@marcoslunadev.com, indicando el derecho que se desea ejercer y adjuntando una copia de
-              un
-              documento identificativo válido (DNI, NIE, pasaporte).</p>
-            <p data-i18n="privacy.sec6Text3">Asimismo, si el usuario considera que el tratamiento de sus datos no se
-              ajusta a la normativa vigente, puede presentar una reclamación ante la Agencia Española de Protección de
-              Datos (AEPD) a través de su web <a href="https://www.aepd.es" target="_blank"
-                rel="noopener">www.aepd.es</a>.</p>
+            </div>
           </section>
 
           <section class="privacy-section">
-            <h2 data-i18n="privacy.sec7Title">7. Cookies y otros datos</h2>
-            <p data-i18n="privacy.sec7Text1">Actualmente esta web no utiliza cookies propias para finalidades de
-              seguimiento, analítica o publicidad.</p>
-            <p data-i18n="privacy.sec7Text2">En caso de que en el futuro se incorporen cookies o tecnologías similares,
-              se informará debidamente al usuario y se solicitará su consentimiento en los términos exigidos por la
-              normativa.</p>
+            <h2 data-i18n="privacy.s4.title">4. Plazo de conservación</h2>
+            <div data-i18n="privacy.s4.body">
+            <ul class="privacy-list">
+            <li><strong>Mensajes de contacto:</strong> el tiempo necesario para responderte y, como máximo, 12 meses desde la última comunicación. Si de la conversación surge una relación profesional, se conservarán mientras dure y durante los plazos legales aplicables. Si retiras tu consentimiento o pides la supresión, se eliminan.</li>
+            <li><strong>Registros técnicos de seguridad:</strong> unos pocos días, según la configuración del proveedor.</li>
+            </ul>
+            </div>
           </section>
 
           <section class="privacy-section">
-            <h2 data-i18n="privacy.sec8Title">8. Seguridad de los datos</h2>
-            <p data-i18n="privacy.sec8Text1">El titular aplicará las medidas técnicas y organizativas razonables para
-              proteger los datos personales y evitar su pérdida, mal uso, alteración, acceso no autorizado o robo.</p>
-            <p data-i18n="privacy.sec8Text2">Entre otras medidas, se utilizarán conexiones cifradas (HTTPS) cuando el
-              servicio de alojamiento lo permita y se mantendrán actualizados los sistemas utilizados para la gestión de
-              la web.</p>
+            <h2 data-i18n="privacy.s5.title">5. Destinatarios y encargados del tratamiento</h2>
+            <div data-i18n="privacy.s5.body">
+            <p>No se ceden datos a terceros salvo obligación legal. Para que la web y el formulario funcionen intervienen estos proveedores, que actúan como encargados del tratamiento:</p>
+            <ul class="privacy-list">
+            <li><strong>Cloudflare, Inc.:</strong> servidor que procesa el formulario (Cloudflare Workers) y verificación anti-bots (Turnstile).</li>
+            <li><strong>EmailJS:</strong> envío del correo con tu mensaje y del correo de confirmación.</li>
+            <li><strong>Proveedor de correo electrónico del titular:</strong> recepción y almacenamiento de los mensajes en la cuenta de contacto.</li>
+            <li><strong>GitHub, Inc.:</strong> alojamiento de la web (GitHub Pages).</li>
+            </ul>
+            </div>
+          </section>
+
+          <section class="privacy-section">
+            <h2 data-i18n="privacy.s6.title">6. Transferencias internacionales</h2>
+            <div data-i18n="privacy.s6.body">
+            <p>Algunos de estos proveedores están ubicados en Estados Unidos o pueden tratar datos fuera del Espacio Económico Europeo. Esas transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. (Data Privacy Framework) cuando el proveedor está adherido a él o, en su defecto, en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+            </div>
+          </section>
+
+          <section class="privacy-section">
+            <h2 data-i18n="privacy.s7.title">7. Menores de edad</h2>
+            <div data-i18n="privacy.s7.body">
+            <p>Este sitio y su formulario están dirigidos a personas mayores de edad y a profesionales. Al enviar el formulario declaras ser mayor de 18 años. Si eres menor de edad, no envíes tus datos.</p>
+            <p>Conforme al artículo 7 de la Ley Orgánica 3/2018 (LOPDGDD), los menores de 14 años no pueden consentir por sí mismos el tratamiento de sus datos. Si se detecta que se han recibido datos de un menor, se eliminarán sin dar respuesta.</p>
+            </div>
+          </section>
+
+          <section class="privacy-section">
+            <h2 data-i18n="privacy.s8.title">8. Tus derechos</h2>
+            <div data-i18n="privacy.s8.body">
+            <p>Puedes ejercer en cualquier momento tus derechos de:</p>
+            <ul class="privacy-list">
+            <li>Acceso a tus datos personales.</li>
+            <li>Rectificación de los datos inexactos.</li>
+            <li>Supresión de tus datos.</li>
+            <li>Oposición al tratamiento.</li>
+            <li>Limitación del tratamiento.</li>
+            <li>Portabilidad de tus datos.</li>
+            <li>Retirada del consentimiento, en cualquier momento.</li>
+            </ul>
+            <p>Para ello, escribe a <a href="mailto:info@marcoslunadev.com">info@marcoslunadev.com</a> indicando el derecho que quieres ejercer. Solo se te pedirá información adicional si existen dudas razonables sobre tu identidad.</p>
+            <p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>.</p>
+            </div>
+          </section>
+
+          <section class="privacy-section">
+            <h2 data-i18n="privacy.s9.title">9. Cookies, almacenamiento local y recursos de terceros</h2>
+            <div data-i18n="privacy.s9.body">
+            <p>Esta web <strong>no utiliza cookies</strong> propias ni de analítica, publicidad o seguimiento, por lo que no necesita un aviso de cookies.</p>
+            <p>Sí utiliza el almacenamiento local del navegador (<em>localStorage</em>) para dos funciones que tú solicitas, exentas de consentimiento según la LSSI (art. 22.2):</p>
+            <ul class="privacy-list">
+            <li><strong>preferredLanguage:</strong> recuerda el idioma que eliges. Se mantiene hasta que borres los datos de navegación.</li>
+            <li><strong>mld_contact_last_submit:</strong> guarda la hora del último envío del formulario para limitar envíos repetidos.</li>
+            </ul>
+            <p>La verificación de Cloudflare Turnstile solo se carga cuando llegas al formulario de contacto. Las fuentes, iconos y librerías de la web se sirven desde el propio dominio, sin conexiones a Google Fonts ni a otros servicios externos.</p>
+            <p>Si en el futuro se incorporasen cookies que requieran consentimiento (por ejemplo, de analítica), se te pedirá previamente mediante un aviso específico.</p>
+            </div>
+          </section>
+
+          <section class="privacy-section">
+            <h2 data-i18n="privacy.s10.title">10. Seguridad</h2>
+            <div data-i18n="privacy.s10.body">
+            <p>Se aplican medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada (HTTPS), verificación anti-bots, límite de envíos, acceso restringido a la cuenta de correo y ausencia de bases de datos propias donde almacenar los mensajes.</p>
+            </div>
           </section>
         </div>
       </div>
@@ -230,8 +240,8 @@
     </div>
   </footer>
 
-  <script src="translations.js?v=20261101218000"></script>
-  <script src="app.js?v=20261101218000"></script>
+  <script src="translations.js?v=20261101221000"></script>
+  <script src="app.js?v=20261101221000"></script>
 </body>
 
 </html>

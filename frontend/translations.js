@@ -25,7 +25,7 @@ const translations = {
       title: '<span class="text-gradient">Código que Impulsa</span><br /><span class="text-white">el Futuro</span>',
       subtitle: "Diseño y construyo productos digitales completos —interfaces, APIs, datos y cloud— con un flujo de ingeniería AI-native guiado por Spec-Driven Development: especificaciones claras, código verificable y entregas rápidas sin sacrificar calidad.",
       stack: "Frontend · Backend · Datos · Cloud · IA",
-      btnStart: "Iniciar Proyecto",
+      btnStart: "Contacto",
       btnPortfolio: "Ver Portafolio",
       promise: "⚡ Respuesta en 48-72h",
       stat1Num: "20+",
@@ -284,7 +284,8 @@ const translations = {
       feedbackError: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o envíanos un correo directo.",
       feedbackTurnstileRequired: "Por favor, completa la verificación de seguridad antes de enviar.",
       feedbackRateLimit: "Has enviado un mensaje recientemente. Por favor, espera unos minutos antes de volver a intentarlo.",
-      privacyAcceptLabel: "He leído y acepto la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a> *"
+      privacyAcceptLabel: "Declaro ser mayor de 18 años y he leído y acepto la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a> *",
+      privacyInfo: "<strong>Información básica sobre protección de datos.</strong> <strong>Responsable:</strong> Marcos Daniel Luna Rodríguez. <strong>Finalidad:</strong> responder a tu mensaje. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos; Cloudflare y EmailJS intervienen como encargados del tratamiento. <strong>Derechos:</strong> acceso, rectificación, supresión y otros, escribiendo a info@marcoslunadev.com. Más información en la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a>."
     },
     footer: {
       brandDesc: "Ingeniería de software full stack, del frontend a la nube. Apalancada en desarrollo AI-native y Spec-Driven Development.",
@@ -295,73 +296,86 @@ const translations = {
       terms: "Aviso Legal"
     },
     privacy: {
-      metaTitle: "Políticas de Privacidad - MarcosLunaDev",
-      title: "Políticas de Privacidad",
-      subtitle: "Última actualización: 8 de julio de 2026",
-      sec1Title: "1. Responsable del tratamiento",
-      sec1Text: "<strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br><strong>Domicilio:</strong> Madrid, España<br><strong>Correo de contacto en materia de protección de datos:</strong> info@marcoslunadev.com",
-      sec2Title: "2. Datos tratados, origen y finalidad",
-      sec2Text1: "En esta web únicamente se recaban datos personales a través del formulario de contacto.",
-      sec2Text2: "Los datos que se pueden solicitar son: nombre, dirección de correo electrónico y el contenido del mensaje que el usuario decida enviar.",
-      sec2Text3: "La finalidad del tratamiento es atender las consultas, solicitudes o comentarios que el usuario remita y poder responderle por correo electrónico.",
-      sec2Text4: "No se realizan perfiles, no se envía publicidad ni newsletters, ni se utilizan los datos con fines comerciales distintos a responder a la solicitud del usuario.",
-      sec3Title: "3. Base jurídica del tratamiento",
-      sec3Text: "La base legal para el tratamiento de los datos es el consentimiento del usuario, manifestado al remitir voluntariamente el formulario de contacto y aceptar la presente política de privacidad.",
-      sec4Title: "4. Conservación de los datos",
-      sec4Text1: "Los datos personales se conservarán únicamente durante el tiempo necesario para gestionar la consulta o comunicación enviada y, en su caso, durante los plazos exigidos por la normativa aplicable.",
-      sec4Text2: "Una vez finalizada la gestión de la consulta, los datos podrán ser eliminados o archivados de forma bloqueada según corresponda.",
-      sec5Title: "5. Destinatarios y encargados de tratamiento",
-      sec5Text1: "Los datos no se ceden a terceros, salvo obligación legal.",
-      sec5Text2: "El envío del formulario genera un correo electrónico dirigido a la cuenta personal del titular, gestionada por el proveedor de servicios de correo y de alojamiento que corresponda (por ejemplo GitHub Pages para la web y tu proveedor de email), los cuales pueden actuar como encargados de tratamiento al prestarte servicios de alojamiento y correo.",
-      sec5Text3: "No están previstas transferencias internacionales de datos distintas de las derivadas del uso de los servicios de alojamiento y correo electrónico indicados, que se realizan bajo las condiciones de protección de datos establecidas por dichos proveedores.",
-      sec6Title: "6. Derechos de los usuarios",
-      sec6Text1: "Cualquier persona tiene derecho a obtener confirmación sobre si se están tratando datos personales que le conciernen, así como a ejercer los siguientes derechos:",
-      sec6Li1: "Derecho de acceso a sus datos personales.",
-      sec6Li2: "Derecho de rectificación de los datos inexactos.",
-      sec6Li3: "Derecho de supresión cuando, entre otros motivos, los datos ya no sean necesarios para los fines para los que fueron recogidos.",
-      sec6Li4: "Derecho de oposición al tratamiento.",
-      sec6Li5: "Derecho a solicitar la limitación del tratamiento de sus datos.",
-      sec6Li6: "Derecho a la portabilidad de los datos en los casos previstos en la normativa.",
-      sec6Text2: "El ejercicio de estos derechos puede realizarse enviando un correo electrónico a info@marcoslunadev.com, indicando el derecho que se desea ejercer y adjuntando una copia de un documento identificativo válido (DNI, NIE, pasaporte).",
-      sec6Text3: "Asimismo, si el usuario considera que el tratamiento de sus datos no se ajusta a la normativa vigente, puede presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) a través de su web <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.",
-      sec7Title: "7. Cookies y otros datos",
-      sec7Text1: "Actualmente esta web no utiliza cookies propias para finalidades de seguimiento, analítica o publicidad.",
-      sec7Text2: "En caso de que en el futuro se incorporen cookies o tecnologías similares, se informará debidamente al usuario y se solicitará su consentimiento en los términos exigidos por la normativa.",
-      sec8Title: "8. Seguridad de los datos",
-      sec8Text1: "El titular aplicará las medidas técnicas y organizativas razonables para proteger los datos personales y evitar su pérdida, mal uso, alteración, acceso no autorizado o robo.",
-      sec8Text2: "Entre otras medidas, se utilizarán conexiones cifradas (HTTPS) cuando el servicio de alojamiento lo permita y se mantendrán actualizados los sistemas utilizados para la gestión de la web."
+      "metaTitle": "Política de Privacidad - MarcosLunaDev",
+      "title": "Política de Privacidad",
+      "subtitle": "Última actualización: 1 de noviembre de 2026",
+      "s1": {
+        "title": "1. Responsable del tratamiento",
+        "body": "<p><strong>Titular:</strong> Marcos Daniel Luna Rodríguez (persona física)<br><strong>Ubicación:</strong> Madrid, España<br><strong>Contacto:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p><p>Este sitio es el portafolio profesional y la marca personal de su titular. No pertenece a ninguna empresa y a través de él no se vende ningún producto ni servicio.</p>"
+      },
+      "s2": {
+        "title": "2. Qué datos se tratan y para qué",
+        "body": "<p><strong>Formulario de contacto.</strong> Nombre y email (obligatorios), teléfono y empresa (opcionales), servicio de interés y el mensaje que escribas. Se usan para atender y responder tu consulta y, en su caso, conversar sobre una posible colaboración profesional. Al enviarlo recibirás un correo automático de confirmación en la dirección indicada.</p><p><strong>Seguridad del formulario.</strong> Para evitar spam y abusos, Cloudflare Turnstile analiza señales técnicas del navegador y la dirección IP cuando llegas al formulario, y el servidor de envío registra datos técnicos (IP, fecha y hora y resultado de la verificación).</p><p><strong>Visita a la web.</strong> El servicio de alojamiento recibe los datos técnicos de conexión (dirección IP y navegador) necesarios para mostrarte la página.</p><p>No se elaboran perfiles, no se toman decisiones automatizadas, no se envía publicidad ni newsletters y los datos no se venden ni se ceden.</p>"
+      },
+      "s3": {
+        "title": "3. Base jurídica",
+        "body": "<ul class=\"privacy-list\"><li><strong>Formulario de contacto:</strong> tu consentimiento (art. 6.1.a RGPD), que prestas al marcar la casilla y enviar el formulario. Puedes retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.</li><li><strong>Seguridad y alojamiento:</strong> el interés legítimo del titular en mantener la web disponible y proteger el formulario frente a abusos (art. 6.1.f RGPD).</li></ul>"
+      },
+      "s4": {
+        "title": "4. Plazo de conservación",
+        "body": "<ul class=\"privacy-list\"><li><strong>Mensajes de contacto:</strong> el tiempo necesario para responderte y, como máximo, 12 meses desde la última comunicación. Si de la conversación surge una relación profesional, se conservarán mientras dure y durante los plazos legales aplicables. Si retiras tu consentimiento o pides la supresión, se eliminan.</li><li><strong>Registros técnicos de seguridad:</strong> unos pocos días, según la configuración del proveedor.</li></ul>"
+      },
+      "s5": {
+        "title": "5. Destinatarios y encargados del tratamiento",
+        "body": "<p>No se ceden datos a terceros salvo obligación legal. Para que la web y el formulario funcionen intervienen estos proveedores, que actúan como encargados del tratamiento:</p><ul class=\"privacy-list\"><li><strong>Cloudflare, Inc.:</strong> servidor que procesa el formulario (Cloudflare Workers) y verificación anti-bots (Turnstile).</li><li><strong>EmailJS:</strong> envío del correo con tu mensaje y del correo de confirmación.</li><li><strong>Proveedor de correo electrónico del titular:</strong> recepción y almacenamiento de los mensajes en la cuenta de contacto.</li><li><strong>GitHub, Inc.:</strong> alojamiento de la web (GitHub Pages).</li></ul>"
+      },
+      "s6": {
+        "title": "6. Transferencias internacionales",
+        "body": "<p>Algunos de estos proveedores están ubicados en Estados Unidos o pueden tratar datos fuera del Espacio Económico Europeo. Esas transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. (Data Privacy Framework) cuando el proveedor está adherido a él o, en su defecto, en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>"
+      },
+      "s7": {
+        "title": "7. Menores de edad",
+        "body": "<p>Este sitio y su formulario están dirigidos a personas mayores de edad y a profesionales. Al enviar el formulario declaras ser mayor de 18 años. Si eres menor de edad, no envíes tus datos.</p><p>Conforme al artículo 7 de la Ley Orgánica 3/2018 (LOPDGDD), los menores de 14 años no pueden consentir por sí mismos el tratamiento de sus datos. Si se detecta que se han recibido datos de un menor, se eliminarán sin dar respuesta.</p>"
+      },
+      "s8": {
+        "title": "8. Tus derechos",
+        "body": "<p>Puedes ejercer en cualquier momento tus derechos de:</p><ul class=\"privacy-list\"><li>Acceso a tus datos personales.</li><li>Rectificación de los datos inexactos.</li><li>Supresión de tus datos.</li><li>Oposición al tratamiento.</li><li>Limitación del tratamiento.</li><li>Portabilidad de tus datos.</li><li>Retirada del consentimiento, en cualquier momento.</li></ul><p>Para ello, escribe a <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> indicando el derecho que quieres ejercer. Solo se te pedirá información adicional si existen dudas razonables sobre tu identidad.</p><p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.</p>"
+      },
+      "s9": {
+        "title": "9. Cookies, almacenamiento local y recursos de terceros",
+        "body": "<p>Esta web <strong>no utiliza cookies</strong> propias ni de analítica, publicidad o seguimiento, por lo que no necesita un aviso de cookies.</p><p>Sí utiliza el almacenamiento local del navegador (<em>localStorage</em>) para dos funciones que tú solicitas, exentas de consentimiento según la LSSI (art. 22.2):</p><ul class=\"privacy-list\"><li><strong>preferredLanguage:</strong> recuerda el idioma que eliges. Se mantiene hasta que borres los datos de navegación.</li><li><strong>mld_contact_last_submit:</strong> guarda la hora del último envío del formulario para limitar envíos repetidos.</li></ul><p>La verificación de Cloudflare Turnstile solo se carga cuando llegas al formulario de contacto. Las fuentes, iconos y librerías de la web se sirven desde el propio dominio, sin conexiones a Google Fonts ni a otros servicios externos.</p><p>Si en el futuro se incorporasen cookies que requieran consentimiento (por ejemplo, de analítica), se te pedirá previamente mediante un aviso específico.</p>"
+      },
+      "s10": {
+        "title": "10. Seguridad",
+        "body": "<p>Se aplican medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada (HTTPS), verificación anti-bots, límite de envíos, acceso restringido a la cuenta de correo y ausencia de bases de datos propias donde almacenar los mensajes.</p>"
+      }
     },
     legal: {
-      metaTitle: "Aviso Legal - MarcosLunaDev",
-      title: "Aviso Legal y Condiciones de Uso",
-      subtitle: "Última actualización: 8 de julio de 2026",
-      sec1Title: "1. Información general",
-      sec1Text: "En cumplimiento del deber de información establecido en el artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI‑CE), se indica a continuación la información general del sitio web:<br><br><strong>Titular:</strong> Marcos Daniel Luna Rodríguez<br><strong>Domicilio:</strong> Madrid, España<br><strong>Correo electrónico de contacto:</strong> info@marcoslunadev.com<br><br>Este sitio web tiene carácter personal y divulgativo, y su finalidad principal es mostrar información sobre la actividad profesional y proyectos de su titular, así como facilitar un medio de contacto.",
-      sec2Title: "2. Condiciones de acceso y uso del sitio web",
-      sec2Text1: "El acceso y/o uso de este sitio web atribuye la condición de usuario, que acepta desde dicho acceso y/o uso las presentes condiciones generales.",
-      sec2Text2: "El usuario se compromete a utilizar el sitio web de forma diliente, correcta y lícita, y a no realizar actividades que puedan dañar la imagen, los intereses o los derechos del titular o de terceros.",
-      sec2Text3: "El titular se reserva el derecho a modificar en cualquier momento y sin previo aviso la presentación, configuración y contenido del sitio web, así como las presentes condiciones de uso.",
-      sec3Title: "3. Propiedad intelectual e industrial",
-      sec3Text1: "Todos los contenidos del sitio web (textos, imágenes, diseños, logotipos, código fuente y cualesquiera otros elementos que aparezcan), salvo indicación expresa en contrario, son titularidad de Marcos Luna Dev o se utilizan con las licencias correspondientes.",
-      sec3Text2: "Queda prohibida la reproducción, distribución, comunicación pública, transformación o cualquier otra forma de explotación de dichos contenidos sin la autorización previa y expresa del titular, salvo en los casos en que esté legalmente permitido.",
-      sec3Text3: "El usuario se compromete a respetar todos los derechos de propiedad intelectual e industrial sobre los contenidos del sitio.",
-      sec4Title: "4. Enlaces externos",
-      sec4Text1: "Este sitio web puede contener enlaces a sitios web de terceros.",
-      sec4Text2: "El titular no se responsabiliza de los contenidos, servicios o cualquier otro elemento que se ofrezca en dichos sitios enlazados, ni de los daños o perjuicios que puedan derivarse del acceso a ellos, ya que no tiene control sobre esos recursos.",
-      sec4Text3: "La inclusión de enlaces externos no implica la existencia de relación, colaboración o dependencia entre el titular y los responsables de esos sitios.",
-      sec5Title: "5. Responsabilidad",
-      sec5Text1: "El titular no garantiza la inexistencia de errores en el acceso al sitio web, en su contenido, ni que este se encuentre actualizado, aunque se compromete a realizar los esfuerzos razonables para evitarlos, subsanarlos o actualizarlos.",
-      sec5Text2: "El usuario accede al sitio web bajo su exclusiva responsabilidad. El titular no se hace responsable de los daños y perjuicios que pudieran derivarse del uso del sitio web, incluyendo, a título enunciativo, fallos de funcionamiento, interrupciones del servicio, presencia de virus o ataques informáticos, siempre que se hayan adoptado las medidas de seguridad razonables.",
-      sec5Text3: "El sitio web no ofrece, en su versión actual, servicios de comercio electrónico ni contratación online, por lo que no existen condiciones de venta ni contratación específicas.",
-      sec6Title: "6. Política de privacidad y protección de datos",
-      sec6Text1: "El tratamiento de los datos personales que se pudiera realizar como consecuencia del uso del formulario de contacto se regirá por lo establecido en la Política de privacidad, accesible en todo momento desde el sitio web.",
-      sec6Text2: "Se recomienda al usuario consultar dicho documento para conocer en detalle cómo se recogen, utilizan y protegen sus datos personales, así como los derechos que le asisten.",
-      sec7Title: "7. Política de cookies",
-      sec7Text1: "En la actualidad este sitio web no utiliza cookies propias con fines de analítica, publicidad o perfiles de usuario.",
-      sec7Text2: "En caso de incorporar cookies en el futuro, se informará debidamente al usuario y se implementará la correspondiente política de cookies y mecanismo de aceptación.",
-      sec8Title: "8. Legislación aplicable y jurisdicción",
-      sec8Text1: "Las presentes condiciones se rigen por la legislación española.",
-      sec8Text2: "Para cualquier controversia que pudiera derivarse del acceso o uso del sitio web, las partes se someten a los juzgados y tribunales de Madrid, salvo que la normativa aplicable establezca otra cosa."
+      "metaTitle": "Aviso Legal - MarcosLunaDev",
+      "title": "Aviso Legal y Condiciones de Uso",
+      "subtitle": "Última actualización: 1 de noviembre de 2026",
+      "s1": {
+        "title": "1. Titular del sitio",
+        "body": "<p><strong>Titular:</strong> Marcos Daniel Luna Rodríguez (persona física)<br><strong>Ubicación:</strong> Madrid, España<br><strong>Contacto:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p>"
+      },
+      "s2": {
+        "title": "2. Naturaleza del sitio",
+        "body": "<p>Este sitio es el portafolio profesional y la marca personal de su titular. Su finalidad es dar a conocer su trayectoria, proyectos y conocimientos y ofrecer un medio de contacto.</p><p>A través de este sitio no se venden productos ni servicios, no se realizan contrataciones ni pagos y no se muestra publicidad, por lo que no constituye una actividad económica en los términos de la Ley 34/2002 (LSSI-CE). Cualquier colaboración profesional que surja de un contacto, ya sea por cuenta ajena o propia, se formalizaría fuera de este sitio y conforme a la normativa aplicable.</p>"
+      },
+      "s3": {
+        "title": "3. Condiciones de uso",
+        "body": "<p>El acceso y uso de este sitio atribuye la condición de usuario e implica la aceptación de estas condiciones. El usuario se compromete a utilizarlo de forma diligente, correcta y lícita, sin realizar actividades que puedan dañar la imagen, los intereses o los derechos del titular o de terceros.</p><p>El titular puede modificar en cualquier momento y sin previo aviso la presentación, configuración y contenidos del sitio, así como estas condiciones.</p>"
+      },
+      "s4": {
+        "title": "4. Propiedad intelectual e industrial",
+        "body": "<p>Los textos, imágenes, diseño, logotipo de MarcosLunaDev y código fuente de este sitio son titularidad de su autor, salvo indicación en contrario. Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa, salvo en los casos legalmente permitidos.</p><p>Los nombres y logotipos de tecnologías, herramientas y empresas que aparecen en el sitio (por ejemplo, Angular, React, Node.js, Claude u OpenAI) son marcas de sus respectivos titulares y se muestran únicamente con fines identificativos.</p>"
+      },
+      "s5": {
+        "title": "5. Enlaces externos",
+        "body": "<p>Este sitio contiene enlaces a sitios de terceros (por ejemplo, LinkedIn o GitHub). El titular no controla ni se responsabiliza de sus contenidos o servicios, y la inclusión de un enlace no implica relación ni colaboración con sus responsables.</p>"
+      },
+      "s6": {
+        "title": "6. Responsabilidad",
+        "body": "<p>El titular procura que la información del sitio sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni la disponibilidad ininterrumpida del sitio. No se hace responsable de los daños derivados de su uso, como interrupciones del servicio, virus o ataques informáticos, siempre que se hayan adoptado medidas de seguridad razonables.</p>"
+      },
+      "s7": {
+        "title": "7. Protección de datos y cookies",
+        "body": "<p>El tratamiento de los datos que facilites a través del formulario de contacto, así como el uso del almacenamiento local del navegador, se rigen por la <a href=\"politica-privacidad.html\">Política de privacidad</a>. Este sitio no utiliza cookies.</p>"
+      },
+      "s8": {
+        "title": "8. Legislación aplicable y jurisdicción",
+        "body": "<p>Estas condiciones se rigen por la legislación española. Para cualquier controversia derivada del acceso o uso del sitio, las partes se someten a los juzgados y tribunales que correspondan conforme a la normativa aplicable.</p>"
+      }
     }
   },
   en: {
@@ -386,7 +400,7 @@ const translations = {
       title: '<span class="text-gradient">Code that Drives</span><br /><span class="text-white">the Future</span>',
       subtitle: "I design and build complete digital products —interfaces, APIs, data and cloud— with an AI-native engineering workflow driven by Spec-Driven Development: clear specs, verifiable code and fast delivery without compromising quality.",
       stack: "Frontend · Backend · Data · Cloud · AI",
-      btnStart: "Start Project",
+      btnStart: "Contact",
       btnPortfolio: "View Portfolio",
       promise: "⚡ Response in 48-72h",
       stat1Num: "20+",
@@ -645,7 +659,8 @@ const translations = {
       feedbackError: "There was an error sending your message. Please try again or send us an email directly.",
       feedbackTurnstileRequired: "Please complete the security verification before sending.",
       feedbackRateLimit: "You have recently submitted a message. Please wait a few minutes before trying again.",
-      privacyAcceptLabel: "I have read and accept the <a href=\"politica-privacidad.html\" target=\"_blank\">Privacy Policy</a> *"
+      privacyAcceptLabel: "I declare that I am over 18 years old and I have read and accept the <a href=\"politica-privacidad.html\" target=\"_blank\">Privacy Policy</a> *",
+      privacyInfo: "<strong>Basic data protection information.</strong> <strong>Controller:</strong> Marcos Daniel Luna Rodríguez. <strong>Purpose:</strong> to reply to your message. <strong>Legal basis:</strong> your consent. <strong>Recipients:</strong> no data is shared; Cloudflare and EmailJS act as data processors. <strong>Rights:</strong> access, rectification, erasure and others, by writing to info@marcoslunadev.com. More information in the <a href=\"politica-privacidad.html\" target=\"_blank\">Privacy Policy</a>."
     },
     footer: {
       brandDesc: "Full stack software engineering, from frontend to cloud. Powered by AI-native development and Spec-Driven Development.",
@@ -656,73 +671,86 @@ const translations = {
       terms: "Legal Notice"
     },
     privacy: {
-      metaTitle: "Privacy Policy - MarcosLunaDev",
-      title: "Privacy Policy",
-      subtitle: "Last updated: July 8, 2026",
-      sec1Title: "1. Data Controller",
-      sec1Text: "<strong>Owner:</strong> Marcos Daniel Luna Rodríguez<br><strong>Address:</strong> Madrid, Spain<br><strong>Contact email for data protection matters:</strong> info@marcoslunadev.com",
-      sec2Title: "2. Processed Data, Origin and Purpose",
-      sec2Text1: "Personal data is only collected on this website through the contact form.",
-      sec2Text2: "The data that may be requested includes: name, email address, and the content of the message the user decides to send.",
-      sec2Text3: "The purpose of processing is to handle inquiries, requests, or comments sent by the user and respond via email.",
-      sec2Text4: "No user profiling is conducted, no advertising or newsletters are sent, nor is data used for commercial purposes other than responding to the user's request.",
-      sec3Title: "3. Legal Basis for Processing",
-      sec3Text: "The legal basis for processing data is the user's consent, expressed by voluntarily submitting the contact form and accepting this privacy policy.",
-      sec4Title: "4. Data Retention",
-      sec4Text1: "Personal data will only be retained for the time necessary to manage the inquiry or communication sent and, where applicable, for the periods required by applicable regulations.",
-      sec4Text2: "Once management of the inquiry is completed, data may be deleted or securely archived as appropriate.",
-      sec5Title: "5. Recipients and Data Processors",
-      sec5Text1: "Data is not shared with third parties, except under legal obligation.",
-      sec5Text2: "Submitting the form generates an email sent to the owner's personal account, managed by the relevant hosting and email service provider (e.g., GitHub Pages for the web and your email provider), which may act as data processors when providing hosting and mail services.",
-      sec5Text3: "No international data transfers are planned other than those resulting from the use of the indicated hosting and email services, which are carried out under the data protection terms established by those providers.",
-      sec6Title: "6. Rights of Users",
-      sec6Text1: "Anyone has the right to obtain confirmation as to whether personal data concerning them is being processed, as well as to exercise the following rights:",
-      sec6Li1: "Right of access to personal data.",
-      sec6Li2: "Right to rectification of inaccurate data.",
-      sec6Li3: "Right to erasure when, among other reasons, the data is no longer necessary for the purposes for which it was collected.",
-      sec6Li4: "Right to object to processing.",
-      sec6Li5: "Right to request restriction of data processing.",
-      sec6Li6: "Right to data portability in cases provided for by regulations.",
-      sec6Text2: "Exercising these rights can be done by sending an email to info@marcoslunadev.com, specifying the right to be exercised and attaching a copy of a valid identity document (ID card, passport, etc.).",
-      sec6Text3: "Furthermore, if the user considers that the processing of their data does not comply with current regulations, they may file a complaint with the Spanish Data Protection Agency (AEPD) via their website <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.",
-      sec7Title: "7. Cookies and Other Data",
-      sec7Text1: "Currently, this website does not use first-party cookies for tracking, analytics, or advertising purposes.",
-      sec7Text2: "In the event that cookies or similar technologies are incorporated in the future, users will be duly informed and their consent will be requested under the terms required by regulations.",
-      sec8Title: "8. Data Security",
-      sec8Text1: "The owner will apply reasonable technical and organizational measures to protect personal data and prevent its loss, misuse, alteration, unauthorized access, or theft.",
-      sec8Text2: "Among other measures, encrypted connections (HTTPS) will be used when permitted by the hosting service, and systems used for managing the web will be kept up to date."
+      "metaTitle": "Privacy Policy - MarcosLunaDev",
+      "title": "Privacy Policy",
+      "subtitle": "Last updated: November 1, 2026",
+      "s1": {
+        "title": "1. Data Controller",
+        "body": "<p><strong>Owner:</strong> Marcos Daniel Luna Rodríguez (private individual)<br><strong>Location:</strong> Madrid, Spain<br><strong>Contact:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p><p>This website is the professional portfolio and personal brand of its owner. It does not belong to any company and no products or services are sold through it.</p>"
+      },
+      "s2": {
+        "title": "2. What Data Is Processed and Why",
+        "body": "<p><strong>Contact form.</strong> Name and email (required), phone and company (optional), the service you are interested in and the message you write. They are used to handle and answer your enquiry and, where appropriate, to discuss a possible professional collaboration. After sending it you will receive an automatic confirmation email at the address provided.</p><p><strong>Form security.</strong> To prevent spam and abuse, Cloudflare Turnstile analyses technical browser signals and your IP address when you reach the form, and the sending server logs technical data (IP, date and time and verification result).</p><p><strong>Visiting the website.</strong> The hosting service receives the technical connection data (IP address and browser) needed to display the page.</p><p>No profiling or automated decision-making takes place, no advertising or newsletters are sent, and data is never sold or shared.</p>"
+      },
+      "s3": {
+        "title": "3. Legal Basis",
+        "body": "<ul class=\"privacy-list\"><li><strong>Contact form:</strong> your consent (Art. 6(1)(a) GDPR), given by ticking the box and sending the form. You may withdraw it at any time without affecting the lawfulness of prior processing.</li><li><strong>Security and hosting:</strong> the owner's legitimate interest in keeping the website available and protecting the form against abuse (Art. 6(1)(f) GDPR).</li></ul>"
+      },
+      "s4": {
+        "title": "4. Retention Period",
+        "body": "<ul class=\"privacy-list\"><li><strong>Contact messages:</strong> for as long as needed to reply and at most 12 months from the last communication. If a professional relationship arises from the conversation, they will be kept for its duration and for the applicable legal periods. If you withdraw consent or request erasure, they are deleted.</li><li><strong>Technical security logs:</strong> a few days, according to the provider's configuration.</li></ul>"
+      },
+      "s5": {
+        "title": "5. Recipients and Data Processors",
+        "body": "<p>Data is not disclosed to third parties unless legally required. The following providers take part in running the website and the form, acting as data processors:</p><ul class=\"privacy-list\"><li><strong>Cloudflare, Inc.:</strong> server that processes the form (Cloudflare Workers) and anti-bot verification (Turnstile).</li><li><strong>EmailJS:</strong> delivery of the email containing your message and of the confirmation email.</li><li><strong>The owner's email provider:</strong> receipt and storage of messages in the contact mailbox.</li><li><strong>GitHub, Inc.:</strong> website hosting (GitHub Pages).</li></ul>"
+      },
+      "s6": {
+        "title": "6. International Transfers",
+        "body": "<p>Some of these providers are located in the United States or may process data outside the European Economic Area. Such transfers rely on the EU-US Data Privacy Framework where the provider is certified under it or, otherwise, on the standard contractual clauses approved by the European Commission.</p>"
+      },
+      "s7": {
+        "title": "7. Minors",
+        "body": "<p>This website and its form are intended for adults and professionals. By sending the form you declare that you are over 18 years old. If you are a minor, please do not send your data.</p><p>Under Article 7 of Spanish Organic Law 3/2018 (LOPDGDD), children under 14 cannot consent to the processing of their data on their own. If data from a minor is found to have been received, it will be deleted without reply.</p>"
+      },
+      "s8": {
+        "title": "8. Your Rights",
+        "body": "<p>You may exercise the following rights at any time:</p><ul class=\"privacy-list\"><li>Access to your personal data.</li><li>Rectification of inaccurate data.</li><li>Erasure of your data.</li><li>Objection to processing.</li><li>Restriction of processing.</li><li>Data portability.</li><li>Withdrawal of consent, at any time.</li></ul><p>To do so, write to <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> stating the right you wish to exercise. Additional information will only be requested if there are reasonable doubts about your identity.</p><p>If you believe the processing of your data does not comply with the regulations, you may lodge a complaint with the Spanish Data Protection Agency (AEPD) at <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.</p>"
+      },
+      "s9": {
+        "title": "9. Cookies, Local Storage and Third-Party Resources",
+        "body": "<p>This website <strong>does not use cookies</strong>, whether its own or for analytics, advertising or tracking, so no cookie banner is needed.</p><p>It does use the browser's local storage (<em>localStorage</em>) for two features you request, which are exempt from consent under Spanish LSSI (Art. 22.2):</p><ul class=\"privacy-list\"><li><strong>preferredLanguage:</strong> remembers the language you choose. It remains until you clear your browsing data.</li><li><strong>mld_contact_last_submit:</strong> stores the time of the last form submission to limit repeated submissions.</li></ul><p>Cloudflare Turnstile verification is only loaded when you reach the contact form. The website's fonts, icons and libraries are served from its own domain, with no connections to Google Fonts or other external services.</p><p>Should cookies requiring consent (for example, analytics) be added in the future, your consent will be requested beforehand through a specific notice.</p>"
+      },
+      "s10": {
+        "title": "10. Security",
+        "body": "<p>Reasonable technical and organisational measures are applied to protect your data: encrypted connection (HTTPS), anti-bot verification, submission limits, restricted access to the mailbox and no proprietary databases storing the messages.</p>"
+      }
     },
     legal: {
-      metaTitle: "Legal Notice - MarcosLunaDev",
-      title: "Legal Notice and Terms of Use",
-      subtitle: "Last updated: July 8, 2026",
-      sec1Title: "1. General Information",
-      sec1Text: "In compliance with the information duty established in Article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), the general information of the website is provided below:<br><br><strong>Owner:</strong> Marcos Daniel Luna Rodríguez<br><strong>Address:</strong> Madrid, Spain<br><strong>Contact email:</strong> info@marcoslunadev.com<br><br>This website is of a personal and informative nature, and its main purpose is to show information about the professional activity and projects of its owner, as well as to provide a means of contact.",
-      sec2Title: "2. Conditions of Access and Use of the Website",
-      sec2Text1: "Accessing and/or using this website confers the status of user, who accepts these general terms and conditions from such access and/or use.",
-      sec2Text2: "The user agrees to use the website diligently, correctly, and lawfully, and not to perform activities that could damage the image, interests, or rights of the owner or third parties.",
-      sec2Text3: "The owner reserves the right to modify at any time and without prior notice the presentation, configuration, and content of the website, as well as these terms of use.",
-      sec3Title: "3. Intellectual and Industrial Property",
-      sec3Text1: "All website content (texts, images, designs, logos, source code, and any other elements appearing), unless expressly stated otherwise, is owned by MarcosLunaDev or used with corresponding licenses.",
-      sec3Text2: "Reproduction, distribution, public communication, transformation, or any other form of exploitation of such content without prior express authorization from the owner is prohibited, except where legally permitted.",
-      sec3Text3: "The user agrees to respect all intellectual and industrial property rights over the contents of the site.",
-      sec4Title: "4. External Links",
-      sec4Text1: "This website may contain links to third-party websites.",
-      sec4Text2: "The owner is not responsible for the content, services, or any other element offered on such linked sites, nor for any damage or harm that may arise from accessing them, as they have no control over those resources.",
-      sec4Text3: "The inclusion of external links does not imply the existence of a relationship, collaboration, or dependency between the owner and those responsible for those sites.",
-      sec5Title: "5. Liability",
-      sec5Text1: "The owner does not guarantee the absence of errors in access to the website, in its content, or that it is updated, although reasonable efforts will be made to avoid, correct, or update them.",
-      sec5Text2: "The user accesses the website under their sole responsibility. The owner is not liable for damages or losses that may arise from using the website, including, without limitation, operation failures, service interruptions, viruses, or cyber attacks, provided reasonable security measures have been adopted.",
-      sec5Text3: "In its current version, the website does not offer e-commerce services or online contracting, so no specific sales or contracting conditions exist.",
-      sec6Title: "6. Privacy Policy and Data Protection",
-      sec6Text1: "The processing of personal data that may occur as a result of using the contact form will be governed by the Privacy Policy, accessible at all times on the website.",
-      sec6Text2: "Users are recommended to consult this document to learn in detail how their personal data is collected, used, and protected, as well as their rights.",
-      sec7Title: "7. Cookie Policy",
-      sec7Text1: "Currently, this website does not use first-party cookies for analytics, advertising, or user profiling purposes.",
-      sec7Text2: "Should cookies be incorporated in the future, users will be duly informed and a corresponding cookie policy and acceptance mechanism will be implemented.",
-      sec8Title: "8. Applicable Legislation and Jurisdiction",
-      sec8Text1: "These conditions are governed by Spanish legislation.",
-      sec8Text2: "For any dispute that may arise from accessing or using the website, the parties submit to the courts and tribunals of Madrid, unless applicable regulations establish otherwise."
+      "metaTitle": "Legal Notice - MarcosLunaDev",
+      "title": "Legal Notice and Terms of Use",
+      "subtitle": "Last updated: November 1, 2026",
+      "s1": {
+        "title": "1. Website Owner",
+        "body": "<p><strong>Owner:</strong> Marcos Daniel Luna Rodríguez (private individual)<br><strong>Location:</strong> Madrid, Spain<br><strong>Contact:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p>"
+      },
+      "s2": {
+        "title": "2. Nature of the Website",
+        "body": "<p>This website is the professional portfolio and personal brand of its owner. Its purpose is to present their background, projects and expertise and to provide a means of contact.</p><p>No products or services are sold, no contracts or payments are made and no advertising is shown through this website, so it does not constitute an economic activity under Spanish Law 34/2002 (LSSI-CE). Any professional collaboration arising from a contact, whether as an employee or self-employed, would be formalised outside this website and in accordance with applicable law.</p>"
+      },
+      "s3": {
+        "title": "3. Terms of Use",
+        "body": "<p>Accessing and using this website makes you a user and implies acceptance of these terms. Users agree to use it diligently, correctly and lawfully, without engaging in activities that may harm the image, interests or rights of the owner or third parties.</p><p>The owner may modify the presentation, configuration and content of the website, as well as these terms, at any time and without prior notice.</p>"
+      },
+      "s4": {
+        "title": "4. Intellectual and Industrial Property",
+        "body": "<p>The texts, images, design, MarcosLunaDev logo and source code of this website belong to its author unless otherwise stated. Their reproduction, distribution, public communication or transformation without express authorisation is prohibited, except where permitted by law.</p><p>The names and logos of technologies, tools and companies shown on the website (for example Angular, React, Node.js, Claude or OpenAI) are trademarks of their respective owners and are displayed for identification purposes only.</p>"
+      },
+      "s5": {
+        "title": "5. External Links",
+        "body": "<p>This website contains links to third-party sites (for example LinkedIn or GitHub). The owner does not control and is not responsible for their content or services, and including a link does not imply any relationship or collaboration with those responsible for them.</p>"
+      },
+      "s6": {
+        "title": "6. Liability",
+        "body": "<p>The owner strives to keep the information on the website accurate and up to date but does not guarantee the absence of errors or uninterrupted availability. The owner is not liable for damages arising from its use, such as service interruptions, viruses or cyberattacks, provided reasonable security measures have been taken.</p>"
+      },
+      "s7": {
+        "title": "7. Data Protection and Cookies",
+        "body": "<p>The processing of the data you provide through the contact form, as well as the use of the browser's local storage, is governed by the <a href=\"politica-privacidad.html\">Privacy Policy</a>. This website does not use cookies.</p>"
+      },
+      "s8": {
+        "title": "8. Applicable Law and Jurisdiction",
+        "body": "<p>These terms are governed by Spanish law. Any dispute arising from accessing or using the website shall be submitted to the courts that have jurisdiction under applicable law.</p>"
+      }
     }
   }
 };
