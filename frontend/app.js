@@ -4,6 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Dynamic language state
   let currentLang = localStorage.getItem('preferredLanguage') || 'es';
 
@@ -107,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
      -------------------------------------------------------------------------- */
   const aiFilterButtons = document.querySelectorAll('#ai-filters .filter-btn');
   const aiCards = document.querySelectorAll('.ai-card');
+  const aiGrid = document.querySelector('.ai-grid');
 
   if (aiFilterButtons.length > 0 && aiCards.length > 0) {
     aiFilterButtons.forEach(button => {
@@ -116,6 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
         button.classList.add('active');
 
         const filterValue = button.getAttribute('data-filter');
+
+        // En modo carrusel 3D (animations.js) el filtro gira el anillo en lugar de ocultar
+        if (aiGrid && aiGrid.classList.contains('is-carousel')) {
+          document.dispatchEvent(new CustomEvent('ai-filter', { detail: filterValue }));
+          return;
+        }
 
         aiCards.forEach(card => {
           const cardCategory = card.getAttribute('data-category');
@@ -179,41 +188,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeBody = codeMockup.querySelector('.editor-body code');
 
     // Definición de snippets
+    // Definición de snippets: el flujo SDD (spec → implementación → test)
     const snippets = {
-      'app.js': `<span class="keyword">const</span> <span class="function">buildFuture</span> = () =&gt; {
-  <span class="keyword">return</span> {
-    <span class="property">technologies</span>: [
-      <span class="string">'Angular'</span>,
-      <span class="string">'React'</span>,
-      <span class="string">'Vue'</span>,
-      <span class="string">'Node'</span>,
-      <span class="string">'Bun'</span>
-    ],
-    <span class="property">quality</span>: <span class="string">'exceptional'</span>
-  };
-};`,
-      'server.ts': `<span class="keyword">import</span> { NestFactory } <span class="keyword">from</span> <span class="string">'@nestjs/core'</span>;
-<span class="keyword">import</span> { AppModule } <span class="keyword">from</span> <span class="string">'./app.module'</span>;
+      'spec.md': `<span class="keyword">## Feature:</span> <span class="function">Checkout</span>
 
-<span class="keyword">async function</span> <span class="function">bootstrap</span>() {
-  <span class="keyword">const</span> <span class="property">app</span> = <span class="keyword">await</span> NestFactory.create(AppModule);
-  <span class="keyword">await</span> app.listen(<span class="property">3000</span>);
-  console.log(<span class="string">'Server running on port 3000'</span>);
-}
-bootstrap();`,
-      'styles.css': `<span class="keyword">:root</span> {
-  <span class="property">--accent-cyan</span>: <span class="string">#06b6d4</span>;
-  <span class="property">--accent-emerald</span>: <span class="string">#10b981</span>;
-}
+<span class="keyword">GIVEN</span> un carrito con stock disponible
+<span class="keyword">WHEN</span>  el cliente confirma el pago
+<span class="keyword">THEN</span>  se crea el pedido <span class="string">→ 201</span>
+ <span class="keyword">AND</span>  se emite <span class="property">OrderCreated</span>
+ <span class="keyword">AND</span>  el stock se reserva`,
+      'orders.ts': `<span class="function">@Controller</span>(<span class="string">'orders'</span>)
+<span class="keyword">export class</span> OrdersController {
+  <span class="keyword">constructor</span>(
+    <span class="keyword">private</span> <span class="property">orders</span>: OrdersService,
+    <span class="keyword">private</span> <span class="property">events</span>: EventBus
+  ) {}
 
-<span class="keyword">.text-gradient</span> {
-  <span class="property">background</span>: linear-gradient(
-    <span class="property">135deg</span>, 
-    var(<span class="property">--accent-cyan</span>), 
-    var(<span class="property">--accent-emerald</span>)
-  );
-  <span class="property">-webkit-background-clip</span>: text;
-}`
+  <span class="function">@Post</span>() <span class="function">@HttpCode</span>(<span class="property">201</span>)
+  <span class="keyword">async</span> <span class="function">create</span>(<span class="function">@Body</span>() dto: CreateOrderDto) {
+    <span class="keyword">const</span> <span class="property">order</span> = <span class="keyword">await</span> <span class="keyword">this</span>.orders.create(dto);
+    <span class="keyword">this</span>.events.emit(<span class="string">'OrderCreated'</span>, order);
+    <span class="keyword">return</span> order;
+  }
+}`,
+      'e2e.ts': `<span class="function">describe</span>(<span class="string">'Checkout'</span>, () =&gt; {
+  <span class="function">it</span>(<span class="string">'crea el pedido y emite OrderCreated'</span>, <span class="keyword">async</span> () =&gt; {
+    <span class="keyword">const</span> <span class="property">res</span> = <span class="keyword">await</span> api.post(<span class="string">'/orders'</span>).send(cart);
+
+    <span class="function">expect</span>(res.status).toBe(<span class="property">201</span>);
+    <span class="function">expect</span>(events).toContainEvent(<span class="string">'OrderCreated'</span>);
+  });
+});`
     };
 
     // Crear pestañas adicionales dinámicamente
@@ -222,8 +227,43 @@ bootstrap();`,
       currentTab.remove(); // Limpiar estático
     }
 
+    const fileNames = Object.keys(snippets);
+    const tabs = [];
+    let activeIndex = 0;
+
+    const showTab = (index) => {
+      activeIndex = index;
+
+      // Activar pestaña
+      tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+
+      // Cambiar contenido de código
+      codeBody.innerHTML = snippets[fileNames[index]];
+      if (window.gsap && !prefersReducedMotion) {
+        gsap.fromTo(codeBody, { autoAlpha: 0, y: 6 }, { autoAlpha: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+      }
+    };
+
+    // Rotación automática cada 5s (spec → implementación → test).
+    // Se pausa con el ratón encima, fuera de pantalla o con la pestaña oculta.
+    const ROTATE_MS = 5000;
+    let rotateTimer = null;
+    let isHovered = false;
+    let isOnScreen = true;
+
+    const stopRotation = () => {
+      clearInterval(rotateTimer);
+      rotateTimer = null;
+    };
+
+    const startRotation = () => {
+      stopRotation();
+      if (isHovered || !isOnScreen || document.hidden) return;
+      rotateTimer = setInterval(() => showTab((activeIndex + 1) % fileNames.length), ROTATE_MS);
+    };
+
     // Agregar todas las pestañas de forma interactiva
-    Object.keys(snippets).forEach((fileName, index) => {
+    fileNames.forEach((fileName, index) => {
       const tab = document.createElement('div');
       tab.className = `editor-tab ${index === 0 ? 'active' : ''}`;
       tab.style.cursor = 'pointer';
@@ -231,16 +271,24 @@ bootstrap();`,
       tab.textContent = fileName;
 
       tab.addEventListener('click', () => {
-        // Activar pestaña
-        editorHeader.querySelectorAll('.editor-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        // Cambiar contenido de código
-        codeBody.innerHTML = snippets[fileName];
+        showTab(index);
+        startRotation(); // Reiniciar el contador tras un click manual
       });
 
+      tabs.push(tab);
       editorHeader.appendChild(tab);
     });
+
+    codeMockup.addEventListener('mouseenter', () => { isHovered = true; stopRotation(); });
+    codeMockup.addEventListener('mouseleave', () => { isHovered = false; startRotation(); });
+    document.addEventListener('visibilitychange', startRotation);
+
+    new IntersectionObserver(([entry]) => {
+      isOnScreen = entry.isIntersecting;
+      startRotation();
+    }).observe(codeMockup);
+
+    startRotation();
 
     // Agregar estilos CSS para la pestaña activa del editor
     const styleSheet = document.createElement("style");
@@ -450,8 +498,11 @@ bootstrap();`,
 
   /* --------------------------------------------------------------------------
      8. SCROLL REVEAL (FADE-IN ANIMATION)
+     Fallback sin GSAP: si GSAP + ScrollTrigger están cargados, animations.js
+     se encarga del reveal; con movimiento reducido no se oculta nada.
      -------------------------------------------------------------------------- */
-  const revealElements = document.querySelectorAll('.service-card, .tech-card-wrapper, .portfolio-card, .metodologia-card, .ai-card, .developer-profile-card, .contacto-info-card, .contacto-form-card');
+  const gsapReady = !!(window.gsap && window.ScrollTrigger);
+  const revealElements = (gsapReady || prefersReducedMotion) ? [] : document.querySelectorAll('.service-card, .tech-card-wrapper, .portfolio-card, .metodologia-card, .ai-card, .developer-profile-card, .contacto-info-card, .contacto-form-card');
 
   // Agregar clase inicial para la transición CSS
   revealElements.forEach(el => {

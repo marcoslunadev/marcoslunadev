@@ -48,7 +48,18 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20261017222000" />
+  <link rel="stylesheet" href="style.css?v=20261101181000" />
+
+  <!-- GSAP: cargado con defer (no bloquea el render). Si el usuario prefiere
+       movimiento reducido no se oculta nada; si GSAP no llega en 3s se muestra todo. -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('anim-pending');
+      setTimeout(function () { document.documentElement.classList.remove('anim-pending'); }, 3000);
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
 
   <!-- Evitar Flash de unstyled dark mode -->
   <meta name="color-scheme" content="dark" />
@@ -146,6 +157,7 @@
         <a href="#servicios" class="nav-link" data-i18n="nav.servicios">Servicios</a>
         <a href="#tecnologias" class="nav-link" data-i18n="nav.tecnologias">Tecnologías</a>
         <a href="#portafolio" class="nav-link" data-i18n="nav.portafolio">Portafolio</a>
+        <a href="#metodologia" class="nav-link" data-i18n="nav.metodologia">Metodología</a>
         <a href="#equipo" class="nav-link" data-i18n="nav.equipo">Equipo</a>
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="es">ES</button>
@@ -166,16 +178,18 @@
     <div class="hero-bg-overlay"></div>
     <div class="hero-container">
       <div class="hero-content">
-        <div class="tag-pill" data-i18n="hero.tag">Software Architecture &amp; Full Stack Consulting</div>
+        <div class="tag-pill" data-anim data-i18n="hero.tag">Full Stack Engineering · AI-Native · Spec-Driven</div>
         <h1 class="hero-title" data-i18n="hero.title">
           <span class="text-gradient">Código que Impulsa</span><br />
           <span class="text-white">el Futuro</span>
         </h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">
-          En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables y APIs Node/NestJS,
-          potenciando el desarrollo con herramientas de IA y Spec‑Driven Development para asegurar calidad y velocidad.
+          Diseño y construyo productos digitales completos —interfaces, APIs, datos y cloud— con un flujo de ingeniería
+          AI-native guiado por Spec-Driven Development: especificaciones claras, código verificable y entregas rápidas
+          sin sacrificar calidad.
         </p>
-        <div class="hero-actions">
+        <p class="hero-stack" data-anim data-i18n="hero.stack">Frontend · Backend · Datos · Cloud · IA</p>
+        <div class="hero-actions" data-anim>
           <a href="#contacto" class="btn btn-primary flex-btn">
             <span data-i18n="hero.btnStart">Iniciar Proyecto</span>
             <i class="ri-arrow-right-line"></i>
@@ -186,7 +200,7 @@
           </div>
         </div>
 
-        <div class="hero-stats">
+        <div class="hero-stats" data-anim>
           <div class="stat-item">
             <span class="stat-num" data-i18n="hero.stat1Num">20+</span>
             <span class="stat-label" data-i18n="hero.stat1Label">Proyectos Corporativos</span>
@@ -204,7 +218,7 @@
         </div>
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual" data-anim>
         <div class="glow-effect"></div>
         <div class="code-editor-mockup">
           <div class="editor-header">
@@ -213,21 +227,16 @@
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <div class="editor-tab">app.js</div>
+            <div class="editor-tab">spec.md</div>
           </div>
           <div class="editor-body">
-            <pre><code><span class="keyword">const</span> <span class="function">buildFuture</span> = () =&gt; {
-  <span class="keyword">return</span> {
-    <span class="property">technologies</span>: [
-      <span class="string">'Angular'</span>,
-      <span class="string">'React'</span>,
-      <span class="string">'Vue'</span>,
-      <span class="string">'Node'</span>,
-      <span class="string">'Bun'</span>
-    ],
-    <span class="property">quality</span>: <span class="string">'exceptional'</span>
-  };
-};</code></pre>
+            <pre><code><span class="keyword">## Feature:</span> <span class="function">Checkout</span>
+
+<span class="keyword">GIVEN</span> un carrito con stock disponible
+<span class="keyword">WHEN</span>  el cliente confirma el pago
+<span class="keyword">THEN</span>  se crea el pedido <span class="string">→ 201</span>
+ <span class="keyword">AND</span>  se emite <span class="property">OrderCreated</span>
+ <span class="keyword">AND</span>  el stock se reserva</code></pre>
           </div>
         </div>
       </div>
@@ -242,10 +251,11 @@
     <div class="container">
       <div class="section-header">
         <div class="tag-pill" data-i18n="servicios.tag">&lt; Nuestros Servicios /&gt;</div>
-        <h2 class="section-title" data-i18n="servicios.title">Soluciones <span
-            class="text-gradient">Profesionales</span></h2>
+        <h2 class="section-title" data-i18n="servicios.title">Ingeniería <span
+            class="text-gradient">End-to-End</span></h2>
         <p class="section-subtitle" data-i18n="servicios.subtitle">
-          Ofrecemos servicios integrales de desarrollo web que cubren todas las necesidades de tu proyecto digital.
+          Del frontend al backend, de los datos a la nube: un único interlocutor técnico para todo el ciclo de vida de
+          tu producto.
         </p>
       </div>
 
@@ -253,17 +263,15 @@
         <!-- Card 1 -->
         <div class="service-card glassmorphism">
           <div class="service-icon icon-cyan">
-            <i class="ri-code-s-slash-line"></i>
+            <i class="ri-stack-line"></i>
           </div>
-          <h3 class="service-card-title" data-i18n="servicios.card1.title">Desarrollo Frontend</h3>
-          <p class="service-card-text" data-i18n="servicios.card1.desc">Interfaces modernas y responsivas con las
-            últimas tecnologías.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card1.title">Producto Full Stack</h3>
+          <p class="service-card-text" data-i18n="servicios.card1.desc">Aplicaciones web completas, de la interfaz a la base de datos, listas para escalar.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li1">Single Page Applications</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li2">Progressive Web Apps</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li3">Diseño Responsivo</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li4">Optimización de Rendimiento</span>
-            </li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li1">Angular · React · Next.js</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li2">MVPs y plataformas SaaS</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li3">Paneles y herramientas internas</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card1.li4">Rendimiento y Core Web Vitals</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -273,15 +281,13 @@
           <div class="service-icon icon-emerald">
             <i class="ri-server-line"></i>
           </div>
-          <h3 class="service-card-title" data-i18n="servicios.card2.title">Desarrollo Backend</h3>
-          <p class="service-card-text" data-i18n="servicios.card2.desc">APIs robustas y escalables con Node.js y NestJS
-            para tu negocio.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card2.title">Backend &amp; APIs</h3>
+          <p class="service-card-text" data-i18n="servicios.card2.desc">Servicios robustos con Node.js/NestJS, Java/Spring Boot y Python.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li1">Node.js & NestJS</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li2">RESTful APIs / GraphQL</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li3">Microservicios</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li4">Bases de Datos Relacionales y
-                NoSQL</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li1">REST / GraphQL</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li2">Microservicios y eventos</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li3">SQL y NoSQL</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card2.li4">Seguridad y autenticación</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -289,16 +295,15 @@
         <!-- Card 3 -->
         <div class="service-card glassmorphism">
           <div class="service-icon icon-cyan">
-            <i class="ri-cloud-line"></i>
+            <i class="ri-brain-line"></i>
           </div>
-          <h3 class="service-card-title" data-i18n="servicios.card3.title">Cloud & DevOps</h3>
-          <p class="service-card-text" data-i18n="servicios.card3.desc">Infraestructura en la nube y automatización de
-            procesos.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card3.title">Ingeniería con IA</h3>
+          <p class="service-card-text" data-i18n="servicios.card3.desc">Integro LLMs en tu producto y en la forma en que tu equipo desarrolla.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li1">CI/CD Integrado</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li2">Contenedores Docker</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li3">Orquestación Kubernetes</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li4">AWS / Azure / GCP</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li1">Integración de LLMs (Claude, OpenAI, Gemini)</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li2">RAG y búsqueda semántica</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li3">Agentes y automatización de procesos</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card3.li4">Workflows de desarrollo AI-native</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -306,16 +311,15 @@
         <!-- Card 4 -->
         <div class="service-card glassmorphism">
           <div class="service-icon icon-emerald">
-            <i class="ri-palette-line"></i>
+            <i class="ri-cloud-line"></i>
           </div>
-          <h3 class="service-card-title" data-i18n="servicios.card4.title">UI/UX Design</h3>
-          <p class="service-card-text" data-i18n="servicios.card4.desc">Diseños centrados en el usuario y la experiencia
-            de navegación.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card4.title">Cloud &amp; DevOps</h3>
+          <p class="service-card-text" data-i18n="servicios.card4.desc">Infraestructura en la nube, automatización y despliegues sin fricción.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li1">Prototipado Interactivo</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li2">Sistemas de Diseño</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li3">Investigación de Usuarios</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li4">Fidelidad de Wireframes</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li1">CI/CD integrado</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li2">Docker &amp; Kubernetes</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li3">AWS / Azure / GCP</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card4.li4">Edge &amp; Serverless</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -323,16 +327,15 @@
         <!-- Card 5 -->
         <div class="service-card glassmorphism">
           <div class="service-icon icon-cyan">
-            <i class="ri-line-chart-line"></i>
+            <i class="ri-node-tree"></i>
           </div>
-          <h3 class="service-card-title" data-i18n="servicios.card5.title">Consultoría Tech</h3>
-          <p class="service-card-text" data-i18n="servicios.card5.desc">Asesoramiento estratégico para optimizar tu
-            proyecto tecnológico.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card5.title">Arquitectura &amp; Modernización</h3>
+          <p class="service-card-text" data-i18n="servicios.card5.desc">Sistemas que escalan y evolución ordenada de plataformas legacy.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li1">Arquitectura de Software</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li2">Revisiones de Código</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li3">Auditorías Técnicas</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li4">Mentoring a Equipos</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li1">Arquitectura Hexagonal / Clean</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li2">Event-Driven Architectures</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li3">Micro-frontends</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card5.li4">Migración de sistemas legacy</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -340,18 +343,15 @@
         <!-- Card 6 -->
         <div class="service-card glassmorphism">
           <div class="service-icon icon-emerald">
-            <i class="ri-database-2-line"></i>
+            <i class="ri-compass-3-line"></i>
           </div>
-          <h3 class="service-card-title" data-i18n="servicios.card6.title">Arquitectura & APIs</h3>
-          <p class="service-card-text" data-i18n="servicios.card6.desc">Diseño de sistemas escalables y APIs de alto
-            rendimiento.</p>
+          <h3 class="service-card-title" data-i18n="servicios.card6.title">Consultoría &amp; Liderazgo Técnico</h3>
+          <p class="service-card-text" data-i18n="servicios.card6.desc">Acompaño a equipos a adoptar Spec-Driven Development e IA con criterio.</p>
           <ul class="service-list">
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li1">Diseño Limpio de APIs</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li2">Arquitectura Hexagonal</span></li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li3">Event-Driven Architectures</span>
-            </li>
-            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li4">Optimización de Consultas SQL</span>
-            </li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li1">Adopción de SDD</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li2">Auditorías y code review</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li3">Mentoring de equipos</span></li>
+            <li><i class="ri-check-line"></i><span data-i18n="servicios.card6.li4">Estrategia y roadmap técnico</span></li>
           </ul>
           <div class="card-bg-gradient"></div>
         </div>
@@ -368,86 +368,11 @@
         <h2 class="section-title" data-i18n="tecnologias.title">Nuestras <span
             class="text-gradient">Especialidades</span></h2>
         <p class="section-subtitle" data-i18n="tecnologias.subtitle">
-          Dominamos las tecnologías más demandadas del mercado para crear soluciones de vanguardia.
+          Un stack completo y probado en producción: frontend, backend, datos y cloud.
         </p>
       </div>
 
       <div class="tech-grid">
-        <!-- Angular -->
-        <div class="tech-card-wrapper border-red">
-          <div class="tech-card">
-            <div class="tech-card-header">
-              <div class="tech-icon-bg bg-red">
-                <i class="ri-angularjs-line"></i>
-              </div>
-              <span class="badge badge-red">Expert</span>
-            </div>
-            <h3 class="tech-title" data-i18n="tecnologias.angular.title">Angular</h3>
-            <p class="tech-desc" data-i18n="tecnologias.angular.desc">Framework robusto para aplicaciones empresariales
-              escalables.</p>
-            <div class="tech-tags">
-              <span><span class="dot-indicator bg-red"></span><span
-                  data-i18n="tecnologias.angular.tag1">TypeScript</span></span>
-              <span><span class="dot-indicator bg-red"></span><span
-                  data-i18n="tecnologias.angular.tag2">RxJS</span></span>
-              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag3">Inyección de
-                  Dependencias</span></span>
-              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag4">CLI
-                  Potente</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- React -->
-        <div class="tech-card-wrapper border-cyan">
-          <div class="tech-card">
-            <div class="tech-card-header">
-              <div class="tech-icon-bg bg-cyan">
-                <i class="ri-reactjs-line"></i>
-              </div>
-              <span class="badge badge-cyan">Expert</span>
-            </div>
-            <h3 class="tech-title" data-i18n="tecnologias.react.title">React</h3>
-            <p class="tech-desc" data-i18n="tecnologias.react.desc">Biblioteca flexible para interfaces de usuario
-              altamente dinámicas.</p>
-            <div class="tech-tags">
-              <span><span class="dot-indicator bg-cyan"></span><span
-                  data-i18n="tecnologias.react.tag1">Hooks</span></span>
-              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag2">Virtual
-                  DOM</span></span>
-              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag3">Basado en
-                  Componentes</span></span>
-              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag4">Ecosistema
-                  Amplio</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Next.js -->
-        <div class="tech-card-wrapper border-gray">
-          <div class="tech-card">
-            <div class="tech-card-header">
-              <div class="tech-icon-bg bg-gray">
-                <i class="ri-nextjs-line"></i>
-              </div>
-              <span class="badge badge-gray">Expert</span>
-            </div>
-            <h3 class="tech-title" data-i18n="tecnologias.next.title">Next.js</h3>
-            <p class="tech-desc" data-i18n="tecnologias.next.desc">Framework React con renderizado en el servidor y
-              estático optimizado.</p>
-            <div class="tech-tags">
-              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag1">SSR /
-                  SSG</span></span>
-              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag2">Rutas de
-                  API</span></span>
-              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag3">Optimización de
-                  Imágenes</span></span>
-              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag4">División de
-                  Código</span></span>
-            </div>
-          </div>
-        </div>
-
         <!-- Node.js -->
         <div class="tech-card-wrapper border-green">
           <div class="tech-card">
@@ -522,6 +447,81 @@
             </div>
           </div>
         </div>
+
+        <!-- Angular -->
+        <div class="tech-card-wrapper border-red">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-red">
+                <i class="ri-angularjs-line"></i>
+              </div>
+              <span class="badge badge-red">Expert</span>
+            </div>
+            <h3 class="tech-title" data-i18n="tecnologias.angular.title">Angular</h3>
+            <p class="tech-desc" data-i18n="tecnologias.angular.desc">Framework robusto para aplicaciones empresariales
+              escalables.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-red"></span><span
+                  data-i18n="tecnologias.angular.tag1">TypeScript</span></span>
+              <span><span class="dot-indicator bg-red"></span><span
+                  data-i18n="tecnologias.angular.tag2">RxJS</span></span>
+              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag3">Inyección de
+                  Dependencias</span></span>
+              <span><span class="dot-indicator bg-red"></span><span data-i18n="tecnologias.angular.tag4">CLI
+                  Potente</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- React -->
+        <div class="tech-card-wrapper border-cyan">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-cyan">
+                <i class="ri-reactjs-line"></i>
+              </div>
+              <span class="badge badge-cyan">Expert</span>
+            </div>
+            <h3 class="tech-title" data-i18n="tecnologias.react.title">React</h3>
+            <p class="tech-desc" data-i18n="tecnologias.react.desc">Biblioteca flexible para interfaces de usuario
+              altamente dinámicas.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-cyan"></span><span
+                  data-i18n="tecnologias.react.tag1">Hooks</span></span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag2">Virtual
+                  DOM</span></span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag3">Basado en
+                  Componentes</span></span>
+              <span><span class="dot-indicator bg-cyan"></span><span data-i18n="tecnologias.react.tag4">Ecosistema
+                  Amplio</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next.js -->
+        <div class="tech-card-wrapper border-gray">
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <div class="tech-icon-bg bg-gray">
+                <i class="ri-nextjs-line"></i>
+              </div>
+              <span class="badge badge-gray">Expert</span>
+            </div>
+            <h3 class="tech-title" data-i18n="tecnologias.next.title">Next.js</h3>
+            <p class="tech-desc" data-i18n="tecnologias.next.desc">Framework React con renderizado en el servidor y
+              estático optimizado.</p>
+            <div class="tech-tags">
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag1">SSR /
+                  SSG</span></span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag2">Rutas de
+                  API</span></span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag3">Optimización de
+                  Imágenes</span></span>
+              <span><span class="dot-indicator bg-gray"></span><span data-i18n="tecnologias.next.tag4">División de
+                  Código</span></span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="tech-secondary">
@@ -529,12 +529,17 @@
         <div class="secondary-badges">
           <span class="sec-badge">TypeScript</span>
           <span class="sec-badge">GraphQL</span>
-          <span class="sec-badge">MongoDB</span>
           <span class="sec-badge">PostgreSQL</span>
+          <span class="sec-badge">MongoDB</span>
           <span class="sec-badge">Docker</span>
+          <span class="sec-badge">Kubernetes</span>
           <span class="sec-badge">AWS</span>
-          <span class="sec-badge">Tailwind CSS</span>
+          <span class="sec-badge">Azure</span>
+          <span class="sec-badge">GCP</span>
+          <span class="sec-badge">Cloudflare Workers</span>
+          <span class="sec-badge">Bun</span>
           <span class="sec-badge">Vite</span>
+          <span class="sec-badge">Tailwind CSS</span>
         </div>
       </div>
 
@@ -770,19 +775,21 @@
         <h2 class="section-title" data-i18n="portfolio.title">Proyectos <span class="text-gradient">Corporativos</span>
         </h2>
         <p class="section-subtitle" data-i18n="portfolio.subtitle">
-          Soluciones empresariales desarrolladas para diferentes sectores industriales y corporativos.
+          Soluciones end-to-end para energía, retail, banca, transporte y sector académico.
         </p>
 
         <div class="portfolio-filters" id="portfolio-filters">
           <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filterAll">Todos</button>
-          <button class="filter-btn" data-filter="react" data-i18n="portfolio.filterReact">React</button>
-          <button class="filter-btn" data-filter="angular" data-i18n="portfolio.filterAngular">Angular</button>
+          <button class="filter-btn" data-filter="fullstack" data-i18n="portfolio.filterFullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="ai" data-i18n="portfolio.filterAi">IA Aplicada</button>
+          <button class="filter-btn" data-filter="architecture"
+            data-i18n="portfolio.filterArchitecture">Arquitectura</button>
         </div>
       </div>
 
       <div class="portfolio-grid" id="portfolio-grid">
-        <!-- Proyecto 1 (React) -->
-        <div class="portfolio-card" data-category="react">
+        <!-- Proyecto 1 -->
+        <div class="portfolio-card" data-category="architecture">
           <div class="card-image-wrapper">
             <img src="assets/project1.jpg" alt="Gestión de Renovación de Tuberías" class="portfolio-image" />
             <div class="card-overlay"></div>
@@ -808,8 +815,8 @@
           </div>
         </div>
 
-        <!-- Proyecto 2 (Angular) -->
-        <div class="portfolio-card" data-category="angular">
+        <!-- Proyecto 2 -->
+        <div class="portfolio-card" data-category="architecture">
           <div class="card-image-wrapper">
             <img src="assets/project2.jpg" alt="Planificación de Anaqueles" class="portfolio-image" />
             <div class="card-overlay"></div>
@@ -834,8 +841,8 @@
           </div>
         </div>
 
-        <!-- Proyecto 3 (Angular) -->
-        <div class="portfolio-card" data-category="angular">
+        <!-- Proyecto 3 -->
+        <div class="portfolio-card" data-category="fullstack,ai">
           <div class="card-image-wrapper">
             <img src="assets/project3.jpg" alt="Mantenimiento Predictivo de Redes" class="portfolio-image" />
             <div class="card-overlay"></div>
@@ -860,8 +867,8 @@
           </div>
         </div>
 
-        <!-- Proyecto 4 (React) -->
-        <div class="portfolio-card" data-category="react">
+        <!-- Proyecto 4 -->
+        <div class="portfolio-card" data-category="fullstack,ai">
           <div class="card-image-wrapper">
             <img src="assets/project4.jpg" alt="Gobierno de Consultas Lingüísticas IA" class="portfolio-image" />
             <div class="card-overlay"></div>
@@ -887,8 +894,8 @@
           </div>
         </div>
 
-        <!-- Proyecto 5 (React) -->
-        <div class="portfolio-card" data-category="react">
+        <!-- Proyecto 5 -->
+        <div class="portfolio-card" data-category="fullstack">
           <div class="card-image-wrapper">
             <img src="assets/project5.jpg" alt="Gestión de Siniestros y Flotas" class="portfolio-image" />
             <div class="card-overlay"></div>
@@ -913,8 +920,8 @@
           </div>
         </div>
 
-        <!-- Proyecto 6 (Angular) -->
-        <div class="portfolio-card" data-category="angular">
+        <!-- Proyecto 6 -->
+        <div class="portfolio-card" data-category="architecture,ai">
           <div class="card-image-wrapper">
             <img src="assets/project6.jpg" alt="Suite Bancaria & Prevención de Riesgo" class="portfolio-image" />
             <div class="card-overlay"></div>
@@ -948,60 +955,71 @@
     <div class="metodologia-glow"></div>
     <div class="container">
       <div class="section-header">
-        <div class="tag-pill tag-emerald" data-i18n="comoTrabajo.tag">&lt; Metodología /&gt;</div>
-        <h2 class="section-title" data-i18n="comoTrabajo.title">Cómo <span class="text-gradient">Trabajo</span></h2>
+        <div class="tag-pill tag-emerald" data-i18n="comoTrabajo.tag">&lt; Cómo trabajo · SDD + IA /&gt;</div>
+        <h2 class="section-title" data-i18n="comoTrabajo.title">Spec-Driven <span
+            class="text-gradient">Development</span></h2>
         <p class="section-subtitle" data-i18n="comoTrabajo.subtitle">
-          Un proceso estructurado para garantizar el éxito y la calidad de principio a fin.
+          La especificación es la fuente de verdad. La IA acelera la construcción; las specs, los tests y la revisión
+          humana garantizan la calidad.
         </p>
       </div>
+
+      <div class="metodologia-progress" aria-hidden="true"><span class="metodologia-progress-bar"></span></div>
 
       <div class="metodologia-grid">
         <!-- Step 1 -->
         <div class="metodologia-card glassmorphism">
           <div class="metodologia-step-num">01</div>
-          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step1.title">1. Discovery</h3>
+          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step1.title">Discovery</h3>
           <p class="metodologia-card-text" data-i18n="comoTrabajo.step1.desc">
-            Reuniones iniciales para entender a fondo tus necesidades, objetivos de negocio y limitaciones técnicas.
+            Entender el negocio, los usuarios y las restricciones técnicas antes de escribir una sola línea de código.
           </p>
         </div>
 
         <!-- Step 2 -->
         <div class="metodologia-card glassmorphism">
           <div class="metodologia-step-num">02</div>
-          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step2.title">2. Propuesta Técnica</h3>
+          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step2.title">Especificación</h3>
           <p class="metodologia-card-text" data-i18n="comoTrabajo.step2.desc">
-            Definición detallada de la arquitectura, stack tecnológico, roadmap de entrega y estimación de costes.
+            Requisitos, contratos de API y criterios de aceptación versionados junto al código como fuente única de verdad.
           </p>
         </div>
 
         <!-- Step 3 -->
         <div class="metodologia-card glassmorphism">
           <div class="metodologia-step-num">03</div>
-          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step3.title">3. Desarrollo</h3>
+          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step3.title">Diseño técnico</h3>
           <p class="metodologia-card-text" data-i18n="comoTrabajo.step3.desc">
-            Construcción del producto con código limpio y estructurado, aplicando tests automatizados y CI/CD.
+            Arquitectura, modelo de datos y plan de entrega trazables a cada punto de la especificación.
           </p>
         </div>
 
         <!-- Step 4 -->
         <div class="metodologia-card glassmorphism">
           <div class="metodologia-step-num">04</div>
-          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step4.title">4. Entrega</h3>
+          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step4.title">Implementación AI-native</h3>
           <p class="metodologia-card-text" data-i18n="comoTrabajo.step4.desc">
-            Puesta en producción de manera segura en la nube (AWS/GCP/Azure) con validación y optimización SEO/Web
-            Vitals.
+            Agentes y copilotos construyen sobre las specs; tests automáticos y revisión humana validan cada cambio.
           </p>
         </div>
 
         <!-- Step 5 -->
         <div class="metodologia-card glassmorphism">
           <div class="metodologia-step-num">05</div>
-          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step5.title">5. Soporte</h3>
+          <h3 class="metodologia-card-title" data-i18n="comoTrabajo.step5.title">Entrega y evolución</h3>
           <p class="metodologia-card-text" data-i18n="comoTrabajo.step5.desc">
-            Acompañamiento post-lanzamiento, monitorización de errores en producción y evolución del sistema.
+            CI/CD, despliegue en cloud, observabilidad y mejora continua sobre la misma especificación.
           </p>
         </div>
       </div>
+
+      <ul class="metodologia-principles">
+        <li><i class="ri-file-list-3-line"></i><span data-i18n="comoTrabajo.principle1">Specs versionadas junto al
+            código</span></li>
+        <li><i class="ri-git-pull-request-line"></i><span data-i18n="comoTrabajo.principle2">Human-in-the-loop en cada
+            PR</span></li>
+        <li><i class="ri-shield-check-line"></i><span data-i18n="comoTrabajo.principle3">Tests como contrato</span></li>
+      </ul>
     </div>
   </section>
 
@@ -1186,13 +1204,14 @@
               <label for="service" class="form-label" data-i18n="contacto.formService">Servicio de interés *</label>
               <select id="service" name="service" required class="form-select">
                 <option value="" data-i18n="contacto.formServiceSelect">Selecciona un servicio</option>
-                <option value="frontend" data-i18n="contacto.formServiceFrontend">Desarrollo Frontend</option>
-                <option value="backend" data-i18n="contacto.formServiceBackend">Desarrollo Backend (Node.js / NestJS)
-                </option>
-                <option value="cloud" data-i18n="contacto.formServiceCloud">Cloud & DevOps</option>
-                <option value="design" data-i18n="contacto.formServiceDesign">UI/UX Design</option>
-                <option value="apis" data-i18n="contacto.formServiceApis">Arquitectura & APIs</option>
-                <option value="consulting" data-i18n="contacto.formServiceConsulting">Consultoría Tech</option>
+                <option value="fullstack" data-i18n="contacto.formServiceFullstack">Producto Full Stack</option>
+                <option value="backend" data-i18n="contacto.formServiceBackend">Backend &amp; APIs</option>
+                <option value="ai" data-i18n="contacto.formServiceAi">Ingeniería con IA</option>
+                <option value="cloud" data-i18n="contacto.formServiceCloud">Cloud &amp; DevOps</option>
+                <option value="architecture" data-i18n="contacto.formServiceArchitecture">Arquitectura &amp;
+                  Modernización</option>
+                <option value="consulting" data-i18n="contacto.formServiceConsulting">Consultoría &amp; Liderazgo
+                  Técnico</option>
               </select>
             </div>
 
@@ -1240,7 +1259,8 @@
             <img src="assets/logo-horizontal-oscuro.png" alt="MarcosLunaDev" class="footer-logo-img" />
           </div>
           <p class="footer-desc" data-i18n="footer.brandDesc">
-            Código que Impulsa el Futuro. Transformamos ideas en experiencias digitales excepcionales.
+            Ingeniería de software full stack, del frontend a la nube. Apalancada en desarrollo AI-native y
+            Spec-Driven Development.
           </p>
           <!-- <div class="footer-socials">
               <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
@@ -1263,10 +1283,10 @@
         <div class="footer-links">
           <h4 class="footer-title" data-i18n="footer.services">Servicios</h4>
           <ul>
-            <li><a href="#servicios" data-i18n="servicios.card1.title">Frontend</a></li>
-            <li><a href="#servicios" data-i18n="servicios.card2.title">Backend</a></li>
-            <li><a href="#servicios" data-i18n="servicios.card3.title">DevOps</a></li>
-            <li><a href="#servicios" data-i18n="servicios.card6.title">Arquitectura</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card1.title">Producto Full Stack</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card2.title">Backend &amp; APIs</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card3.title">Ingeniería con IA</a></li>
+            <li><a href="#servicios" data-i18n="servicios.card5.title">Arquitectura &amp; Modernización</a></li>
           </ul>
         </div>
       </div>
@@ -1281,8 +1301,9 @@
     </div>
   </footer>
 
-  <script src="translations.js?v=20261017222000"></script>
-  <script src="app.js?v=20261017222000"></script>
+  <script src="translations.js?v=20261101181000"></script>
+  <script src="app.js?v=20261101181000"></script>
+  <script src="animations.js?v=20261101181000" defer></script>
 </body>
 
 </html>

@@ -16,13 +16,15 @@ const translations = {
       servicios: "Servicios",
       tecnologias: "Tecnologías",
       portafolio: "Portafolio",
+      metodologia: "Metodología",
       equipo: "Perfil profesional",
       contacto: "Contacto"
     },
     hero: {
-      tag: "Software Architecture & Full Stack Consulting",
+      tag: "Full Stack Engineering · AI-Native · Spec-Driven",
       title: '<span class="text-gradient">Código que Impulsa</span><br /><span class="text-white">el Futuro</span>',
-      subtitle: "En MarcosLunaDev ayudamos a empresas a construir frontends Angular/React escalables y APIs Node/NestJS, potenciando el desarrollo con herramientas de IA y Spec‑Driven Development para asegurar calidad y velocidad.",
+      subtitle: "Diseño y construyo productos digitales completos —interfaces, APIs, datos y cloud— con un flujo de ingeniería AI-native guiado por Spec-Driven Development: especificaciones claras, código verificable y entregas rápidas sin sacrificar calidad.",
+      stack: "Frontend · Backend · Datos · Cloud · IA",
       btnStart: "Iniciar Proyecto",
       btnPortfolio: "Ver Portafolio",
       promise: "⚡ Respuesta en 48-72h",
@@ -35,61 +37,61 @@ const translations = {
     },
     servicios: {
       tag: "&lt; Servicios de MarcosLunaDev /&gt;",
-      title: 'Soluciones <span class="text-gradient">Profesionales</span>',
-      subtitle: "Ofrecemos servicios integrales de desarrollo web que cubren todas las necesidades de tu proyecto digital.",
+      title: 'Ingeniería <span class="text-gradient">End-to-End</span>',
+      subtitle: "Del frontend al backend, de los datos a la nube: un único interlocutor técnico para todo el ciclo de vida de tu producto.",
       card1: {
-        title: "Desarrollo Frontend Angular & React",
-        desc: "Interfaces modernas y responsivas con las últimas tecnologías.",
-        li1: "Single Page Applications",
-        li2: "Progressive Web Apps",
-        li3: "Diseño Responsivo",
-        li4: "Optimización de Rendimiento"
+        title: "Producto Full Stack",
+        desc: "Aplicaciones web completas, de la interfaz a la base de datos, listas para escalar.",
+        li1: "Angular · React · Next.js",
+        li2: "MVPs y plataformas SaaS",
+        li3: "Paneles y herramientas internas",
+        li4: "Rendimiento y Core Web Vitals"
       },
       card2: {
-        title: "Desarrollo Node/NestJS para Productos Corporativos",
-        desc: "APIs robustas y escalables con Node.js y NestJS para tu negocio.",
-        li1: "Node.js & NestJS",
-        li2: "RESTful APIs / GraphQL",
-        li3: "Microservicios",
-        li4: "Bases de Datos Relacionales y NoSQL"
+        title: "Backend & APIs",
+        desc: "Servicios robustos con Node.js/NestJS, Java/Spring Boot y Python.",
+        li1: "REST / GraphQL",
+        li2: "Microservicios y eventos",
+        li3: "SQL y NoSQL",
+        li4: "Seguridad y autenticación"
       },
       card3: {
-        title: "Cloud & DevOps",
-        desc: "Infraestructura en la nube y automatización de procesos.",
-        li1: "CI/CD Integrado",
-        li2: "Contenedores Docker",
-        li3: "Orquestación Kubernetes",
-        li4: "AWS / Azure / GCP"
+        title: "Ingeniería con IA",
+        desc: "Integro LLMs en tu producto y en la forma en que tu equipo desarrolla.",
+        li1: "Integración de LLMs (Claude, OpenAI, Gemini)",
+        li2: "RAG y búsqueda semántica",
+        li3: "Agentes y automatización de procesos",
+        li4: "Workflows de desarrollo AI-native"
       },
       card4: {
-        title: "UI/UX Design",
-        desc: "Diseños centrados en el usuario y la experiencia de navegación.",
-        li1: "Prototipado Interactivo",
-        li2: "Sistemas de Diseño",
-        li3: "Investigación de Usuarios",
-        li4: "Fidelidad de Wireframes"
+        title: "Cloud & DevOps",
+        desc: "Infraestructura en la nube, automatización y despliegues sin fricción.",
+        li1: "CI/CD integrado",
+        li2: "Docker & Kubernetes",
+        li3: "AWS / Azure / GCP",
+        li4: "Edge & Serverless"
       },
       card5: {
-        title: "Consultoría Angular & Arquitectura Frontend",
-        desc: "Asesoramiento estratégico para optimizar tu proyecto tecnológico.",
-        li1: "Arquitectura de Software",
-        li2: "Revisiones de Código",
-        li3: "Auditorías Técnicas",
-        li4: "Mentoring a Equipos"
+        title: "Arquitectura & Modernización",
+        desc: "Sistemas que escalan y evolución ordenada de plataformas legacy.",
+        li1: "Arquitectura Hexagonal / Clean",
+        li2: "Event-Driven Architectures",
+        li3: "Micro-frontends",
+        li4: "Migración de sistemas legacy"
       },
       card6: {
-        title: "Arquitectura & APIs",
-        desc: "Diseño de sistemas escalables y APIs de alto rendimiento.",
-        li1: "Diseño Limpio de APIs",
-        li2: "Arquitectura Hexagonal",
-        li3: "Event-Driven Architectures",
-        li4: "Optimización de Consultas SQL"
+        title: "Consultoría & Liderazgo Técnico",
+        desc: "Acompaño a equipos a adoptar Spec-Driven Development e IA con criterio.",
+        li1: "Adopción de SDD",
+        li2: "Auditorías y code review",
+        li3: "Mentoring de equipos",
+        li4: "Estrategia y roadmap técnico"
       }
     },
     tecnologias: {
       tag: "&lt; Stack Tecnológico /&gt;",
       title: 'Especialidades <span class="text-gradient">Técnicas</span>',
-      subtitle: "Dominamos las tecnologías más demandadas del mercado para crear soluciones de vanguardia.",
+      subtitle: "Un stack completo y probado en producción: frontend, backend, datos y cloud.",
       angular: {
         title: "Angular",
         desc: "Framework robusto para aplicaciones empresariales escalables.",
@@ -147,6 +149,9 @@ const translations = {
       aiFilterLocal: "Inferencia Local",
       aiFilterCloud: "Modelos Cloud",
       aiFilterAgent: "Agentes & APIs",
+      aiDragHint: "Arrastra para explorar",
+      aiPrev: "Anterior",
+      aiNext: "Siguiente",
       aiList: {
         cursor: "Entorno de desarrollo principal optimizado para edición de código contextual multi-archivo en tiempo real y refactorización guiada.",
         opencode: "Automatización de tareas repetitivas en terminal y flujos de empaquetado optimizados con scripts locales.",
@@ -163,37 +168,41 @@ const translations = {
       }
     },
     comoTrabajo: {
-      tag: "&lt; Metodología /&gt;",
-      title: 'Cómo <span class="text-gradient">Trabajo</span>',
-      subtitle: "Un proceso estructurado para garantizar el éxito y la calidad de principio a fin.",
+      tag: "&lt; Cómo trabajo · SDD + IA /&gt;",
+      title: 'Spec-Driven <span class="text-gradient">Development</span>',
+      subtitle: "La especificación es la fuente de verdad. La IA acelera la construcción; las specs, los tests y la revisión humana garantizan la calidad.",
       step1: {
-        title: "1. Discovery",
-        desc: "Reuniones iniciales para entender a fondo tus necesidades, objetivos de negocio y limitaciones técnicas."
+        title: "Discovery",
+        desc: "Entender el negocio, los usuarios y las restricciones técnicas antes de escribir una sola línea de código."
       },
       step2: {
-        title: "2. Propuesta Técnica",
-        desc: "Definición detallada de la arquitectura, stack tecnológico, roadmap de entrega y estimación de costes."
+        title: "Especificación",
+        desc: "Requisitos, contratos de API y criterios de aceptación versionados junto al código como fuente única de verdad."
       },
       step3: {
-        title: "3. Desarrollo asistido por IA",
-        desc: "Desarrollo acelerado por IA y validado bajo Spec-Driven Development. Garantiza código robusto, alineado con las especificaciones y libre de regresiones."
+        title: "Diseño técnico",
+        desc: "Arquitectura, modelo de datos y plan de entrega trazables a cada punto de la especificación."
       },
       step4: {
-        title: "4. Entrega",
-        desc: "Puesta en producción de manera segura en la nube (AWS/GCP/Azure) con validación y optimización SEO/Web Vitals."
+        title: "Implementación AI-native",
+        desc: "Agentes y copilotos construyen sobre las specs; tests automáticos y revisión humana validan cada cambio."
       },
       step5: {
-        title: "5. Soporte",
-        desc: "Acompañamiento post-lanzamiento, monitorización de errores en producción y evolución del sistema."
-      }
+        title: "Entrega y evolución",
+        desc: "CI/CD, despliegue en cloud, observabilidad y mejora continua sobre la misma especificación."
+      },
+      principle1: "Specs versionadas junto al código",
+      principle2: "Human-in-the-loop en cada PR",
+      principle3: "Tests como contrato"
     },
     portfolio: {
       tag: "&lt; Casos de Éxito /&gt;",
       title: 'Proyectos <span class="text-gradient">Corporativos</span>',
-      subtitle: "Soluciones empresariales desarrolladas para diferentes sectores industriales y corporativos.",
+      subtitle: "Soluciones end-to-end para energía, retail, banca, transporte y sector académico.",
       filterAll: "Todos",
-      filterReact: "React",
-      filterAngular: "Angular",
+      filterFullstack: "Full Stack",
+      filterAi: "IA Aplicada",
+      filterArchitecture: "Arquitectura",
       project1: {
         title: "Gestión de Renovación de Tuberías",
         desc: "<b>Complejidad:</b> Planificación ineficiente y manual de obras críticas en red de gas. <br /><b>Rol:</b> Frontend Lead & Architect. <br /><b>Solución:</b> Reconstrucción del core frontend y sincronización offline. <br /><b>Impacto:</b> Reducción del 25% en tiempos de ejecución de obras y digitalización de 500+ km de red.",
@@ -237,7 +246,7 @@ const translations = {
       subtitle: "Un profesional comprometido con la excelencia técnica y la innovación digital.",
       role: "&lt; Founder &amp; Lead Consultant /&gt;",
       bio: "Arquitecto de Software, Líder Técnico y Desarrollador Full Stack con más de <b>15 años de experiencia</b> entregando soluciones escalables de extremo a extremo, diseñando arquitecturas técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
-      bioExtra: "Con una formación de base única que combina Ciencias y Artes Navales, Electrónica y Telecomunicaciones y Administración de Sistemas Informáticos, inicialmente orientada a infraestructuras y seguridad de sistemas, he evolucionado y me he adaptado hacia la programación y el desarrollo web moderno. Hoy me especializo en conectar infraestructuras robustas, seguridad de sistemas y el stack de desarrollo web contemporáneo, optimizado mediante desarrollo asistido por IA y metodologías de Spec‑Driven Development (desarrollo guiado por especificaciones)."
+      bioExtra: "Con una formación de base única que combina Ciencias y Artes Navales, Electrónica y Telecomunicaciones y Administración de Sistemas Informáticos, inicialmente orientada a infraestructuras y seguridad de sistemas, he evolucionado y me he adaptado hacia la programación y el desarrollo web moderno. Hoy diseño y construyo productos completos —de la infraestructura y la seguridad hasta la interfaz—, apalancado en desarrollo AI-native y Spec‑Driven Development (desarrollo guiado por especificaciones)."
     },
     contacto: {
       tag: "&lt; Hablemos /&gt;",
@@ -258,8 +267,16 @@ const translations = {
       placeholderPhone: "+34 600 000 000",
       formCompany: "Empresa / Organización",
       placeholderCompany: "Tu empresa o proyecto",
+      formService: "Servicio de interés *",
+      formServiceSelect: "Selecciona un servicio",
+      formServiceFullstack: "Producto Full Stack",
+      formServiceBackend: "Backend & APIs",
+      formServiceAi: "Ingeniería con IA",
+      formServiceCloud: "Cloud & DevOps",
+      formServiceArchitecture: "Arquitectura & Modernización",
+      formServiceConsulting: "Consultoría & Liderazgo Técnico",
       formMessage: "Mensaje *",
-      placeholderMessage: "Ej: Necesitamos construir un frontend en Angular escalable y robusto...",
+      placeholderMessage: "Ej: Necesitamos una plataforma web con API, panel de gestión e integración con IA...",
       charLabel: "caracteres",
       formSubmit: "Enviar Mensaje",
       formSubmitting: "Enviando...",
@@ -270,7 +287,7 @@ const translations = {
       privacyAcceptLabel: "He leído y acepto la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a> *"
     },
     footer: {
-      brandDesc: "Desarrollo de software y arquitectura web de alto rendimiento. Apalancados en desarrollo asistido por IA y Spec-Driven Development.",
+      brandDesc: "Ingeniería de software full stack, del frontend a la nube. Apalancada en desarrollo AI-native y Spec-Driven Development.",
       quickLinks: "Enlaces Rápidos",
       services: "Servicios",
       copyright: "&copy; 2026 MarcosLunaDev. Todos los derechos reservados.",
@@ -360,13 +377,15 @@ const translations = {
       servicios: "Services",
       tecnologias: "Technologies",
       portafolio: "Portfolio",
+      metodologia: "Approach",
       equipo: "Professional Profile",
       contacto: "Contact"
     },
     hero: {
-      tag: "Software Architecture & Full Stack Consulting",
+      tag: "Full Stack Engineering · AI-Native · Spec-Driven",
       title: '<span class="text-gradient">Code that Drives</span><br /><span class="text-white">the Future</span>',
-      subtitle: "At MarcosLunaDev, we help companies build scalable Angular/React frontends and Node/NestJS APIs, leveraging AI tools and Spec‑Driven Development to ensure quality and speed.",
+      subtitle: "I design and build complete digital products —interfaces, APIs, data and cloud— with an AI-native engineering workflow driven by Spec-Driven Development: clear specs, verifiable code and fast delivery without compromising quality.",
+      stack: "Frontend · Backend · Data · Cloud · AI",
       btnStart: "Start Project",
       btnPortfolio: "View Portfolio",
       promise: "⚡ Response in 48-72h",
@@ -379,61 +398,61 @@ const translations = {
     },
     servicios: {
       tag: "&lt; MarcosLunaDev Services /&gt;",
-      title: 'Professional <span class="text-gradient">Solutions</span>',
-      subtitle: "We offer comprehensive web development services that cover all the needs of your digital project.",
+      title: 'End-to-End <span class="text-gradient">Engineering</span>',
+      subtitle: "From frontend to backend, from data to the cloud: a single technical partner for your product's entire lifecycle.",
       card1: {
-        title: "Angular & React Frontend Development",
-        desc: "Modern and responsive interfaces using the latest technologies.",
-        li1: "Single Page Applications",
-        li2: "Progressive Web Apps",
-        li3: "Responsive Design",
-        li4: "Performance Optimization"
+        title: "Full Stack Product",
+        desc: "Complete web applications, from the interface to the database, built to scale.",
+        li1: "Angular · React · Next.js",
+        li2: "MVPs and SaaS platforms",
+        li3: "Dashboards and internal tools",
+        li4: "Performance & Core Web Vitals"
       },
       card2: {
-        title: "Node/NestJS Development for Corporate Products",
-        desc: "Robust and scalable APIs with Node.js and NestJS for your business.",
-        li1: "Node.js & NestJS",
-        li2: "RESTful APIs / GraphQL",
-        li3: "Microservices",
-        li4: "Relational and NoSQL Databases"
+        title: "Backend & APIs",
+        desc: "Robust services with Node.js/NestJS, Java/Spring Boot and Python.",
+        li1: "REST / GraphQL",
+        li2: "Microservices and events",
+        li3: "SQL and NoSQL",
+        li4: "Security and authentication"
       },
       card3: {
-        title: "Cloud & DevOps",
-        desc: "Cloud infrastructure and process automation.",
-        li1: "Integrated CI/CD",
-        li2: "Docker Containers",
-        li3: "Kubernetes Orchestration",
-        li4: "AWS / Azure / GCP"
+        title: "AI Engineering",
+        desc: "I integrate LLMs into your product and into the way your team builds software.",
+        li1: "LLM integration (Claude, OpenAI, Gemini)",
+        li2: "RAG and semantic search",
+        li3: "Agents and process automation",
+        li4: "AI-native development workflows"
       },
       card4: {
-        title: "UI/UX Design",
-        desc: "Designs focused on the user and the navigation experience.",
-        li1: "Interactive Prototyping",
-        li2: "Design Systems",
-        li3: "User Research",
-        li4: "High-fidelity Wireframes"
+        title: "Cloud & DevOps",
+        desc: "Cloud infrastructure, automation and frictionless deployments.",
+        li1: "Integrated CI/CD",
+        li2: "Docker & Kubernetes",
+        li3: "AWS / Azure / GCP",
+        li4: "Edge & Serverless"
       },
       card5: {
-        title: "Angular Consulting & Frontend Architecture",
-        desc: "Strategic advice to optimize your technological project.",
-        li1: "Software Architecture",
-        li2: "Code Reviews",
-        li3: "Technical Audits",
-        li4: "Team Mentoring"
+        title: "Architecture & Modernization",
+        desc: "Systems that scale and a structured evolution of legacy platforms.",
+        li1: "Hexagonal / Clean Architecture",
+        li2: "Event-Driven Architectures",
+        li3: "Micro-frontends",
+        li4: "Legacy system migration"
       },
       card6: {
-        title: "Architecture & APIs",
-        desc: "Design of scalable systems and high-performance APIs.",
-        li1: "Clean API Design",
-        li2: "Hexagonal Architecture",
-        li3: "Event-Driven Architectures",
-        li4: "SQL Query Optimization"
+        title: "Consulting & Technical Leadership",
+        desc: "I help teams adopt Spec-Driven Development and AI with sound judgment.",
+        li1: "SDD adoption",
+        li2: "Audits and code review",
+        li3: "Team mentoring",
+        li4: "Technical strategy & roadmap"
       }
     },
     tecnologias: {
       tag: "&lt; Tech Stack /&gt;",
       title: 'Technical <span class="text-gradient">Specialties</span>',
-      subtitle: "We master the most in-demand technologies in the market to create cutting-edge solutions.",
+      subtitle: "A complete, production-proven stack: frontend, backend, data and cloud.",
       angular: {
         title: "Angular",
         desc: "Robust framework for scalable enterprise applications.",
@@ -491,6 +510,9 @@ const translations = {
       aiFilterLocal: "Local Inference",
       aiFilterCloud: "Cloud LLMs",
       aiFilterAgent: "Agents & APIs",
+      aiDragHint: "Drag to explore",
+      aiPrev: "Previous",
+      aiNext: "Next",
       aiList: {
         cursor: "Main development environment optimized for real-time contextual multi-file code editing and guided refactoring.",
         opencode: "Automation of repetitive terminal tasks and build workflows optimized with local scripts.",
@@ -507,37 +529,41 @@ const translations = {
       }
     },
     comoTrabajo: {
-      tag: "&lt; Methodology /&gt;",
-      title: 'How I <span class="text-gradient">Work</span>',
-      subtitle: "A structured process to ensure success and quality from start to finish.",
+      tag: "&lt; How I work · SDD + AI /&gt;",
+      title: 'Spec-Driven <span class="text-gradient">Development</span>',
+      subtitle: "The specification is the source of truth. AI speeds up the build; specs, tests and human review guarantee the quality.",
       step1: {
-        title: "1. Discovery",
-        desc: "Initial meetings to thoroughly understand your needs, business goals, and technical constraints."
+        title: "Discovery",
+        desc: "Understand the business, the users and the technical constraints before writing a single line of code."
       },
       step2: {
-        title: "2. Technical Proposal",
-        desc: "Detailed definition of the architecture, tech stack, delivery roadmap, and cost estimation."
+        title: "Specification",
+        desc: "Requirements, API contracts and acceptance criteria versioned alongside the code as the single source of truth."
       },
       step3: {
-        title: "3. AI-Assisted Development",
-        desc: "AI-accelerated development validated under Spec-Driven Development. Guarantees robust code, aligned with specifications and regression-free."
+        title: "Technical design",
+        desc: "Architecture, data model and delivery plan, each traceable to the specification."
       },
       step4: {
-        title: "4. Delivery",
-        desc: "Secure deployment to the cloud (AWS/GCP/Azure) with validation and SEO/Web Vitals optimization."
+        title: "AI-native build",
+        desc: "Agents and copilots build on top of the specs; automated tests and human review validate every change."
       },
       step5: {
-        title: "5. Support",
-        desc: "Post-launch support, production error monitoring, and system evolution."
-      }
+        title: "Delivery & evolution",
+        desc: "CI/CD, cloud deployment, observability and continuous improvement on the same specification."
+      },
+      principle1: "Specs versioned with the code",
+      principle2: "Human-in-the-loop on every PR",
+      principle3: "Tests as the contract"
     },
     portfolio: {
       tag: "&lt; Success Stories /&gt;",
       title: 'Corporate <span class="text-gradient">Projects</span>',
-      subtitle: "Enterprise solutions developed for different industrial and corporate sectors.",
+      subtitle: "End-to-end solutions for energy, retail, banking, transport and academia.",
       filterAll: "All",
-      filterReact: "React",
-      filterAngular: "Angular",
+      filterFullstack: "Full Stack",
+      filterAi: "Applied AI",
+      filterArchitecture: "Architecture",
       project1: {
         title: "Pipeline Renewal Management",
         desc: "<b>Complexity:</b> Inefficient and manual planning of critical gas network works. <br /><b>Role:</b> Frontend Lead & Architect. <br /><b>Solution:</b> Frontend core rebuild and offline sync. <br /><b>Impact:</b> 25% reduction in execution times and digitalization of 500+ km of pipeline.",
@@ -581,7 +607,7 @@ const translations = {
       subtitle: "A professional committed to technical excellence and digital innovation.",
       role: "&lt; Founder &amp; Principal Consultant /&gt;",
       bio: "Software Architect, Technical Leader, and Full Stack Developer with more than <b>15 years of experience</b> delivering scalable end-to-end solutions, designing complex technical architectures, and leading multidisciplinary development teams.",
-      bioExtra: "With a unique foundational background that combines Naval Sciences and Arts, Electronics and Telecommunications, and IT Systems Administration, initially focused on infrastructure and systems security, I later transitioned and adapted to modern web development. Today I specialize in connecting robust infrastructures, system security, and the contemporary web development stack, optimized through AI‑assisted development and Spec‑Driven Development methodologies."
+      bioExtra: "With a unique foundational background that combines Naval Sciences and Arts, Electronics and Telecommunications, and IT Systems Administration, initially focused on infrastructure and systems security, I later transitioned and adapted to modern web development. Today I design and build complete products —from infrastructure and security all the way to the interface— powered by AI-native development and Spec‑Driven Development."
     },
     contacto: {
       tag: "&lt; Let's Talk /&gt;",
@@ -602,8 +628,16 @@ const translations = {
       placeholderPhone: "+34 600 000 000",
       formCompany: "Company / Organization",
       placeholderCompany: "Your company or project",
+      formService: "Service of interest *",
+      formServiceSelect: "Select a service",
+      formServiceFullstack: "Full Stack Product",
+      formServiceBackend: "Backend & APIs",
+      formServiceAi: "AI Engineering",
+      formServiceCloud: "Cloud & DevOps",
+      formServiceArchitecture: "Architecture & Modernization",
+      formServiceConsulting: "Consulting & Technical Leadership",
       formMessage: "Message *",
-      placeholderMessage: "E.g., We need to build a scalable Angular frontend dashboard...",
+      placeholderMessage: "E.g., We need a web platform with an API, an admin panel and AI integration...",
       charLabel: "characters",
       formSubmit: "Send Message",
       formSubmitting: "Sending...",
@@ -611,10 +645,10 @@ const translations = {
       feedbackError: "There was an error sending your message. Please try again or send us an email directly.",
       feedbackTurnstileRequired: "Please complete the security verification before sending.",
       feedbackRateLimit: "You have recently submitted a message. Please wait a few minutes before trying again.",
-      privacyAcceptLabel: "I have read and accept the <a href=\"privacy-policy.html\" target=\"_blank\">Privacy Policy</a> *"
+      privacyAcceptLabel: "I have read and accept the <a href=\"politica-privacidad.html\" target=\"_blank\">Privacy Policy</a> *"
     },
     footer: {
-      brandDesc: "High-performance software development and web architecture. Boosted by AI-assisted coding and Spec-Driven Development.",
+      brandDesc: "Full stack software engineering, from frontend to cloud. Powered by AI-native development and Spec-Driven Development.",
       quickLinks: "Quick Links",
       services: "Services",
       copyright: "&copy; 2026 MarcosLunaDev. All rights reserved.",
