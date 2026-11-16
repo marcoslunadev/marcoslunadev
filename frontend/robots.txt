@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /recursos/
 
 Sitemap: https://marcoslunadev.com/sitemap.xml
