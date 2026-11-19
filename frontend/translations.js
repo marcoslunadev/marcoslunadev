@@ -298,7 +298,7 @@ const translations = {
     privacy: {
       "metaTitle": "Política de Privacidad - MarcosLunaDev",
       "title": "Política de Privacidad",
-      "subtitle": "Última actualización: 1 de noviembre de 2026",
+      "subtitle": "Última actualización: 19 de noviembre de 2026",
       "s1": {
         "title": "1. Responsable del tratamiento",
         "body": "<p><strong>Titular:</strong> Marcos Daniel Luna Rodríguez (persona física)<br><strong>Ubicación:</strong> Madrid, España<br><strong>Contacto:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p><p>Este sitio es el portafolio profesional y la marca personal de su titular. No pertenece a ninguna empresa y a través de él no se vende ningún producto ni servicio.</p>"
@@ -338,6 +338,10 @@ const translations = {
       "s10": {
         "title": "10. Seguridad",
         "body": "<p>Se aplican medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada (HTTPS), verificación anti-bots, límite de envíos, acceso restringido a la cuenta de correo y ausencia de bases de datos propias donde almacenar los mensajes.</p>"
+      },
+      "s11": {
+        "title": "11. Mensajes automáticos en Instagram",
+        "body": "<p>Si comentas la palabra «SPEC» en una publicación de la cuenta de Instagram <strong>@marcoslunadev</strong>, o la envías por mensaje directo, un sistema automático te envía por mensaje directo el enlace a una plantilla gratuita y, si fue un comentario, publica una respuesta breve debajo.</p><ul class=\"privacy-list\"><li><strong>Datos que se tratan:</strong> tu nombre de usuario e identificador de Instagram, el texto y el identificador del comentario o mensaje, y su fecha. Los facilita Meta a través de su API oficial de Instagram. No se piden otros datos, no se usan para publicidad y no se ceden a terceros.</li><li><strong>Finalidad:</strong> enviarte una sola vez la plantilla que has pedido y evitar envíos repetidos.</li><li><strong>Base jurídica:</strong> tu consentimiento (art. 6.1.a RGPD), que prestas al escribir la palabra clave para pedir la plantilla.</li><li><strong>Conservación:</strong> en el servidor de automatización del titular durante 30 días como máximo. Después se borran automáticamente.</li><li><strong>Proveedores que intervienen:</strong> Meta Platforms Ireland Ltd. (Instagram), que transmite los comentarios y mensajes, y ngrok, Inc., que hace llegar de forma cifrada los avisos de Meta al servidor del titular.</li><li><strong>Cómo borrarlos antes:</strong> escribe a <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> o envía un mensaje directo a @marcoslunadev con el texto «BORRAR MIS DATOS». Se eliminan en un plazo máximo de 30 días y se te confirma por el mismo medio.</li></ul>"
       }
     },
     legal: {
@@ -673,7 +677,7 @@ const translations = {
     privacy: {
       "metaTitle": "Privacy Policy - MarcosLunaDev",
       "title": "Privacy Policy",
-      "subtitle": "Last updated: November 1, 2026",
+      "subtitle": "Last updated: November 19, 2026",
       "s1": {
         "title": "1. Data Controller",
         "body": "<p><strong>Owner:</strong> Marcos Daniel Luna Rodríguez (private individual)<br><strong>Location:</strong> Madrid, Spain<br><strong>Contact:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p><p>This website is the professional portfolio and personal brand of its owner. It does not belong to any company and no products or services are sold through it.</p>"
@@ -713,6 +717,10 @@ const translations = {
       "s10": {
         "title": "10. Security",
         "body": "<p>Reasonable technical and organisational measures are applied to protect your data: encrypted connection (HTTPS), anti-bot verification, submission limits, restricted access to the mailbox and no proprietary databases storing the messages.</p>"
+      },
+      "s11": {
+        "title": "11. Automated Instagram messages",
+        "body": "<p>If you comment the word \"SPEC\" on a post by the Instagram account <strong>@marcoslunadev</strong>, or send it as a direct message, an automated system sends you a direct message with the link to a free template and, if it was a comment, posts a short reply under it.</p><ul class=\"privacy-list\"><li><strong>Data processed:</strong> your Instagram username and ID, the text and ID of the comment or message, and its date. Meta provides them through its official Instagram API. No other data is requested, it is not used for advertising and it is not shared with third parties.</li><li><strong>Purpose:</strong> to send you the template you asked for once, and to avoid sending it twice.</li><li><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR), given by writing the keyword to request the template.</li><li><strong>Retention:</strong> on the owner's automation server for at most 30 days. After that it is deleted automatically.</li><li><strong>Providers involved:</strong> Meta Platforms Ireland Ltd. (Instagram), which delivers the comments and messages, and ngrok, Inc., which relays Meta's notifications to the owner's server over an encrypted connection.</li><li><strong>How to delete it sooner:</strong> write to <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> or send a direct message to @marcoslunadev with the text \"DELETE MY DATA\". It is deleted within 30 days at most and you will be notified through the same channel.</li></ul>"
       }
     },
     legal: {
