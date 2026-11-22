@@ -2,3 +2,6 @@
 dist/
 .astro/
 node_modules/
+
+# Generado por scripts/build-icons.mjs (predev/prebuild)
+src/styles/vendor/remixicon/

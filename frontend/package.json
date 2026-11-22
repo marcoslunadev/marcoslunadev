@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/build-icons.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/build-icons.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -13,5 +15,9 @@
     "@astrojs/sitemap": "3.7.6",
     "astro": "7.4.13",
     "gsap": "3.13.0"
+  },
+  "devDependencies": {
+    "remixicon": "4.2.0",
+    "subset-font": "2.9.0"
   }
 }
