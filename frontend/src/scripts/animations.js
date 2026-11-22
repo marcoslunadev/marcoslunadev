@@ -1,6 +1,6 @@
 /* ==========================================================================
    ANIMATIONS.JS - MOVIMIENTO CON GSAP + SCROLLTRIGGER
-   Se carga con defer después de GSAP. Reglas de rendimiento:
+   Se ejecuta como módulo después de scripts/gsap.js. Reglas de rendimiento:
    - Solo se animan transform y opacity (sin reflow/layout).
    - El título y el subtítulo del hero nunca se ocultan (LCP intacto).
    - prefers-reduced-motion: no se anima nada.
@@ -319,8 +319,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const total = cards.length;
     const step = 360 / total;
     const AUTO_SPEED = -9; // grados por segundo
-    const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
-    const t = (key, fallback) => (typeof translations !== 'undefined' && translations[lang].tecnologias[key]) || fallback;
+    // Textos en el idioma de la página, generados en build (components/sections/Technologies.astro)
+    const labels = JSON.parse(ring.dataset.labels || '{}');
+    const t = (key, fallback) => labels[key] || fallback;
 
     // Estructura: viewport con perspectiva > anillo (.ai-grid) > tarjetas
     const viewport = document.createElement('div');
@@ -339,9 +340,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const controls = document.createElement('div');
     controls.className = 'ai-carousel-controls';
     controls.innerHTML = `
-      <button type="button" class="ai-carousel-btn" data-dir="-1" aria-label="${t('aiPrev', 'Anterior')}"><i class="ri-arrow-left-s-line"></i></button>
-      <span class="ai-carousel-hint" data-i18n="tecnologias.aiDragHint">${t('aiDragHint', 'Arrastra para explorar')}</span>
-      <button type="button" class="ai-carousel-btn" data-dir="1" aria-label="${t('aiNext', 'Siguiente')}"><i class="ri-arrow-right-s-line"></i></button>`;
+      <button type="button" class="ai-carousel-btn" data-dir="-1" aria-label="${t('prev', 'Anterior')}"><i class="ri-arrow-left-s-line"></i></button>
+      <span class="ai-carousel-hint">${t('hint', 'Arrastra para explorar')}</span>
+      <button type="button" class="ai-carousel-btn" data-dir="1" aria-label="${t('next', 'Siguiente')}"><i class="ri-arrow-right-s-line"></i></button>`;
     viewport.after(controls);
 
     ring.classList.add('is-carousel');

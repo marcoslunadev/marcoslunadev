@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Dynamic language state
-  let currentLang = localStorage.getItem('preferredLanguage') || 'es';
 
   /* --------------------------------------------------------------------------
      1. MENU RESPONSIVE (MOBILE TOGGLE)
@@ -312,6 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
      6. CONTACT FORM VALIDATION & SIMULATION
      -------------------------------------------------------------------------- */
   const contactForm = document.getElementById('contact-form');
+  // Textos del idioma de la página, generados en build (components/sections/Contact.astro)
+  const messages = contactForm ? JSON.parse(contactForm.dataset.messages || '{}') : {};
   const messageInput = document.getElementById('message');
   const charCountNum = document.getElementById('char-count-num');
 
@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (charCountNum) charCountNum.textContent = '0';
         resetTurnstile();
         formFeedback.className = 'form-feedback success';
-        formFeedback.textContent = translations[currentLang].contacto.feedbackSuccess;
+        formFeedback.textContent = messages.feedbackSuccess;
         setTimeout(() => {
           formFeedback.className = 'form-feedback hidden';
         }, 6000);
@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const elapsedSeconds = (Date.now() - formInitTime) / 1000;
       if (elapsedSeconds < 2.5) {
         formFeedback.className = 'form-feedback error';
-        formFeedback.textContent = translations[currentLang].contacto.feedbackError;
+        formFeedback.textContent = messages.feedbackError;
         return;
       }
 
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const timeDiff = Date.now() - parseInt(lastSubmit, 10);
         if (timeDiff < 90000) {
           formFeedback.className = 'form-feedback error';
-          formFeedback.textContent = translations[currentLang].contacto.feedbackRateLimit;
+          formFeedback.textContent = messages.feedbackRateLimit;
           return;
         }
       }
@@ -410,13 +410,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!turnstileToken) {
         formFeedback.className = 'form-feedback error';
-        formFeedback.textContent = translations[currentLang].contacto.feedbackTurnstileRequired;
+        formFeedback.textContent = messages.feedbackTurnstileRequired;
         return;
       }
 
       // Deshabilitar botón y mostrar spinner
       submitBtn.disabled = true;
-      btnText.textContent = translations[currentLang].contacto.formSubmitting;
+      btnText.textContent = messages.formSubmitting;
       btnSpinner.classList.remove('hidden');
       formFeedback.className = 'form-feedback hidden';
 
@@ -448,12 +448,12 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           submitBtn.disabled = false;
-          btnText.textContent = translations[currentLang].contacto.formSubmit;
+          btnText.textContent = messages.formSubmit;
           btnSpinner.classList.add('hidden');
 
           formFeedback.classList.remove('hidden');
           formFeedback.classList.add('success');
-          formFeedback.textContent = translations[currentLang].contacto.feedbackSuccess;
+          formFeedback.textContent = messages.feedbackSuccess;
 
           // Registrar timestamp para el control de frecuencia
           localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
@@ -470,12 +470,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch((error) => {
           submitBtn.disabled = false;
-          btnText.textContent = translations[currentLang].contacto.formSubmit;
+          btnText.textContent = messages.formSubmit;
           btnSpinner.classList.add('hidden');
 
           formFeedback.classList.remove('hidden');
           formFeedback.classList.add('error');
-          formFeedback.textContent = translations[currentLang].contacto.feedbackError;
+          formFeedback.textContent = messages.feedbackError;
           console.error('Contact Form Worker Error:', error);
 
           // Resetear widget para permitir un nuevo intento
@@ -485,37 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
             formFeedback.className = 'form-feedback hidden';
           }, 6000);
         });
-    });
-  }
-
-  /* --------------------------------------------------------------------------
-     7. NEWSLETTER FORM
-     -------------------------------------------------------------------------- */
-  const newsletterForm = document.getElementById('newsletter-form');
-  const newsletterFeedback = document.getElementById('newsletter-feedback');
-
-  if (newsletterForm && newsletterFeedback) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = newsletterForm.querySelector('input');
-      const button = newsletterForm.querySelector('button');
-
-      button.disabled = true;
-      button.style.opacity = '0.7';
-
-      setTimeout(() => {
-        button.disabled = false;
-        button.style.opacity = '1';
-
-        newsletterFeedback.className = 'newsletter-feedback success';
-        newsletterFeedback.textContent = currentLang === 'es' ? '¡Suscrito con éxito!' : 'Subscribed successfully!';
-
-        input.value = '';
-
-        setTimeout(() => {
-          newsletterFeedback.className = 'newsletter-feedback hidden';
-        }, 4000);
-      }, 1000);
     });
   }
 
@@ -551,94 +520,26 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   /* --------------------------------------------------------------------------
-     9. MULTI-LANGUAGE SYSTEM (i18n)
+     9. SELECTOR DE IDIOMA
+     Cada idioma tiene sus propias rutas generadas en build (/ y /en/). Los
+     enlaces ES/EN navegan a la otra versión de la página, conservan el ancla
+     y recuerdan la elección (localStorage "preferredLanguage", ver BaseLayout).
      -------------------------------------------------------------------------- */
-  // Function to translate the page DOM
-  const translatePage = (lang) => {
-    // 1. Update HTML lang attribute
-    document.documentElement.setAttribute('lang', lang);
-
-    // 2. Translate elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-      const key = element.getAttribute('data-i18n');
-      const text = getNestedValue(translations[lang], key);
-      if (text !== undefined) {
-        element.innerHTML = text;
+  document.querySelectorAll('.lang-btn').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const lang = link.getAttribute('data-lang');
+      try {
+        localStorage.setItem('preferredLanguage', lang);
+      } catch (err) { /* almacenamiento no disponible: se navega igualmente */ }
+      if (link.classList.contains('active')) {
+        e.preventDefault();
+        return;
+      }
+      if (location.hash) {
+        e.preventDefault();
+        location.href = link.getAttribute('href') + location.hash;
       }
     });
-
-    // 3. Translate elements with data-i18n-placeholder attribute
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-      const key = element.getAttribute('data-i18n-placeholder');
-      const text = getNestedValue(translations[lang], key);
-      if (text !== undefined) {
-        element.setAttribute('placeholder', text);
-      }
-    });
-
-    // 4. Update page SEO meta tags and Title (solo en la home: las páginas legales
-    //    traducen su propio <title data-i18n> y no deben heredar los metadatos de la home)
-    if (translations[lang].meta && !document.querySelector('title[data-i18n]')) {
-      document.title = translations[lang].meta.title;
-
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', translations[lang].meta.description);
-
-      const metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) metaKeywords.setAttribute('content', translations[lang].meta.keywords);
-
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.setAttribute('content', translations[lang].meta.ogTitle);
-
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogDesc) ogDesc.setAttribute('content', translations[lang].meta.ogDesc);
-
-      const twitterTitle = document.querySelector('meta[property="twitter:title"]');
-      if (twitterTitle) twitterTitle.setAttribute('content', translations[lang].meta.ogTitle);
-
-      const twitterDesc = document.querySelector('meta[property="twitter:description"]');
-      if (twitterDesc) twitterDesc.setAttribute('content', translations[lang].meta.ogDesc);
-    }
-  };
-
-  // Helper to retrieve nested object values from string key path (e.g. "hero.title")
-  const getNestedValue = (obj, path) => {
-    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
-  };
-
-  // Function to change current language
-  const setLanguage = (lang) => {
-    currentLang = lang;
-    localStorage.setItem('preferredLanguage', lang);
-    translatePage(lang);
-
-    // Update switcher buttons active state
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      if (btn.getAttribute('data-lang') === lang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  };
-
-  // Hook up language switch event listeners
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const selectedLang = e.target.getAttribute('data-lang');
-      setLanguage(selectedLang);
-    });
-  });
-
-  // Initialize page in selected language
-  translatePage(currentLang);
-  // Sync the active class in lang buttons
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    if (btn.getAttribute('data-lang') === currentLang) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
   });
 
   /* --------------------------------------------------------------------------
@@ -693,7 +594,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const modal = createLogoModal();
       const modalImg = modal.querySelector('#logo-modal-img');
 
-      let imgSrc = 'assets/logo-horizontal-oscuro.png';
+      let imgSrc = '/assets/logo-horizontal-oscuro.png';
       if (logoEl.tagName === 'IMG') {
         imgSrc = logoEl.getAttribute('src');
       } else {
