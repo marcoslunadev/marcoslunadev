@@ -4,15 +4,16 @@
   "private": true,
   "description": "Portafolio y servicios de MarcosLunaDev - Monorepo Frontend + Cloudflare Worker",
   "scripts": {
-    "dev:frontend": "npx serve frontend -l 8080",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "preview:frontend": "npm --prefix frontend run preview",
     "dev:worker": "npm --prefix worker run dev",
     "deploy:worker": "npm --prefix worker run deploy",
     "tail:worker": "npm --prefix worker run tail"
   },
   "keywords": [
     "frontend",
-    "angular",
-    "nestjs",
+    "astro",
     "cloudflare-workers"
   ],
   "author": "Marcos Daniel Luna Rodríguez",
