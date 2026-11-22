@@ -2133,6 +2133,8 @@ textarea {
   border-radius: 12px;
   transition: all var(--transition-fast);
   letter-spacing: 0.05em;
+  /* Son enlaces entre /, /en/…: mismo interlineado que tenían como <button> */
+  line-height: normal;
 }
 
 .lang-btn:hover {
