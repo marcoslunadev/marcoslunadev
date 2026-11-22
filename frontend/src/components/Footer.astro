@@ -1,0 +1,58 @@
+---
+import { routes, useTranslations, type Lang, type PageId } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: PageId;
+}
+
+const { lang, page } = Astro.props;
+const t = useTranslations(lang);
+const isHome = page === 'home';
+const home = isHome ? '' : routes.home[lang];
+
+const quickLinks = [
+  { id: 'inicio', key: 'nav.inicio' },
+  { id: 'servicios', key: 'nav.servicios' },
+  { id: 'tecnologias', key: 'nav.tecnologias' },
+  { id: 'portafolio', key: 'nav.portafolio' },
+];
+// La home enlaza «Arquitectura & Modernización» (card5); las páginas legales, «Consultoría» (card6).
+const serviceKeys = ['card1', 'card2', 'card3', isHome ? 'card5' : 'card6'];
+---
+
+<footer class="footer">
+  <div class="footer-bottom-decor">MarcosLunaDev</div>
+  <div class="container relative-z">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="flex-logo mb-4">
+          <img src="/assets/logo-horizontal-oscuro.png" alt="MarcosLunaDev" class="footer-logo-img" />
+        </div>
+        <p class="footer-desc" set:html={t('footer.brandDesc')} />
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-title" set:html={t('footer.quickLinks')} />
+        <ul>
+          {quickLinks.map((link) => <li><a href={`${home}#${link.id}`} set:html={t(link.key)} /></li>)}
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-title" set:html={t('footer.services')} />
+        <ul>
+          {serviceKeys.map((card) => <li><a href={`${home}#servicios`} set:html={t(`servicios.${card}.title`)} /></li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright" set:html={t('footer.copyright')} />
+      <div class="footer-bottom-links">
+        <a href={routes.privacy[lang]} set:html={t('footer.privacy')} />
+        <a href={routes.legal[lang]} set:html={t('footer.terms')} />
+      </div>
+    </div>
+  </div>
+</footer>

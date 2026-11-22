@@ -1,0 +1,73 @@
+---
+import { routes, useTranslations, type Lang, type PageId } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: PageId;
+}
+
+const { lang, page } = Astro.props;
+const t = useTranslations(lang);
+const isHome = page === 'home';
+// En la home los enlaces son anclas; en las páginas legales apuntan a la home del mismo idioma.
+const home = isHome ? '' : routes.home[lang];
+
+const links = [
+  { id: 'inicio', key: 'nav.inicio' },
+  { id: 'servicios', key: 'nav.servicios' },
+  { id: 'tecnologias', key: 'nav.tecnologias' },
+  { id: 'portafolio', key: 'nav.portafolio' },
+  ...(isHome ? [{ id: 'metodologia', key: 'nav.metodologia' }] : []),
+  { id: 'equipo', key: 'nav.equipo' },
+];
+---
+
+<header class:list={['header', { scrolled: !isHome }]}>
+  <div class="header-container">
+    {
+      isHome ? (
+        <div class="logo-container">
+          <a href="#inicio" class="logo" aria-label="MarcosLunaDev">
+            <img src="/assets/logo-horizontal-oscuro.png" alt="MarcosLunaDev" class="logo-img" />
+          </a>
+        </div>
+      ) : (
+        <a href={routes.home[lang]} class="logo" aria-label="MarcosLunaDev">
+          <img src="/assets/logo-horizontal-oscuro.png" alt="MarcosLunaDev Logo" class="logo-img" />
+        </a>
+      )
+    }
+
+    <nav class="nav-menu" id="nav-menu">
+      {
+        links.map((link, i) => (
+          <a href={`${home}#${link.id}`} class:list={['nav-link', { active: isHome && i === 0 }]} set:html={t(link.key)} />
+        ))
+      }
+      <div class="lang-switch">
+        {
+          (['es', 'en'] as const).map((code, i) => (
+            <>
+              {i > 0 && <span class="lang-separator">|</span>}
+              <a
+                href={routes[page][code]}
+                class:list={['lang-btn', { active: code === lang }]}
+                data-lang={code}
+                hreflang={code}
+                lang={code}
+                aria-current={code === lang ? 'page' : undefined}
+              >
+                {code.toUpperCase()}
+              </a>
+            </>
+          ))
+        }
+      </div>
+      <a href={`${home}#contacto`} class="btn btn-primary btn-nav" set:html={t('nav.contacto')} />
+    </nav>
+
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+      <i class="ri-menu-line"></i>
+    </button>
+  </div>
+</header>
