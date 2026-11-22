@@ -1,0 +1,51 @@
+---
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = useTranslations(Astro.props.lang);
+const cards = [
+  { key: 'card1', icon: 'ri-stack-line', color: 'cyan' },
+  { key: 'card2', icon: 'ri-server-line', color: 'emerald' },
+  { key: 'card3', icon: 'ri-brain-line', color: 'cyan' },
+  { key: 'card4', icon: 'ri-cloud-line', color: 'emerald' },
+  { key: 'card5', icon: 'ri-node-tree', color: 'cyan' },
+  { key: 'card6', icon: 'ri-compass-3-line', color: 'emerald' },
+];
+const items = ['li1', 'li2', 'li3', 'li4'];
+---
+
+<section id="servicios" class="servicios">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag-pill" set:html={t('servicios.tag')} />
+      <h2 class="section-title" set:html={t('servicios.title')} />
+      <p class="section-subtitle" set:html={t('servicios.subtitle')} />
+    </div>
+
+    <div class="grid grid-3">
+      {
+        cards.map((card) => (
+          <div class="service-card glassmorphism">
+            <div class={`service-icon icon-${card.color}`}>
+              <i class={card.icon} />
+            </div>
+            <h3 class="service-card-title" set:html={t(`servicios.${card.key}.title`)} />
+            <p class="service-card-text" set:html={t(`servicios.${card.key}.desc`)} />
+            <ul class="service-list">
+              {items.map((li) => (
+                <li>
+                  <i class="ri-check-line" />
+                  <span set:html={t(`servicios.${card.key}.${li}`)} />
+                </li>
+              ))}
+            </ul>
+            <div class="card-bg-gradient" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

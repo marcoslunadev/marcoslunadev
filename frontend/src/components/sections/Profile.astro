@@ -1,0 +1,69 @@
+---
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = useTranslations(Astro.props.lang);
+const skills = [
+  'Angular',
+  'React',
+  'Next.js',
+  'Node.js',
+  'NestJS',
+  'Java / Spring Boot',
+  'Python',
+  'PHP',
+  'SQL',
+  'NoSQL',
+  'TypeScript',
+  'Cloud & DevOps',
+  'AI Integration',
+  'Spec-Driven Development',
+  'AI-Assisted Coding',
+];
+---
+
+<section id="equipo" class="equipo">
+  <div class="equipo-glow-1"></div>
+  <div class="equipo-glow-2"></div>
+  <div class="container">
+    <div class="section-header">
+      <div class="tag-pill tag-emerald" set:html={t('equipo.tag')} />
+      <h2 class="section-title" set:html={t('equipo.title')} />
+      <p class="section-subtitle" set:html={t('equipo.subtitle')} />
+    </div>
+
+    <div class="developer-profile-wrapper">
+      <div class="developer-profile-card glassmorphism">
+        <div class="developer-visual">
+          <img src="/assets/marcos-luna.jpg" alt="Marcos Luna" width="460" height="460" class="developer-img" />
+          <div class="developer-image-overlay"></div>
+        </div>
+        <div class="developer-info">
+          <div class="dev-role" set:html={t('equipo.role')} />
+          <h3 class="dev-name">Marcos Luna</h3>
+          <p class="dev-bio" set:html={t('equipo.bio')} />
+          <p class="dev-bio-extra" set:html={t('equipo.bioExtra')} />
+
+          <div class="developer-skills">
+            {skills.map((skill) => <span class="dev-badge">{skill}</span>)}
+          </div>
+
+          <div class="developer-socials">
+            <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="https://github.com/MarcosLunaDev" target="_blank" rel="noopener" class="social-link" aria-label="Github">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="mailto:info@marcoslunadev.com" class="social-link" aria-label="Email">
+              <i class="ri-mail-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

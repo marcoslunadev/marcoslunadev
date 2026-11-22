@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const filters = [
+  { filter: 'all', key: 'filterAll' },
+  { filter: 'fullstack', key: 'filterFullstack' },
+  { filter: 'ai', key: 'filterAi' },
+  { filter: 'architecture', key: 'filterArchitecture' },
+];
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const stripTags = (html: string) => html.replace(/<[^>]*>/g, '');
+---
+
+<section id="portafolio" class="portafolio">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag-pill" set:html={t('portfolio.tag')} />
+      <h2 class="section-title" set:html={t('portfolio.title')} />
+      <p class="section-subtitle" set:html={t('portfolio.subtitle')} />
+
+      <div class="portfolio-filters" id="portfolio-filters">
+        {
+          filters.map((f, i) => (
+            <button class:list={['filter-btn', { active: i === 0 }]} data-filter={f.filter} set:html={t(`portfolio.${f.key}`)} />
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+      {
+        projects.map(({ data: project }) => (
+          <div class="portfolio-card" data-category={project.categories.join(',')}>
+            <div class="card-image-wrapper">
+              <img src={project.image} alt={stripTags(project.title[lang])} class="portfolio-image" />
+              <div class="card-overlay" />
+              <span class="card-tag" set:html={project.tag[lang]} />
+            </div>
+            <div class="card-details">
+              <h3 class="card-title" set:html={project.title[lang]} />
+              <p class="card-text" set:html={project.description[lang]} />
+              <div class="card-tags">
+                {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+              </div>
+              <a href="#contacto" class="details-link">
+                <span set:html={project.details[lang]} />
+                <i class="ri-arrow-right-line" />
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

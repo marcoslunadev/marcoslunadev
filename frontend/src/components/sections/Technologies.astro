@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Icono: clase de Remix Icon o imagen SVG propia
+const techs = [
+  { key: 'node', color: 'green', badge: 'Expert', icon: 'ri-nodejs-line' },
+  { key: 'java', color: 'orange', badge: 'Advanced', img: '/assets/java.svg', alt: 'Java / Spring Boot' },
+  { key: 'python', color: 'blue', badge: 'Advanced', img: '/assets/python.svg', alt: 'Python' },
+  { key: 'angular', color: 'red', badge: 'Expert', icon: 'ri-angularjs-line' },
+  { key: 'react', color: 'cyan', badge: 'Expert', icon: 'ri-reactjs-line' },
+  { key: 'next', color: 'gray', badge: 'Expert', icon: 'ri-nextjs-line' },
+];
+const techTags = ['tag1', 'tag2', 'tag3', 'tag4'];
+const secondary = [
+  'TypeScript',
+  'GraphQL',
+  'PostgreSQL',
+  'MongoDB',
+  'Docker',
+  'Kubernetes',
+  'AWS',
+  'Azure',
+  'GCP',
+  'Cloudflare Workers',
+  'Bun',
+  'Vite',
+  'Tailwind CSS',
+];
+const aiFilters = [
+  { filter: 'all', key: 'aiFilterAll' },
+  { filter: 'development', key: 'aiFilterDev' },
+  { filter: 'local', key: 'aiFilterLocal' },
+  { filter: 'cloud', key: 'aiFilterCloud' },
+  { filter: 'agentic', key: 'aiFilterAgent' },
+];
+const aiStack = (await getCollection('aiStack')).sort((a, b) => a.data.order - b.data.order);
+// Textos que el carrusel 3D (scripts/animations.js) crea en el cliente
+const carouselLabels = {
+  prev: t('tecnologias.aiPrev'),
+  next: t('tecnologias.aiNext'),
+  hint: t('tecnologias.aiDragHint'),
+};
+---
+
+<section id="tecnologias" class="tecnologias">
+  <div class="tecnologias-grid-pattern"></div>
+  <div class="container">
+    <div class="section-header">
+      <div class="tag-pill tag-emerald" set:html={t('tecnologias.tag')} />
+      <h2 class="section-title" set:html={t('tecnologias.title')} />
+      <p class="section-subtitle" set:html={t('tecnologias.subtitle')} />
+    </div>
+
+    <div class="tech-grid">
+      {
+        techs.map((tech) => (
+          <div class={`tech-card-wrapper border-${tech.color}`}>
+            <div class="tech-card">
+              <div class="tech-card-header">
+                <div class={`tech-icon-bg bg-${tech.color}`}>
+                  {tech.img ? <img src={tech.img} alt={tech.alt} class="tech-icon-svg" /> : <i class={tech.icon} />}
+                </div>
+                <span class={`badge badge-${tech.color}`}>{tech.badge}</span>
+              </div>
+              <h3 class="tech-title" set:html={t(`tecnologias.${tech.key}.title`)} />
+              <p class="tech-desc" set:html={t(`tecnologias.${tech.key}.desc`)} />
+              <div class="tech-tags">
+                {techTags.map((tag) => (
+                  <span>
+                    <span class={`dot-indicator bg-${tech.color}`} />
+                    <span set:html={t(`tecnologias.${tech.key}.${tag}`)} />
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="tech-secondary">
+      <p class="secondary-title" set:html={t('tecnologias.secondary')} />
+      <div class="secondary-badges">
+        {secondary.map((name) => <span class="sec-badge">{name}</span>)}
+      </div>
+    </div>
+
+    <!-- AI & AGENTIC STACK -->
+    <div class="ai-stack-section">
+      <div class="section-header">
+        <div class="tag-pill tag-emerald" set:html={t('tecnologias.aiTag')} />
+        <h3 class="section-title" set:html={t('tecnologias.aiTitle')} />
+        <p class="section-subtitle" set:html={t('tecnologias.aiSubtitle')} />
+
+        <!-- Filtros de IA -->
+        <div class="ai-filters" id="ai-filters">
+          {
+            aiFilters.map((f, i) => (
+              <button class:list={['filter-btn', { active: i === 0 }]} data-filter={f.filter} set:html={t(`tecnologias.${f.key}`)} />
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="ai-grid" data-labels={JSON.stringify(carouselLabels)}>
+        {
+          aiStack.map(({ data: tool }) => (
+            <article class="ai-card glassmorphism" data-category={tool.categories.join(',')}>
+              <div class="ai-card-header">
+                <div class:list={['ai-logo-wrapper', { 'logo-bg-white': tool.logoOnWhite }]}>
+                  <img src={tool.logo} alt={tool.logoAlt} class="ai-logo-img" />
+                </div>
+                <div class="ai-tags">
+                  <span class="ai-tag tag-category">{tool.typeLabel}</span>
+                  <span class={`ai-tag tag-deploy tag-${tool.deploy.variant}`}>{tool.deploy.label}</span>
+                </div>
+              </div>
+              <h5 class="ai-title">{tool.name}</h5>
+              <p class="ai-desc" set:html={tool.description[lang]} />
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "project1",
+    "order": 1,
+    "image": "/assets/project1.jpg",
+    "categories": [
+      "architecture"
+    ],
+    "tags": [
+      "React",
+      "Java",
+      "MongoDB"
+    ],
+    "tag": {
+      "es": "Energía",
+      "en": "Energy"
+    },
+    "title": {
+      "es": "Gestión de Renovación de Tuberías",
+      "en": "Pipeline Renewal Management"
+    },
+    "description": {
+      "es": "<b>Complejidad:</b> Planificación ineficiente y manual de obras críticas en red de gas. <br /><b>Rol:</b> Frontend Lead & Architect. <br /><b>Solución:</b> Reconstrucción del core frontend y sincronización offline. <br /><b>Impacto:</b> Reducción del 25% en tiempos de ejecución de obras y digitalización de 500+ km de red.",
+      "en": "<b>Complexity:</b> Inefficient and manual planning of critical gas network works. <br /><b>Role:</b> Frontend Lead & Architect. <br /><b>Solution:</b> Frontend core rebuild and offline sync. <br /><b>Impact:</b> 25% reduction in execution times and digitalization of 500+ km of pipeline."
+    },
+    "details": {
+      "es": "Ver detalles",
+      "en": "View details"
+    }
+  },
+  {
+    "id": "project2",
+    "order": 2,
+    "image": "/assets/project2.jpg",
+    "categories": [
+      "architecture"
+    ],
+    "tags": [
+      "Angular",
+      "Java",
+      "PostgreSQL"
+    ],
+    "tag": {
+      "es": "Retail",
+      "en": "Retail"
+    },
+    "title": {
+      "es": "Planificación de Anaqueles",
+      "en": "Shelf Space Planning"
+    },
+    "description": {
+      "es": "<b>Complejidad:</b> Optimización tridimensional de góndolas para grandes superficies. <br /><b>Rol:</b> Frontend Architect. <br /><b>Solución:</b> Motor de render interactivo con algoritmos de ordenación 3D. <br /><b>Impacto:</b> Aumento del 14% en ventas cruzadas y reducción de errores de stock en tienda.",
+      "en": "<b>Complexity:</b> Three-dimensional shelf optimization for large retail stores. <br /><b>Role:</b> Frontend Architect. <br /><b>Solution:</b> Interactive rendering engine with 3D sorting algorithms. <br /><b>Impact:</b> 14% increase in cross-sales and reduction in store stock errors."
+    },
+    "details": {
+      "es": "Ver detalles",
+      "en": "View details"
+    }
+  },
+  {
+    "id": "project3",
+    "order": 3,
+    "image": "/assets/project3.jpg",
+    "categories": [
+      "fullstack",
+      "ai"
+    ],
+    "tags": [
+      "Angular",
+      "Node.js",
+      "IA/ML"
+    ],
+    "tag": {
+      "es": "Energía",
+      "en": "Energy"
+    },
+    "title": {
+      "es": "Mantenimiento Predictivo de Redes",
+      "en": "Predictive Network Maintenance"
+    },
+    "description": {
+      "es": "<b>Complejidad:</b> Fugas imprevistas en redes de distribución con pérdidas millonarias. <br /><b>Rol:</b> Full-stack Developer. <br /><b>Solución:</b> API de ML para predecir puntos de fatiga por presión. <br /><b>Impacto:</b> Reducción del 30% en averías mayores y optimización del mantenimiento preventivo.",
+      "en": "<b>Complexity:</b> Unexpected leaks in distribution networks causing million-dollar losses. <br /><b>Role:</b> Full-stack Developer. <br /><b>Solution:</b> ML API predicting fatigue points from pressure data. <br /><b>Impact:</b> 30% reduction in major failures and optimized preventive maintenance."
+    },
+    "details": {
+      "es": "Ver detalles",
+      "en": "View details"
+    }
+  },
+  {
+    "id": "project4",
+    "order": 4,
+    "image": "/assets/project4.jpg",
+    "categories": [
+      "fullstack",
+      "ai"
+    ],
+    "tags": [
+      "React",
+      "IA/ML",
+      "Node.js",
+      "Python"
+    ],
+    "tag": {
+      "es": "Académico",
+      "en": "Academic"
+    },
+    "title": {
+      "es": "Gobierno de Consultas Lingüísticas IA",
+      "en": "AI Academic Query Governance"
+    },
+    "description": {
+      "es": "<b>Complejidad:</b> Catalogación de miles de consultas lingüísticas sin categorizar. <br /><b>Rol:</b> Lead Developer. <br /><b>Solución:</b> Integración de LLMs para análisis semántico y categorización. <br /><b>Impacto:</b> Procesamiento automático del 95% de consultas y buscador inteligente.",
+      "en": "<b>Complexity:</b> Categorization of thousands of unstructured linguistic queries. <br /><b>Role:</b> Lead Developer. <br /><b>Solution:</b> LLM integration for semantic analysis and classification. <br /><b>Impact:</b> Automatic processing of 95% of queries and smart search engine."
+    },
+    "details": {
+      "es": "Ver detalles",
+      "en": "View details"
+    }
+  },
+  {
+    "id": "project5",
+    "order": 5,
+    "image": "/assets/project5.jpg",
+    "categories": [
+      "fullstack"
+    ],
+    "tags": [
+      "React",
+      "PostgreSQL",
+      "Python"
+    ],
+    "tag": {
+      "es": "Transporte",
+      "en": "Transport"
+    },
+    "title": {
+      "es": "Gestión de Siniestros y Flotas",
+      "en": "Fleet & Incident Claims Management"
+    },
+    "description": {
+      "es": "<b>Complejidad:</b> Tracking en papel y retrasos en partes de siniestros de 200+ autobuses. <br /><b>Rol:</b> Full-stack Developer. <br /><b>Solución:</b> App móvil web responsiva offline-first. <br /><b>Impacto:</b> Reducción del 50% en tiempo de tramitación con seguros y alertas en tiempo real.",
+      "en": "<b>Complexity:</b> Paper tracking and claim delays for a fleet of 200+ buses. <br /><b>Role:</b> Full-stack Developer. <br /><b>Solution:</b> Offline-first responsive web/mobile app. <br /><b>Impact:</b> 50% reduction in insurance processing time and real-time alerts."
+    },
+    "details": {
+      "es": "Ver detalles",
+      "en": "View details"
+    }
+  },
+  {
+    "id": "project6",
+    "order": 6,
+    "image": "/assets/project6.jpg",
+    "categories": [
+      "architecture",
+      "ai"
+    ],
+    "tags": [
+      "Angular",
+      "PostgreSQL",
+      "Java"
+    ],
+    "tag": {
+      "es": "Banca",
+      "en": "Banking"
+    },
+    "title": {
+      "es": "Suite Bancaria & Prevención de Riesgo",
+      "en": "BPM Banking & Risk Prevention Suite"
+    },
+    "description": {
+      "es": "<b>Complejidad:</b> Auditorías de crimen financiero e integraciones heredadas lentas. <br /><b>Rol:</b> Tech Lead / Frontend Architect. <br /><b>Solución:</b> Arquitectura micro-frontend con caching agresivo, acelerada mediante copilotos cognitivos (Windsurf) y agentes autónomos (Devin Cloud) para refactorización masiva. <br /><b>Impacto:</b> Reducción de latencia en un 40% y cumplimiento normativo estricto auditado.",
+      "en": "<b>Complexity:</b> Financial crime audits and slow legacy integrations. <br /><b>Role:</b> Tech Lead / Frontend Architect. <br /><b>Solution:</b> Micro-frontend architecture with aggressive caching, accelerated by cognitive copilots (Windsurf) and autonomous agents (Devin Cloud) for bulk refactoring. <br /><b>Impact:</b> 40% latency reduction and strict audited regulatory compliance."
+    },
+    "details": {
+      "es": "Ver detalles",
+      "en": "View details"
+    }
+  }
+]

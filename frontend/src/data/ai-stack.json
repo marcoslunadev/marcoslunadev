@@ -1,0 +1,243 @@
+[
+  {
+    "id": "anthropic",
+    "order": 1,
+    "name": "Anthropic Claude",
+    "logo": "/assets/claude-color.svg",
+    "logoAlt": "Anthropic",
+    "logoOnWhite": false,
+    "categories": [
+      "cloud"
+    ],
+    "typeLabel": "LLM Cloud",
+    "deploy": {
+      "label": "Cloud",
+      "variant": "cloud"
+    },
+    "description": {
+      "es": "Razonamiento lógico complejo para refactorizaciones estructurales y auditorías de código seguras.",
+      "en": "Complex logical reasoning for structural refactoring and secure code audits."
+    }
+  },
+  {
+    "id": "openai",
+    "order": 2,
+    "name": "OpenAI",
+    "logo": "/assets/openai.svg",
+    "logoAlt": "OpenAI",
+    "logoOnWhite": true,
+    "categories": [
+      "cloud"
+    ],
+    "typeLabel": "LLM Cloud",
+    "deploy": {
+      "label": "Cloud",
+      "variant": "cloud"
+    },
+    "description": {
+      "es": "Procesamiento de lenguaje natural y APIs ágiles para su integración directa en flujos backend.",
+      "en": "Natural language processing and agile APIs for direct integration into backend workflows."
+    }
+  },
+  {
+    "id": "gemini",
+    "order": 3,
+    "name": "Google Gemini",
+    "logo": "/assets/gemini-color.svg",
+    "logoAlt": "Google Gemini",
+    "logoOnWhite": false,
+    "categories": [
+      "cloud"
+    ],
+    "typeLabel": "LLM Cloud",
+    "deploy": {
+      "label": "Cloud",
+      "variant": "cloud"
+    },
+    "description": {
+      "es": "Análisis de repositorios completos gracias a su ventana de contexto de millones de tokens.",
+      "en": "Analysis of complete repositories thanks to its extended context window of millions of tokens."
+    }
+  },
+  {
+    "id": "antigravity",
+    "order": 4,
+    "name": "Antigravity",
+    "logo": "/assets/antigravity-color.svg",
+    "logoAlt": "Antigravity",
+    "logoOnWhite": false,
+    "categories": [
+      "agentic",
+      "development"
+    ],
+    "typeLabel": "Agentic",
+    "deploy": {
+      "label": "Híbrido",
+      "variant": "hybrid"
+    },
+    "description": {
+      "es": "Desarrollo de flujos agenticos autónomos y toma de decisiones multinivel orquestados por código JS/TS.",
+      "en": "Development of autonomous agentic flows and multilevel decision-making orchestrated by JS/TS code."
+    }
+  },
+  {
+    "id": "devin",
+    "order": 5,
+    "name": "Devin",
+    "logo": "/assets/devin-color.svg",
+    "logoAlt": "Devin",
+    "logoOnWhite": false,
+    "categories": [
+      "agentic"
+    ],
+    "typeLabel": "Agentic",
+    "deploy": {
+      "label": "Cloud",
+      "variant": "cloud"
+    },
+    "description": {
+      "es": "Agente de ingeniería de software autónomo capaz de ejecutar tareas complejas en sandboxes aislados.",
+      "en": "Autonomous software engineering agent capable of executing complex tasks in isolated sandboxes."
+    }
+  },
+  {
+    "id": "langchain",
+    "order": 6,
+    "name": "LangChain",
+    "logo": "/assets/langchain.webp",
+    "logoAlt": "LangChain",
+    "logoOnWhite": false,
+    "categories": [
+      "agentic"
+    ],
+    "typeLabel": "Framework",
+    "deploy": {
+      "label": "Híbrido",
+      "variant": "hybrid"
+    },
+    "description": {
+      "es": "Orquestador y framework para el desarrollo de flujos complejos de IA, encadenamiento de prompts y recuperación RAG.",
+      "en": "Orchestrator and framework for building complex AI workflows, prompt chaining, and RAG architectures."
+    }
+  },
+  {
+    "id": "cursor",
+    "order": 7,
+    "name": "Cursor",
+    "logo": "/assets/cursor.svg",
+    "logoAlt": "Cursor",
+    "logoOnWhite": true,
+    "categories": [
+      "development"
+    ],
+    "typeLabel": "IDE",
+    "deploy": {
+      "label": "Híbrido",
+      "variant": "hybrid"
+    },
+    "description": {
+      "es": "Entorno de desarrollo principal optimizado para edición de código contextual multi-archivo en tiempo real y refactorización guiada.",
+      "en": "Main development environment optimized for real-time contextual multi-file code editing and guided refactoring."
+    }
+  },
+  {
+    "id": "windsurf",
+    "order": 8,
+    "name": "Windsurf",
+    "logo": "/assets/windsurf.webp",
+    "logoAlt": "Windsurf",
+    "logoOnWhite": false,
+    "categories": [
+      "development"
+    ],
+    "typeLabel": "IDE",
+    "deploy": {
+      "label": "Híbrido",
+      "variant": "hybrid"
+    },
+    "description": {
+      "es": "Editor e IDE avanzado con flujos de agente integrados y depuración en tiempo real.",
+      "en": "Advanced editor and IDE with built-in agent flows and real-time debugging."
+    }
+  },
+  {
+    "id": "v0",
+    "order": 9,
+    "name": "v0 by Vercel",
+    "logo": "/assets/v0.webp",
+    "logoAlt": "v0",
+    "logoOnWhite": true,
+    "categories": [
+      "development"
+    ],
+    "typeLabel": "Generación UI",
+    "deploy": {
+      "label": "Cloud",
+      "variant": "cloud"
+    },
+    "description": {
+      "es": "Generador de interfaces de usuario asistido por IA para prototipado rápido de componentes React y Tailwind CSS.",
+      "en": "AI-powered UI generator for rapid prototyping of React and Tailwind CSS components."
+    }
+  },
+  {
+    "id": "opencode",
+    "order": 10,
+    "name": "Open Code",
+    "logo": "/assets/opencode.webp",
+    "logoAlt": "Open Code",
+    "logoOnWhite": false,
+    "categories": [
+      "development"
+    ],
+    "typeLabel": "Engine",
+    "deploy": {
+      "label": "Local",
+      "variant": "local"
+    },
+    "description": {
+      "es": "Automatización de tareas repetitivas en terminal y flujos de empaquetado optimizados con scripts locales.",
+      "en": "Automation of repetitive terminal tasks and build workflows optimized with local scripts."
+    }
+  },
+  {
+    "id": "ollama",
+    "order": 11,
+    "name": "Ollama",
+    "logo": "/assets/ollama.svg",
+    "logoAlt": "Ollama",
+    "logoOnWhite": true,
+    "categories": [
+      "local"
+    ],
+    "typeLabel": "LLM Local",
+    "deploy": {
+      "label": "Local",
+      "variant": "local"
+    },
+    "description": {
+      "es": "Orquestación de modelos de lenguaje abiertos (Llama, Phi) en local para desarrollo offline y protección de propiedad intelectual.",
+      "en": "Orchestration of open-source language models (Llama, Phi) locally for offline development and intellectual property protection."
+    }
+  },
+  {
+    "id": "lmstudio",
+    "order": 12,
+    "name": "LM Studio",
+    "logo": "/assets/lmstudio.webp",
+    "logoAlt": "LM Studio",
+    "logoOnWhite": false,
+    "categories": [
+      "local"
+    ],
+    "typeLabel": "Servidor",
+    "deploy": {
+      "label": "Local",
+      "variant": "local"
+    },
+    "description": {
+      "es": "Servidor de inferencia local con compatibilidad de API OpenAI para experimentación y validación rápida de modelos abiertos.",
+      "en": "Local inference server with OpenAI API compatibility for rapid experimentation and validation of open models."
+    }
+  }
+]

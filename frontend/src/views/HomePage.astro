@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Services from '../components/sections/Services.astro';
+import Technologies from '../components/sections/Technologies.astro';
+import Portfolio from '../components/sections/Portfolio.astro';
+import Methodology from '../components/sections/Methodology.astro';
+import Profile from '../components/sections/Profile.astro';
+import Contact from '../components/sections/Contact.astro';
+import { useTranslations, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  page="home"
+  title={t('meta.title')}
+  description={t('meta.description')}
+  keywords={t('meta.keywords')}
+  ogTitle={t('meta.ogTitle')}
+  ogDescription={t('meta.ogDesc')}
+>
+  <Hero lang={lang} />
+  <Services lang={lang} />
+  <Technologies lang={lang} />
+  <Portfolio lang={lang} />
+  <Methodology lang={lang} />
+  <Profile lang={lang} />
+  <Contact lang={lang} />
+
+  <!-- Orden de ejecución: GSAP global → app (menú, filtros, formulario) → animaciones → fondo -->
+  <script>
+    import '../scripts/gsap.js';
+    import '../scripts/app.js';
+    import '../scripts/animations.js';
+    import '../scripts/background.js';
+  </script>
+</BaseLayout>
