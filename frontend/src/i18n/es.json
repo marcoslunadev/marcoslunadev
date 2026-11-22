@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "title": "MarcosLunaDev | Arquitecto de Software & Desarrollador Full Stack | IA, SDD & Cloud",
+    "description": "Arquitecto de Software y Desarrollador Full Stack con más de 15 años de experiencia. Especialista en arquitecturas escalables, APIs robustas (Node/NestJS), ecosistemas modernos (Angular/React), desarrollo impulsado por IA y Spec-Driven Development (SDD).",
+    "keywords": "arquitecto de software, software architect, desarrollador full stack, full stack developer, arquitectura de software, inteligencia artificial, desarrollo con IA, spec-driven development, SDD, SSD, Node.js, NestJS, Angular, React, TypeScript, APIs escalables, cloud, microservicios, MarcosLunaDev, Marcos Luna",
+    "ogTitle": "MarcosLunaDev | Arquitecto de Software & Desarrollador Full Stack | IA & SDD",
+    "ogDesc": "Arquitecto de Software y Desarrollador Full Stack. Especialista en arquitecturas escalables, APIs Node/NestJS, ecosistemas modernos y soluciones potenciadas por Inteligencia Artificial y Spec-Driven Development (SDD)."
+  },
+  "nav": {
+    "inicio": "Inicio",
+    "servicios": "Servicios",
+    "tecnologias": "Tecnologías",
+    "portafolio": "Portafolio",
+    "metodologia": "Metodología",
+    "equipo": "Perfil profesional",
+    "contacto": "Contacto"
+  },
+  "hero": {
+    "tag": "Full Stack Engineering · AI-Native · Spec-Driven",
+    "title": "<span class=\"text-gradient\">Código que Impulsa</span><br /><span class=\"text-white\">el Futuro</span>",
+    "subtitle": "Diseño y construyo productos digitales completos —interfaces, APIs, datos y cloud— con un flujo de ingeniería AI-native guiado por Spec-Driven Development: especificaciones claras, código verificable y entregas rápidas sin sacrificar calidad.",
+    "stack": "Frontend · Backend · Datos · Cloud · IA",
+    "btnStart": "Contacto",
+    "btnPortfolio": "Ver Portafolio",
+    "hook": "🧭 Primera conversación sin compromiso",
+    "stat1Num": "20+",
+    "stat1Label": "Proyectos Corporativos",
+    "stat2Num": "98%",
+    "stat2Label": "Satisfacción del Cliente",
+    "stat3Num": "15+",
+    "stat3Label": "Años de Experiencia"
+  },
+  "servicios": {
+    "tag": "&lt; Servicios de MarcosLunaDev /&gt;",
+    "title": "Ingeniería <span class=\"text-gradient\">End-to-End</span>",
+    "subtitle": "Del frontend al backend, de los datos a la nube: un único interlocutor técnico para todo el ciclo de vida de tu producto.",
+    "card1": {
+      "title": "Producto Full Stack",
+      "desc": "Aplicaciones web completas, de la interfaz a la base de datos, listas para escalar.",
+      "li1": "Angular · React · Next.js",
+      "li2": "MVPs y plataformas SaaS",
+      "li3": "Paneles y herramientas internas",
+      "li4": "Rendimiento y Core Web Vitals"
+    },
+    "card2": {
+      "title": "Backend & APIs",
+      "desc": "Servicios robustos con Node.js/NestJS, Java/Spring Boot y Python.",
+      "li1": "REST / GraphQL",
+      "li2": "Microservicios y eventos",
+      "li3": "SQL y NoSQL",
+      "li4": "Seguridad y autenticación"
+    },
+    "card3": {
+      "title": "Ingeniería con IA",
+      "desc": "Integro LLMs en tu producto y en la forma en que tu equipo desarrolla.",
+      "li1": "Integración de LLMs (Claude, OpenAI, Gemini)",
+      "li2": "RAG y búsqueda semántica",
+      "li3": "Agentes y automatización de procesos",
+      "li4": "Workflows de desarrollo AI-native"
+    },
+    "card4": {
+      "title": "Cloud & DevOps",
+      "desc": "Infraestructura en la nube, automatización y despliegues sin fricción.",
+      "li1": "CI/CD integrado",
+      "li2": "Docker & Kubernetes",
+      "li3": "AWS / Azure / GCP",
+      "li4": "Edge & Serverless"
+    },
+    "card5": {
+      "title": "Arquitectura & Modernización",
+      "desc": "Sistemas que escalan y evolución ordenada de plataformas legacy.",
+      "li1": "Arquitectura Hexagonal / Clean",
+      "li2": "Event-Driven Architectures",
+      "li3": "Micro-frontends",
+      "li4": "Migración de sistemas legacy"
+    },
+    "card6": {
+      "title": "Consultoría & Liderazgo Técnico",
+      "desc": "Acompaño a equipos a adoptar Spec-Driven Development e IA con criterio.",
+      "li1": "Adopción de SDD",
+      "li2": "Auditorías y code review",
+      "li3": "Mentoring de equipos",
+      "li4": "Estrategia y roadmap técnico"
+    }
+  },
+  "tecnologias": {
+    "tag": "&lt; Stack Tecnológico /&gt;",
+    "title": "Especialidades <span class=\"text-gradient\">Técnicas</span>",
+    "subtitle": "Un stack completo y probado en producción: frontend, backend, datos y cloud.",
+    "angular": {
+      "title": "Angular",
+      "desc": "Framework robusto para aplicaciones empresariales escalables.",
+      "tag1": "TypeScript",
+      "tag2": "RxJS",
+      "tag3": "Inyección de Dependencias",
+      "tag4": "CLI Potente"
+    },
+    "react": {
+      "title": "React",
+      "desc": "Biblioteca flexible para interfaces de usuario altamente dinámicas.",
+      "tag1": "Hooks",
+      "tag2": "Virtual DOM",
+      "tag3": "Basado en Componentes",
+      "tag4": "Ecosistema Amplio"
+    },
+    "next": {
+      "title": "Next.js",
+      "desc": "Framework React con renderizado en el servidor y estático optimizado.",
+      "tag1": "SSR / SSG",
+      "tag2": "Rutas de API",
+      "tag3": "Optimización de Imágenes",
+      "tag4": "División de Código"
+    },
+    "node": {
+      "title": "Node.js / NestJS",
+      "desc": "Entorno de ejecución y framework estructurado para desarrollo backend de alto rendimiento.",
+      "tag1": "Event-Driven",
+      "tag2": "I/O No Bloqueante",
+      "tag3": "Ecosistema NPM",
+      "tag4": "Altamente Escalable"
+    },
+    "java": {
+      "title": "Java / Spring Boot",
+      "desc": "Arquitectura backend empresarial robusta, escalable y segura.",
+      "tag1": "Spring Boot",
+      "tag2": "Spring Cloud",
+      "tag3": "JPA / Hibernate",
+      "tag4": "Microservicios"
+    },
+    "python": {
+      "title": "Python",
+      "desc": "Scripting, automatización de procesos y APIs de alto rendimiento.",
+      "tag1": "FastAPI / Django",
+      "tag2": "Scripting & Scraping",
+      "tag3": "Análisis de Datos",
+      "tag4": "Automatización IA"
+    },
+    "secondary": "También trabajamos con",
+    "aiTag": "&lt; IA Aplicada /&gt;",
+    "aiTitle": "Ingeniería Aumentada & <span class=\"text-gradient\">Stack IA</span>",
+    "aiSubtitle": "Criterio técnico y workflow de desarrollo optimizado mediante copilotos cognitivos, inferencia local privada y agentes autónomos.",
+    "aiFilterAll": "Todos",
+    "aiFilterDev": "Entorno & Terminal",
+    "aiFilterLocal": "Inferencia Local",
+    "aiFilterCloud": "Modelos Cloud",
+    "aiFilterAgent": "Agentes & APIs",
+    "aiDragHint": "Arrastra para explorar",
+    "aiPrev": "Anterior",
+    "aiNext": "Siguiente"
+  },
+  "comoTrabajo": {
+    "tag": "&lt; Cómo trabajo · SDD + IA /&gt;",
+    "title": "Spec-Driven <span class=\"text-gradient\">Development</span>",
+    "subtitle": "La especificación es la fuente de verdad. La IA acelera la construcción; las specs, los tests y la revisión humana garantizan la calidad.",
+    "step1": {
+      "title": "Discovery",
+      "desc": "Entender el negocio, los usuarios y las restricciones técnicas antes de escribir una sola línea de código."
+    },
+    "step2": {
+      "title": "Especificación",
+      "desc": "Requisitos, contratos de API y criterios de aceptación versionados junto al código como fuente única de verdad."
+    },
+    "step3": {
+      "title": "Diseño técnico",
+      "desc": "Arquitectura, modelo de datos y plan de entrega trazables a cada punto de la especificación."
+    },
+    "step4": {
+      "title": "Implementación AI-native",
+      "desc": "Agentes y copilotos construyen sobre las specs; tests automáticos y revisión humana validan cada cambio."
+    },
+    "step5": {
+      "title": "Entrega y evolución",
+      "desc": "CI/CD, despliegue en cloud, observabilidad y mejora continua sobre la misma especificación."
+    },
+    "principle1": "Specs versionadas junto al código",
+    "principle2": "Human-in-the-loop en cada PR",
+    "principle3": "Tests como contrato"
+  },
+  "portfolio": {
+    "tag": "&lt; Casos de Éxito /&gt;",
+    "title": "Proyectos <span class=\"text-gradient\">Corporativos</span>",
+    "subtitle": "Soluciones end-to-end para energía, retail, banca, transporte y sector académico.",
+    "filterAll": "Todos",
+    "filterFullstack": "Full Stack",
+    "filterAi": "IA Aplicada",
+    "filterArchitecture": "Arquitectura"
+  },
+  "equipo": {
+    "tag": "&lt; Fundador /&gt;",
+    "title": "El Especialista detrás de <span class=\"text-gradient\">MarcosLunaDev</span>",
+    "subtitle": "Un profesional comprometido con la excelencia técnica y la innovación digital.",
+    "role": "&lt; Founder &amp; Lead Consultant /&gt;",
+    "bio": "Arquitecto de Software, Líder Técnico y Desarrollador Full Stack con más de <b>15 años de experiencia</b> entregando soluciones escalables de extremo a extremo, diseñando arquitecturas técnicas complejas y liderando equipos de desarrollo multidisciplinares.",
+    "bioExtra": "Con una formación de base única que combina Ciencias y Artes Navales, Electrónica y Telecomunicaciones y Administración de Sistemas Informáticos, inicialmente orientada a infraestructuras y seguridad de sistemas, he evolucionado y me he adaptado hacia la programación y el desarrollo web moderno. Hoy diseño y construyo productos completos —de la infraestructura y la seguridad hasta la interfaz—, apalancado en desarrollo AI-native y Spec‑Driven Development (desarrollo guiado por especificaciones)."
+  },
+  "contacto": {
+    "tag": "&lt; Hablemos /&gt;",
+    "title": "Comienza tu <span class=\"text-gradient\">Proyecto</span>",
+    "subtitle": "Cuéntame tu reto técnico y vemos juntos cómo abordarlo.",
+    "infoTitle": "Información de Contacto",
+    "emailLabel": "Email",
+    "phoneLabel": "Teléfono",
+    "hoursLabel": "Horario",
+    "hoursWeek": "Lunes - Viernes: 9:00 - 18:00",
+    "hoursSaturday": "Sábado: 10:00 - 14:00",
+    "followUs": "Conecta conmigo",
+    "formName": "Nombre completo *",
+    "placeholderName": "Tu nombre",
+    "formEmail": "Email *",
+    "placeholderEmail": "tu@email.com",
+    "formPhone": "Teléfono de contacto",
+    "placeholderPhone": "+34 600 000 000",
+    "formCompany": "Empresa / Organización",
+    "placeholderCompany": "Tu empresa o proyecto",
+    "formService": "Servicio de interés *",
+    "formServiceSelect": "Selecciona un servicio",
+    "formServiceFullstack": "Producto Full Stack",
+    "formServiceBackend": "Backend & APIs",
+    "formServiceAi": "Ingeniería con IA",
+    "formServiceCloud": "Cloud & DevOps",
+    "formServiceArchitecture": "Arquitectura & Modernización",
+    "formServiceConsulting": "Consultoría & Liderazgo Técnico",
+    "formMessage": "Mensaje *",
+    "placeholderMessage": "Ej: Necesitamos una plataforma web con API, panel de gestión e integración con IA...",
+    "charLabel": "caracteres",
+    "formSubmit": "Enviar Mensaje",
+    "formSubmitting": "Enviando...",
+    "feedbackSuccess": "¡Gracias! Tu mensaje ha sido enviado correctamente por correo. Nos pondremos en contacto contigo pronto.",
+    "feedbackError": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o envíanos un correo directo.",
+    "feedbackTurnstileRequired": "Por favor, completa la verificación de seguridad antes de enviar.",
+    "feedbackRateLimit": "Has enviado un mensaje recientemente. Por favor, espera unos minutos antes de volver a intentarlo.",
+    "privacyAcceptLabel": "Declaro ser mayor de 18 años y he leído y acepto la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a> *",
+    "privacyInfo": "<strong>Información básica sobre protección de datos.</strong> <strong>Responsable:</strong> Marcos Daniel Luna Rodríguez. <strong>Finalidad:</strong> responder a tu mensaje. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos; Cloudflare y EmailJS intervienen como encargados del tratamiento. <strong>Derechos:</strong> acceso, rectificación, supresión y otros, escribiendo a info@marcoslunadev.com. Más información en la <a href=\"politica-privacidad.html\" target=\"_blank\">Política de privacidad</a>."
+  },
+  "footer": {
+    "brandDesc": "Ingeniería de software full stack, del frontend a la nube. Apalancada en desarrollo AI-native y Spec-Driven Development.",
+    "quickLinks": "Enlaces Rápidos",
+    "services": "Servicios",
+    "copyright": "&copy; 2026 MarcosLunaDev. Todos los derechos reservados.",
+    "privacy": "Políticas de privacidad",
+    "terms": "Aviso Legal"
+  },
+  "privacy": {
+    "metaTitle": "Política de Privacidad - MarcosLunaDev",
+    "metaDesc": "Política de Privacidad de MarcosLunaDev. Conoce cómo gestionamos, protegemos y garantizamos tus datos de carácter personal en nuestro sitio web.",
+    "title": "Política de Privacidad",
+    "subtitle": "Última actualización: 19 de noviembre de 2026",
+    "s1": {
+      "title": "1. Responsable del tratamiento",
+      "body": "<p><strong>Titular:</strong> Marcos Daniel Luna Rodríguez (persona física)<br><strong>Ubicación:</strong> Madrid, España<br><strong>Contacto:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p><p>Este sitio es el portafolio profesional y la marca personal de su titular. No pertenece a ninguna empresa y a través de él no se vende ningún producto ni servicio.</p>"
+    },
+    "s2": {
+      "title": "2. Qué datos se tratan y para qué",
+      "body": "<p><strong>Formulario de contacto.</strong> Nombre y email (obligatorios), teléfono y empresa (opcionales), servicio de interés y el mensaje que escribas. Se usan para atender y responder tu consulta y, en su caso, conversar sobre una posible colaboración profesional. Al enviarlo recibirás un correo automático de confirmación en la dirección indicada.</p><p><strong>Seguridad del formulario.</strong> Para evitar spam y abusos, Cloudflare Turnstile analiza señales técnicas del navegador y la dirección IP cuando llegas al formulario, y el servidor de envío registra datos técnicos (IP, fecha y hora y resultado de la verificación).</p><p><strong>Visita a la web.</strong> El servicio de alojamiento recibe los datos técnicos de conexión (dirección IP y navegador) necesarios para mostrarte la página.</p><p>No se elaboran perfiles, no se toman decisiones automatizadas, no se envía publicidad ni newsletters y los datos no se venden ni se ceden.</p>"
+    },
+    "s3": {
+      "title": "3. Base jurídica",
+      "body": "<ul class=\"privacy-list\"><li><strong>Formulario de contacto:</strong> tu consentimiento (art. 6.1.a RGPD), que prestas al marcar la casilla y enviar el formulario. Puedes retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.</li><li><strong>Seguridad y alojamiento:</strong> el interés legítimo del titular en mantener la web disponible y proteger el formulario frente a abusos (art. 6.1.f RGPD).</li></ul>"
+    },
+    "s4": {
+      "title": "4. Plazo de conservación",
+      "body": "<ul class=\"privacy-list\"><li><strong>Mensajes de contacto:</strong> el tiempo necesario para responderte y, como máximo, 12 meses desde la última comunicación. Si de la conversación surge una relación profesional, se conservarán mientras dure y durante los plazos legales aplicables. Si retiras tu consentimiento o pides la supresión, se eliminan.</li><li><strong>Registros técnicos de seguridad:</strong> unos pocos días, según la configuración del proveedor.</li></ul>"
+    },
+    "s5": {
+      "title": "5. Destinatarios y encargados del tratamiento",
+      "body": "<p>No se ceden datos a terceros salvo obligación legal. Para que la web y el formulario funcionen intervienen estos proveedores, que actúan como encargados del tratamiento:</p><ul class=\"privacy-list\"><li><strong>Cloudflare, Inc.:</strong> servidor que procesa el formulario (Cloudflare Workers) y verificación anti-bots (Turnstile).</li><li><strong>EmailJS:</strong> envío del correo con tu mensaje y del correo de confirmación.</li><li><strong>Proveedor de correo electrónico del titular:</strong> recepción y almacenamiento de los mensajes en la cuenta de contacto.</li><li><strong>GitHub, Inc.:</strong> alojamiento de la web (GitHub Pages).</li></ul>"
+    },
+    "s6": {
+      "title": "6. Transferencias internacionales",
+      "body": "<p>Algunos de estos proveedores están ubicados en Estados Unidos o pueden tratar datos fuera del Espacio Económico Europeo. Esas transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. (Data Privacy Framework) cuando el proveedor está adherido a él o, en su defecto, en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>"
+    },
+    "s7": {
+      "title": "7. Menores de edad",
+      "body": "<p>Este sitio y su formulario están dirigidos a personas mayores de edad y a profesionales. Al enviar el formulario declaras ser mayor de 18 años. Si eres menor de edad, no envíes tus datos.</p><p>Conforme al artículo 7 de la Ley Orgánica 3/2018 (LOPDGDD), los menores de 14 años no pueden consentir por sí mismos el tratamiento de sus datos. Si se detecta que se han recibido datos de un menor, se eliminarán sin dar respuesta.</p>"
+    },
+    "s8": {
+      "title": "8. Tus derechos",
+      "body": "<p>Puedes ejercer en cualquier momento tus derechos de:</p><ul class=\"privacy-list\"><li>Acceso a tus datos personales.</li><li>Rectificación de los datos inexactos.</li><li>Supresión de tus datos.</li><li>Oposición al tratamiento.</li><li>Limitación del tratamiento.</li><li>Portabilidad de tus datos.</li><li>Retirada del consentimiento, en cualquier momento.</li></ul><p>Para ello, escribe a <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> indicando el derecho que quieres ejercer. Solo se te pedirá información adicional si existen dudas razonables sobre tu identidad.</p><p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.</p>"
+    },
+    "s9": {
+      "title": "9. Cookies, almacenamiento local y recursos de terceros",
+      "body": "<p>Esta web <strong>no utiliza cookies</strong> propias ni de analítica, publicidad o seguimiento, por lo que no necesita un aviso de cookies.</p><p>Sí utiliza el almacenamiento local del navegador (<em>localStorage</em>) para dos funciones que tú solicitas, exentas de consentimiento según la LSSI (art. 22.2):</p><ul class=\"privacy-list\"><li><strong>preferredLanguage:</strong> recuerda el idioma que eliges. Se mantiene hasta que borres los datos de navegación.</li><li><strong>mld_contact_last_submit:</strong> guarda la hora del último envío del formulario para limitar envíos repetidos.</li></ul><p>La verificación de Cloudflare Turnstile solo se carga cuando llegas al formulario de contacto. Las fuentes, iconos y librerías de la web se sirven desde el propio dominio, sin conexiones a Google Fonts ni a otros servicios externos.</p><p>Si en el futuro se incorporasen cookies que requieran consentimiento (por ejemplo, de analítica), se te pedirá previamente mediante un aviso específico.</p>"
+    },
+    "s10": {
+      "title": "10. Seguridad",
+      "body": "<p>Se aplican medidas técnicas y organizativas razonables para proteger tus datos: conexión cifrada (HTTPS), verificación anti-bots, límite de envíos, acceso restringido a la cuenta de correo y ausencia de bases de datos propias donde almacenar los mensajes.</p>"
+    },
+    "s11": {
+      "title": "11. Mensajes automáticos en Instagram",
+      "body": "<p>Si comentas la palabra «SPEC» en una publicación de la cuenta de Instagram <strong>@marcoslunadev</strong>, o la envías por mensaje directo, un sistema automático te envía por mensaje directo el enlace a una plantilla gratuita y, si fue un comentario, publica una respuesta breve debajo.</p><ul class=\"privacy-list\"><li><strong>Datos que se tratan:</strong> tu nombre de usuario e identificador de Instagram, el texto y el identificador del comentario o mensaje, y su fecha. Los facilita Meta a través de su API oficial de Instagram. No se piden otros datos, no se usan para publicidad y no se ceden a terceros.</li><li><strong>Finalidad:</strong> enviarte una sola vez la plantilla que has pedido y evitar envíos repetidos.</li><li><strong>Base jurídica:</strong> tu consentimiento (art. 6.1.a RGPD), que prestas al escribir la palabra clave para pedir la plantilla.</li><li><strong>Conservación:</strong> en el servidor de automatización del titular durante 30 días como máximo. Después se borran automáticamente.</li><li><strong>Proveedores que intervienen:</strong> Meta Platforms Ireland Ltd. (Instagram), que transmite los comentarios y mensajes, y ngrok, Inc., que hace llegar de forma cifrada los avisos de Meta al servidor del titular.</li><li><strong>Cómo borrarlos antes:</strong> escribe a <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> o envía un mensaje directo a @marcoslunadev con el texto «BORRAR MIS DATOS». Se eliminan en un plazo máximo de 30 días y se te confirma por el mismo medio.</li></ul>"
+    }
+  },
+  "legal": {
+    "metaTitle": "Aviso Legal - MarcosLunaDev",
+    "metaDesc": "Aviso legal y condiciones de uso de MarcosLunaDev. Información general sobre el titular, condiciones de acceso, uso y propiedad intelectual.",
+    "title": "Aviso Legal y Condiciones de Uso",
+    "subtitle": "Última actualización: 1 de noviembre de 2026",
+    "s1": {
+      "title": "1. Titular del sitio",
+      "body": "<p><strong>Titular:</strong> Marcos Daniel Luna Rodríguez (persona física)<br><strong>Ubicación:</strong> Madrid, España<br><strong>Contacto:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p>"
+    },
+    "s2": {
+      "title": "2. Naturaleza del sitio",
+      "body": "<p>Este sitio es el portafolio profesional y la marca personal de su titular. Su finalidad es dar a conocer su trayectoria, proyectos y conocimientos y ofrecer un medio de contacto.</p><p>A través de este sitio no se venden productos ni servicios, no se realizan contrataciones ni pagos y no se muestra publicidad, por lo que no constituye una actividad económica en los términos de la Ley 34/2002 (LSSI-CE). Cualquier colaboración profesional que surja de un contacto, ya sea por cuenta ajena o propia, se formalizaría fuera de este sitio y conforme a la normativa aplicable.</p>"
+    },
+    "s3": {
+      "title": "3. Condiciones de uso",
+      "body": "<p>El acceso y uso de este sitio atribuye la condición de usuario e implica la aceptación de estas condiciones. El usuario se compromete a utilizarlo de forma diligente, correcta y lícita, sin realizar actividades que puedan dañar la imagen, los intereses o los derechos del titular o de terceros.</p><p>El titular puede modificar en cualquier momento y sin previo aviso la presentación, configuración y contenidos del sitio, así como estas condiciones.</p>"
+    },
+    "s4": {
+      "title": "4. Propiedad intelectual e industrial",
+      "body": "<p>Los textos, imágenes, diseño, logotipo de MarcosLunaDev y código fuente de este sitio son titularidad de su autor, salvo indicación en contrario. Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa, salvo en los casos legalmente permitidos.</p><p>Los nombres y logotipos de tecnologías, herramientas y empresas que aparecen en el sitio (por ejemplo, Angular, React, Node.js, Claude u OpenAI) son marcas de sus respectivos titulares y se muestran únicamente con fines identificativos.</p>"
+    },
+    "s5": {
+      "title": "5. Enlaces externos",
+      "body": "<p>Este sitio contiene enlaces a sitios de terceros (por ejemplo, LinkedIn o GitHub). El titular no controla ni se responsabiliza de sus contenidos o servicios, y la inclusión de un enlace no implica relación ni colaboración con sus responsables.</p>"
+    },
+    "s6": {
+      "title": "6. Responsabilidad",
+      "body": "<p>El titular procura que la información del sitio sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni la disponibilidad ininterrumpida del sitio. No se hace responsable de los daños derivados de su uso, como interrupciones del servicio, virus o ataques informáticos, siempre que se hayan adoptado medidas de seguridad razonables.</p>"
+    },
+    "s7": {
+      "title": "7. Protección de datos y cookies",
+      "body": "<p>El tratamiento de los datos que facilites a través del formulario de contacto, así como el uso del almacenamiento local del navegador, se rigen por la <a href=\"politica-privacidad.html\">Política de privacidad</a>. Este sitio no utiliza cookies.</p>"
+    },
+    "s8": {
+      "title": "8. Legislación aplicable y jurisdicción",
+      "body": "<p>Estas condiciones se rigen por la legislación española. Para cualquier controversia derivada del acceso o uso del sitio, las partes se someten a los juzgados y tribunales que correspondan conforme a la normativa aplicable.</p>"
+    }
+  }
+}

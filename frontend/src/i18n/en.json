@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "title": "MarcosLunaDev | Software Architect & Full Stack Developer | AI, SDD & Cloud",
+    "description": "Software Architect and Senior Full Stack Developer with 15+ years of experience. Specializing in scalable architectures, robust APIs (Node/NestJS), modern frontends (Angular/React), AI-powered engineering, and Spec-Driven Development (SDD).",
+    "keywords": "software architect, full stack developer, software architecture, artificial intelligence, AI development, spec-driven development, SDD, SSD, Node.js, NestJS, Angular, React, TypeScript, scalable APIs, cloud, microservices, MarcosLunaDev, Marcos Luna",
+    "ogTitle": "MarcosLunaDev | Software Architect & Full Stack Developer | AI & SDD",
+    "ogDesc": "Software Architect and Full Stack Developer. Specializing in scalable architectures, Node/NestJS APIs, modern frontends, and solutions powered by Artificial Intelligence and Spec-Driven Development (SDD)."
+  },
+  "nav": {
+    "inicio": "Home",
+    "servicios": "Services",
+    "tecnologias": "Technologies",
+    "portafolio": "Portfolio",
+    "metodologia": "Approach",
+    "equipo": "Professional Profile",
+    "contacto": "Contact"
+  },
+  "hero": {
+    "tag": "Full Stack Engineering · AI-Native · Spec-Driven",
+    "title": "<span class=\"text-gradient\">Code that Drives</span><br /><span class=\"text-white\">the Future</span>",
+    "subtitle": "I design and build complete digital products —interfaces, APIs, data and cloud— with an AI-native engineering workflow driven by Spec-Driven Development: clear specs, verifiable code and fast delivery without compromising quality.",
+    "stack": "Frontend · Backend · Data · Cloud · AI",
+    "btnStart": "Contact",
+    "btnPortfolio": "View Portfolio",
+    "hook": "🧭 First conversation, no strings attached",
+    "stat1Num": "20+",
+    "stat1Label": "Corporate Projects",
+    "stat2Num": "98%",
+    "stat2Label": "Client Satisfaction",
+    "stat3Num": "15+",
+    "stat3Label": "Years of Experience"
+  },
+  "servicios": {
+    "tag": "&lt; MarcosLunaDev Services /&gt;",
+    "title": "End-to-End <span class=\"text-gradient\">Engineering</span>",
+    "subtitle": "From frontend to backend, from data to the cloud: a single technical partner for your product's entire lifecycle.",
+    "card1": {
+      "title": "Full Stack Product",
+      "desc": "Complete web applications, from the interface to the database, built to scale.",
+      "li1": "Angular · React · Next.js",
+      "li2": "MVPs and SaaS platforms",
+      "li3": "Dashboards and internal tools",
+      "li4": "Performance & Core Web Vitals"
+    },
+    "card2": {
+      "title": "Backend & APIs",
+      "desc": "Robust services with Node.js/NestJS, Java/Spring Boot and Python.",
+      "li1": "REST / GraphQL",
+      "li2": "Microservices and events",
+      "li3": "SQL and NoSQL",
+      "li4": "Security and authentication"
+    },
+    "card3": {
+      "title": "AI Engineering",
+      "desc": "I integrate LLMs into your product and into the way your team builds software.",
+      "li1": "LLM integration (Claude, OpenAI, Gemini)",
+      "li2": "RAG and semantic search",
+      "li3": "Agents and process automation",
+      "li4": "AI-native development workflows"
+    },
+    "card4": {
+      "title": "Cloud & DevOps",
+      "desc": "Cloud infrastructure, automation and frictionless deployments.",
+      "li1": "Integrated CI/CD",
+      "li2": "Docker & Kubernetes",
+      "li3": "AWS / Azure / GCP",
+      "li4": "Edge & Serverless"
+    },
+    "card5": {
+      "title": "Architecture & Modernization",
+      "desc": "Systems that scale and a structured evolution of legacy platforms.",
+      "li1": "Hexagonal / Clean Architecture",
+      "li2": "Event-Driven Architectures",
+      "li3": "Micro-frontends",
+      "li4": "Legacy system migration"
+    },
+    "card6": {
+      "title": "Consulting & Technical Leadership",
+      "desc": "I help teams adopt Spec-Driven Development and AI with sound judgment.",
+      "li1": "SDD adoption",
+      "li2": "Audits and code review",
+      "li3": "Team mentoring",
+      "li4": "Technical strategy & roadmap"
+    }
+  },
+  "tecnologias": {
+    "tag": "&lt; Tech Stack /&gt;",
+    "title": "Technical <span class=\"text-gradient\">Specialties</span>",
+    "subtitle": "A complete, production-proven stack: frontend, backend, data and cloud.",
+    "angular": {
+      "title": "Angular",
+      "desc": "Robust framework for scalable enterprise applications.",
+      "tag1": "TypeScript",
+      "tag2": "RxJS",
+      "tag3": "Dependency Injection",
+      "tag4": "Powerful CLI"
+    },
+    "react": {
+      "title": "React",
+      "desc": "Flexible library for highly dynamic user interfaces.",
+      "tag1": "Hooks",
+      "tag2": "Virtual DOM",
+      "tag3": "Component-Based",
+      "tag4": "Broad Ecosystem"
+    },
+    "next": {
+      "title": "Next.js",
+      "desc": "React framework with optimized server-side and static rendering.",
+      "tag1": "SSR / SSG",
+      "tag2": "API Routes",
+      "tag3": "Image Optimization",
+      "tag4": "Code Splitting"
+    },
+    "node": {
+      "title": "Node.js / NestJS",
+      "desc": "Runtime environment and structured framework for high-performance backend development.",
+      "tag1": "Event-Driven",
+      "tag2": "Non-Blocking I/O",
+      "tag3": "NPM Ecosystem",
+      "tag4": "Highly Scalable"
+    },
+    "java": {
+      "title": "Java / Spring Boot",
+      "desc": "Robust, scalable, and secure enterprise backend architecture.",
+      "tag1": "Spring Boot",
+      "tag2": "Spring Cloud",
+      "tag3": "JPA / Hibernate",
+      "tag4": "Microservices"
+    },
+    "python": {
+      "title": "Python",
+      "desc": "Scripting, process automation, and high-performance APIs.",
+      "tag1": "FastAPI / Django",
+      "tag2": "Scripting & Scraping",
+      "tag3": "Data Analysis",
+      "tag4": "AI Automation"
+    },
+    "secondary": "We also work with",
+    "aiTag": "&lt; Applied AI /&gt;",
+    "aiTitle": "AI-Augmented Engineering & <span class=\"text-gradient\">AI Stack</span>",
+    "aiSubtitle": "Technical criteria and optimized development workflow leveraging cognitive copilots, private local inference, and autonomous agents.",
+    "aiFilterAll": "All",
+    "aiFilterDev": "Environment & CLI",
+    "aiFilterLocal": "Local Inference",
+    "aiFilterCloud": "Cloud LLMs",
+    "aiFilterAgent": "Agents & APIs",
+    "aiDragHint": "Drag to explore",
+    "aiPrev": "Previous",
+    "aiNext": "Next"
+  },
+  "comoTrabajo": {
+    "tag": "&lt; How I work · SDD + AI /&gt;",
+    "title": "Spec-Driven <span class=\"text-gradient\">Development</span>",
+    "subtitle": "The specification is the source of truth. AI speeds up the build; specs, tests and human review guarantee the quality.",
+    "step1": {
+      "title": "Discovery",
+      "desc": "Understand the business, the users and the technical constraints before writing a single line of code."
+    },
+    "step2": {
+      "title": "Specification",
+      "desc": "Requirements, API contracts and acceptance criteria versioned alongside the code as the single source of truth."
+    },
+    "step3": {
+      "title": "Technical design",
+      "desc": "Architecture, data model and delivery plan, each traceable to the specification."
+    },
+    "step4": {
+      "title": "AI-native build",
+      "desc": "Agents and copilots build on top of the specs; automated tests and human review validate every change."
+    },
+    "step5": {
+      "title": "Delivery & evolution",
+      "desc": "CI/CD, cloud deployment, observability and continuous improvement on the same specification."
+    },
+    "principle1": "Specs versioned with the code",
+    "principle2": "Human-in-the-loop on every PR",
+    "principle3": "Tests as the contract"
+  },
+  "portfolio": {
+    "tag": "&lt; Success Stories /&gt;",
+    "title": "Corporate <span class=\"text-gradient\">Projects</span>",
+    "subtitle": "End-to-end solutions for energy, retail, banking, transport and academia.",
+    "filterAll": "All",
+    "filterFullstack": "Full Stack",
+    "filterAi": "Applied AI",
+    "filterArchitecture": "Architecture"
+  },
+  "equipo": {
+    "tag": "&lt; Founder /&gt;",
+    "title": "The Specialist behind MarcosLunaDev",
+    "subtitle": "A professional committed to technical excellence and digital innovation.",
+    "role": "&lt; Founder &amp; Principal Consultant /&gt;",
+    "bio": "Software Architect, Technical Leader, and Full Stack Developer with more than <b>15 years of experience</b> delivering scalable end-to-end solutions, designing complex technical architectures, and leading multidisciplinary development teams.",
+    "bioExtra": "With a unique foundational background that combines Naval Sciences and Arts, Electronics and Telecommunications, and IT Systems Administration, initially focused on infrastructure and systems security, I later transitioned and adapted to modern web development. Today I design and build complete products —from infrastructure and security all the way to the interface— powered by AI-native development and Spec‑Driven Development."
+  },
+  "contacto": {
+    "tag": "&lt; Let's Talk /&gt;",
+    "title": "Start Your <span class=\"text-gradient\">Project</span>",
+    "subtitle": "Tell me about your technical challenge and let's work out together how to tackle it.",
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "hoursLabel": "Hours",
+    "hoursWeek": "Monday - Friday: 9:00 - 18:00",
+    "hoursSaturday": "Saturday: 10:00 - 14:00",
+    "followUs": "Connect with me",
+    "formName": "Full name *",
+    "placeholderName": "Your name",
+    "formEmail": "Email *",
+    "placeholderEmail": "you@email.com",
+    "formPhone": "Contact Phone Number",
+    "placeholderPhone": "+34 600 000 000",
+    "formCompany": "Company / Organization",
+    "placeholderCompany": "Your company or project",
+    "formService": "Service of interest *",
+    "formServiceSelect": "Select a service",
+    "formServiceFullstack": "Full Stack Product",
+    "formServiceBackend": "Backend & APIs",
+    "formServiceAi": "AI Engineering",
+    "formServiceCloud": "Cloud & DevOps",
+    "formServiceArchitecture": "Architecture & Modernization",
+    "formServiceConsulting": "Consulting & Technical Leadership",
+    "formMessage": "Message *",
+    "placeholderMessage": "E.g., We need a web platform with an API, an admin panel and AI integration...",
+    "charLabel": "characters",
+    "formSubmit": "Send Message",
+    "formSubmitting": "Sending...",
+    "feedbackSuccess": "Thank you! Your message has been successfully sent by email. We will contact you soon.",
+    "feedbackError": "There was an error sending your message. Please try again or send us an email directly.",
+    "feedbackTurnstileRequired": "Please complete the security verification before sending.",
+    "feedbackRateLimit": "You have recently submitted a message. Please wait a few minutes before trying again.",
+    "privacyAcceptLabel": "I declare that I am over 18 years old and I have read and accept the <a href=\"politica-privacidad.html\" target=\"_blank\">Privacy Policy</a> *",
+    "privacyInfo": "<strong>Basic data protection information.</strong> <strong>Controller:</strong> Marcos Daniel Luna Rodríguez. <strong>Purpose:</strong> to reply to your message. <strong>Legal basis:</strong> your consent. <strong>Recipients:</strong> no data is shared; Cloudflare and EmailJS act as data processors. <strong>Rights:</strong> access, rectification, erasure and others, by writing to info@marcoslunadev.com. More information in the <a href=\"politica-privacidad.html\" target=\"_blank\">Privacy Policy</a>."
+  },
+  "footer": {
+    "brandDesc": "Full stack software engineering, from frontend to cloud. Powered by AI-native development and Spec-Driven Development.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "copyright": "&copy; 2026 MarcosLunaDev. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Legal Notice"
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy - MarcosLunaDev",
+    "metaDesc": "MarcosLunaDev Privacy Policy. Learn how your personal data is managed, protected and safeguarded on this website.",
+    "title": "Privacy Policy",
+    "subtitle": "Last updated: November 19, 2026",
+    "s1": {
+      "title": "1. Data Controller",
+      "body": "<p><strong>Owner:</strong> Marcos Daniel Luna Rodríguez (private individual)<br><strong>Location:</strong> Madrid, Spain<br><strong>Contact:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p><p>This website is the professional portfolio and personal brand of its owner. It does not belong to any company and no products or services are sold through it.</p>"
+    },
+    "s2": {
+      "title": "2. What Data Is Processed and Why",
+      "body": "<p><strong>Contact form.</strong> Name and email (required), phone and company (optional), the service you are interested in and the message you write. They are used to handle and answer your enquiry and, where appropriate, to discuss a possible professional collaboration. After sending it you will receive an automatic confirmation email at the address provided.</p><p><strong>Form security.</strong> To prevent spam and abuse, Cloudflare Turnstile analyses technical browser signals and your IP address when you reach the form, and the sending server logs technical data (IP, date and time and verification result).</p><p><strong>Visiting the website.</strong> The hosting service receives the technical connection data (IP address and browser) needed to display the page.</p><p>No profiling or automated decision-making takes place, no advertising or newsletters are sent, and data is never sold or shared.</p>"
+    },
+    "s3": {
+      "title": "3. Legal Basis",
+      "body": "<ul class=\"privacy-list\"><li><strong>Contact form:</strong> your consent (Art. 6(1)(a) GDPR), given by ticking the box and sending the form. You may withdraw it at any time without affecting the lawfulness of prior processing.</li><li><strong>Security and hosting:</strong> the owner's legitimate interest in keeping the website available and protecting the form against abuse (Art. 6(1)(f) GDPR).</li></ul>"
+    },
+    "s4": {
+      "title": "4. Retention Period",
+      "body": "<ul class=\"privacy-list\"><li><strong>Contact messages:</strong> for as long as needed to reply and at most 12 months from the last communication. If a professional relationship arises from the conversation, they will be kept for its duration and for the applicable legal periods. If you withdraw consent or request erasure, they are deleted.</li><li><strong>Technical security logs:</strong> a few days, according to the provider's configuration.</li></ul>"
+    },
+    "s5": {
+      "title": "5. Recipients and Data Processors",
+      "body": "<p>Data is not disclosed to third parties unless legally required. The following providers take part in running the website and the form, acting as data processors:</p><ul class=\"privacy-list\"><li><strong>Cloudflare, Inc.:</strong> server that processes the form (Cloudflare Workers) and anti-bot verification (Turnstile).</li><li><strong>EmailJS:</strong> delivery of the email containing your message and of the confirmation email.</li><li><strong>The owner's email provider:</strong> receipt and storage of messages in the contact mailbox.</li><li><strong>GitHub, Inc.:</strong> website hosting (GitHub Pages).</li></ul>"
+    },
+    "s6": {
+      "title": "6. International Transfers",
+      "body": "<p>Some of these providers are located in the United States or may process data outside the European Economic Area. Such transfers rely on the EU-US Data Privacy Framework where the provider is certified under it or, otherwise, on the standard contractual clauses approved by the European Commission.</p>"
+    },
+    "s7": {
+      "title": "7. Minors",
+      "body": "<p>This website and its form are intended for adults and professionals. By sending the form you declare that you are over 18 years old. If you are a minor, please do not send your data.</p><p>Under Article 7 of Spanish Organic Law 3/2018 (LOPDGDD), children under 14 cannot consent to the processing of their data on their own. If data from a minor is found to have been received, it will be deleted without reply.</p>"
+    },
+    "s8": {
+      "title": "8. Your Rights",
+      "body": "<p>You may exercise the following rights at any time:</p><ul class=\"privacy-list\"><li>Access to your personal data.</li><li>Rectification of inaccurate data.</li><li>Erasure of your data.</li><li>Objection to processing.</li><li>Restriction of processing.</li><li>Data portability.</li><li>Withdrawal of consent, at any time.</li></ul><p>To do so, write to <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> stating the right you wish to exercise. Additional information will only be requested if there are reasonable doubts about your identity.</p><p>If you believe the processing of your data does not comply with the regulations, you may lodge a complaint with the Spanish Data Protection Agency (AEPD) at <a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>.</p>"
+    },
+    "s9": {
+      "title": "9. Cookies, Local Storage and Third-Party Resources",
+      "body": "<p>This website <strong>does not use cookies</strong>, whether its own or for analytics, advertising or tracking, so no cookie banner is needed.</p><p>It does use the browser's local storage (<em>localStorage</em>) for two features you request, which are exempt from consent under Spanish LSSI (Art. 22.2):</p><ul class=\"privacy-list\"><li><strong>preferredLanguage:</strong> remembers the language you choose. It remains until you clear your browsing data.</li><li><strong>mld_contact_last_submit:</strong> stores the time of the last form submission to limit repeated submissions.</li></ul><p>Cloudflare Turnstile verification is only loaded when you reach the contact form. The website's fonts, icons and libraries are served from its own domain, with no connections to Google Fonts or other external services.</p><p>Should cookies requiring consent (for example, analytics) be added in the future, your consent will be requested beforehand through a specific notice.</p>"
+    },
+    "s10": {
+      "title": "10. Security",
+      "body": "<p>Reasonable technical and organisational measures are applied to protect your data: encrypted connection (HTTPS), anti-bot verification, submission limits, restricted access to the mailbox and no proprietary databases storing the messages.</p>"
+    },
+    "s11": {
+      "title": "11. Automated Instagram messages",
+      "body": "<p>If you comment the word \"SPEC\" on a post by the Instagram account <strong>@marcoslunadev</strong>, or send it as a direct message, an automated system sends you a direct message with the link to a free template and, if it was a comment, posts a short reply under it.</p><ul class=\"privacy-list\"><li><strong>Data processed:</strong> your Instagram username and ID, the text and ID of the comment or message, and its date. Meta provides them through its official Instagram API. No other data is requested, it is not used for advertising and it is not shared with third parties.</li><li><strong>Purpose:</strong> to send you the template you asked for once, and to avoid sending it twice.</li><li><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR), given by writing the keyword to request the template.</li><li><strong>Retention:</strong> on the owner's automation server for at most 30 days. After that it is deleted automatically.</li><li><strong>Providers involved:</strong> Meta Platforms Ireland Ltd. (Instagram), which delivers the comments and messages, and ngrok, Inc., which relays Meta's notifications to the owner's server over an encrypted connection.</li><li><strong>How to delete it sooner:</strong> write to <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a> or send a direct message to @marcoslunadev with the text \"DELETE MY DATA\". It is deleted within 30 days at most and you will be notified through the same channel.</li></ul>"
+    }
+  },
+  "legal": {
+    "metaTitle": "Legal Notice - MarcosLunaDev",
+    "metaDesc": "Legal notice and terms of use of MarcosLunaDev. General information about the owner, access and use conditions, and intellectual property.",
+    "title": "Legal Notice and Terms of Use",
+    "subtitle": "Last updated: November 1, 2026",
+    "s1": {
+      "title": "1. Website Owner",
+      "body": "<p><strong>Owner:</strong> Marcos Daniel Luna Rodríguez (private individual)<br><strong>Location:</strong> Madrid, Spain<br><strong>Contact:</strong> <a href=\"mailto:info@marcoslunadev.com\">info@marcoslunadev.com</a></p>"
+    },
+    "s2": {
+      "title": "2. Nature of the Website",
+      "body": "<p>This website is the professional portfolio and personal brand of its owner. Its purpose is to present their background, projects and expertise and to provide a means of contact.</p><p>No products or services are sold, no contracts or payments are made and no advertising is shown through this website, so it does not constitute an economic activity under Spanish Law 34/2002 (LSSI-CE). Any professional collaboration arising from a contact, whether as an employee or self-employed, would be formalised outside this website and in accordance with applicable law.</p>"
+    },
+    "s3": {
+      "title": "3. Terms of Use",
+      "body": "<p>Accessing and using this website makes you a user and implies acceptance of these terms. Users agree to use it diligently, correctly and lawfully, without engaging in activities that may harm the image, interests or rights of the owner or third parties.</p><p>The owner may modify the presentation, configuration and content of the website, as well as these terms, at any time and without prior notice.</p>"
+    },
+    "s4": {
+      "title": "4. Intellectual and Industrial Property",
+      "body": "<p>The texts, images, design, MarcosLunaDev logo and source code of this website belong to its author unless otherwise stated. Their reproduction, distribution, public communication or transformation without express authorisation is prohibited, except where permitted by law.</p><p>The names and logos of technologies, tools and companies shown on the website (for example Angular, React, Node.js, Claude or OpenAI) are trademarks of their respective owners and are displayed for identification purposes only.</p>"
+    },
+    "s5": {
+      "title": "5. External Links",
+      "body": "<p>This website contains links to third-party sites (for example LinkedIn or GitHub). The owner does not control and is not responsible for their content or services, and including a link does not imply any relationship or collaboration with those responsible for them.</p>"
+    },
+    "s6": {
+      "title": "6. Liability",
+      "body": "<p>The owner strives to keep the information on the website accurate and up to date but does not guarantee the absence of errors or uninterrupted availability. The owner is not liable for damages arising from its use, such as service interruptions, viruses or cyberattacks, provided reasonable security measures have been taken.</p>"
+    },
+    "s7": {
+      "title": "7. Data Protection and Cookies",
+      "body": "<p>The processing of the data you provide through the contact form, as well as the use of the browser's local storage, is governed by the <a href=\"politica-privacidad.html\">Privacy Policy</a>. This website does not use cookies.</p>"
+    },
+    "s8": {
+      "title": "8. Applicable Law and Jurisdiction",
+      "body": "<p>These terms are governed by Spanish law. Any dispute arising from accessing or using the website shall be submitted to the courts that have jurisdiction under applicable law.</p>"
+    }
+  }
+}
