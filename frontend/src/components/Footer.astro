@@ -33,14 +33,14 @@ const serviceKeys = ['card1', 'card2', 'card3', isHome ? 'card5' : 'card6'];
       </div>
 
       <div class="footer-links">
-        <h4 class="footer-title" set:html={t('footer.quickLinks')} />
+        <h3 class="footer-title" set:html={t('footer.quickLinks')} />
         <ul>
           {quickLinks.map((link) => <li><a href={`${home}#${link.id}`} set:html={t(link.key)} /></li>)}
         </ul>
       </div>
 
       <div class="footer-links">
-        <h4 class="footer-title" set:html={t('footer.services')} />
+        <h3 class="footer-title" set:html={t('footer.services')} />
         <ul>
           {serviceKeys.map((card) => <li><a href={`${home}#servicios`} set:html={t(`servicios.${card}.title`)} /></li>)}
         </ul>
