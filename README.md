@@ -101,6 +101,7 @@ npm install
 npm run dev -- --port 8080   # hot reload; port 8080 is allowed by the Worker CORS
 npm run build    # static site in frontend/dist
 npm run preview -- --port 8080  # serves frontend/dist
+npm run check:seo  # checks robots.txt, sitemap, canonical and hreflang on the live site
 ```
 
 Pages are generated in Spanish (`/`, `/aviso-legal.html`, `/politica-privacidad.html`) and English (`/en/`, `/en/aviso-legal.html`, `/en/politica-privacidad.html`). Texts live in `src/i18n/*.json`; portfolio projects and the AI stack live in `src/data/*.json`. Icons: write any Remix Icon class (`ri-*`) in `src/` and `scripts/build-icons.mjs` (run automatically before `dev` and `build`) adds that glyph to the self-hosted icon subset.
