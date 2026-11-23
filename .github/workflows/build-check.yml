@@ -1,0 +1,49 @@
+name: Build check
+
+# Compila la web en cada PR para detectar fallos antes del merge.
+# No despliega nada: el despliegue lo hace deploy.yml al hacer push a main.
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy.yml"
+      - ".github/workflows/build-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        # Mismo entorno que deploy.yml
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with Astro
+        run: npm run build
+      - name: Check output
+        # Las 6 páginas, el sitemap y los archivos de public/ que necesita Pages
+        run: |
+          for f in index.html aviso-legal.html politica-privacidad.html \
+                   en/index.html en/aviso-legal.html en/politica-privacidad.html \
+                   sitemap.xml robots.txt CNAME; do
+            test -s "dist/$f" || { echo "::error::Falta dist/$f"; exit 1; }
+          done
+          echo "dist/ OK"
