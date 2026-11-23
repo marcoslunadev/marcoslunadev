@@ -1,0 +1,163 @@
+---
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = useTranslations(Astro.props.lang);
+const services = [
+  { value: '', key: 'formServiceSelect' },
+  { value: 'fullstack', key: 'formServiceFullstack' },
+  { value: 'backend', key: 'formServiceBackend' },
+  { value: 'ai', key: 'formServiceAi' },
+  { value: 'cloud', key: 'formServiceCloud' },
+  { value: 'architecture', key: 'formServiceArchitecture' },
+  { value: 'consulting', key: 'formServiceConsulting' },
+];
+// Mensajes que scripts/app.js muestra durante el envío del formulario
+const messages = Object.fromEntries(
+  ['formSubmit', 'formSubmitting', 'feedbackSuccess', 'feedbackError', 'feedbackRateLimit', 'feedbackTurnstileRequired'].map(
+    (key) => [key, t(`contacto.${key}`)],
+  ),
+);
+---
+
+<section id="contacto" class="contacto">
+  <div class="contacto-glow-1"></div>
+  <div class="contacto-glow-2"></div>
+  <div class="container">
+    <div class="section-header">
+      <div class="tag-pill" set:html={t('contacto.tag')} />
+      <h2 class="section-title" set:html={t('contacto.title')} />
+      <p class="section-subtitle" set:html={t('contacto.subtitle')} />
+    </div>
+
+    <div class="contacto-wrapper">
+      <div class="contacto-info-card glassmorphism">
+        <h3 class="info-card-title" set:html={t('contacto.infoTitle')} />
+
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-icon bg-cyan-alpha">
+              <i class="ri-mail-line"></i>
+            </div>
+            <div class="info-details">
+              <h4 set:html={t('contacto.emailLabel')} />
+              <p><a href="mailto:info@marcoslunadev.com">info@marcoslunadev.com</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon bg-emerald-alpha">
+              <i class="ri-phone-line"></i>
+            </div>
+            <div class="info-details">
+              <h4 set:html={t('contacto.phoneLabel')} />
+              <p class="contact-phone-group">
+                <a href="tel:+34622380215" class="contact-phone-link">+34 622 380 215</a>
+                <a href="https://wa.me/34622380215" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+                  <i class="ri-whatsapp-line"></i>
+                  <span>WhatsApp</span>
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon bg-emerald-alpha">
+              <i class="ri-time-line"></i>
+            </div>
+            <div class="info-details">
+              <h4 set:html={t('contacto.hoursLabel')} />
+              <p set:html={t('contacto.hoursWeek')} />
+              <p set:html={t('contacto.hoursSaturday')} />
+            </div>
+          </div>
+        </div>
+
+        <div class="info-socials-wrapper">
+          <h4 set:html={t('contacto.followUs')} />
+          <div class="info-socials">
+            <a href="https://www.linkedin.com/in/marcosdlunarodriguez/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://github.com/MarcosLunaDev" target="_blank" rel="noopener" aria-label="Github"><i class="ri-github-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contacto-form-card glassmorphism">
+        <form id="contact-form" class="contact-form" data-messages={JSON.stringify(messages)}>
+          <!-- Honeypot invisible para humanos (trampa anti-bot) -->
+          <div class="ohnohoney" aria-hidden="true">
+            <label for="contact-website-field">Si eres humano, deja este campo vacío</label>
+            <input type="text" id="contact-website-field" name="_website_trap" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="form-label" set:html={t('contacto.formName')} />
+              <input type="text" id="name" name="name" required class="form-input" placeholder={t('contacto.placeholderName')} />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label" set:html={t('contacto.formEmail')} />
+              <input type="email" id="email" name="email" required class="form-input" placeholder={t('contacto.placeholderEmail')} />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone" class="form-label" set:html={t('contacto.formPhone')} />
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder={t('contacto.placeholderPhone')} />
+            </div>
+            <div class="form-group">
+              <label for="company" class="form-label" set:html={t('contacto.formCompany')} />
+              <input type="text" id="company" name="company" class="form-input" placeholder={t('contacto.placeholderCompany')} />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service" class="form-label" set:html={t('contacto.formService')} />
+            <select id="service" name="service" required class="form-select">
+              {services.map((s) => <option value={s.value} set:html={t(`contacto.${s.key}`)} />)}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label" set:html={t('contacto.formMessage')} />
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxlength="500"
+              rows="5"
+              class="form-textarea"
+              placeholder={t('contacto.placeholderMessage')}></textarea>
+            <div class="char-count">
+              <span id="char-count-num">0</span> / 500 <span set:html={t('contacto.charLabel')} />
+            </div>
+          </div>
+
+          <div class="form-group-checkbox">
+            <input type="checkbox" id="privacy-accept" name="privacy_accept" required class="form-checkbox" />
+            <label for="privacy-accept" class="checkbox-label" set:html={t('contacto.privacyAcceptLabel')} />
+          </div>
+
+          <!-- Primera capa informativa (RGPD art. 13, recomendación AEPD) -->
+          <p class="form-privacy-info" set:html={t('contacto.privacyInfo')} />
+
+          <!-- Cloudflare Turnstile: scripts/app.js carga el script solo al acercarse al formulario -->
+          <div class="turnstile-wrapper">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAFXZvz6DSyucxCwx" data-action="contact" data-theme="dark"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+            <span class="btn-text" set:html={t('contacto.formSubmit')} />
+            <span class="btn-spinner hidden"></span>
+          </button>
+
+          <div class="form-feedback hidden" id="form-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

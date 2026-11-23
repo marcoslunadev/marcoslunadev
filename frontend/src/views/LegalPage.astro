@@ -1,0 +1,49 @@
+---
+// Aviso legal y política de privacidad: mismo diseño, textos desde los ficheros de idioma.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { languages, useTranslations, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  doc: 'legal' | 'privacy';
+}
+
+const { lang, doc } = Astro.props;
+const t = useTranslations(lang);
+const sectionIds = Object.keys(languages[lang][doc]).filter((key) => /^s\d+$/.test(key));
+// Anclas estables enlazadas desde fuera (p. ej. respuestas automáticas de Instagram)
+const anchors: Record<string, string> = doc === 'privacy' ? { s11: 'instagram' } : {};
+---
+
+<BaseLayout
+  lang={lang}
+  page={doc}
+  title={t(`${doc}.metaTitle`)}
+  description={t(`${doc}.metaDesc`)}
+>
+  <main class="privacy-main">
+    <div class="privacy-glow-1"></div>
+    <div class="privacy-glow-2"></div>
+    <div class="container relative-z">
+      <div class="privacy-card glassmorphism">
+        <h1 class="section-title" set:html={t(`${doc}.title`)} />
+        <p class="last-updated" set:html={t(`${doc}.subtitle`)} />
+
+        <div class="privacy-content">
+          {
+            sectionIds.map((id) => (
+              <section class="privacy-section" id={anchors[id]}>
+                <h2 set:html={t(`${doc}.${id}.title`)} />
+                <div set:html={t(`${doc}.${id}.body`)} />
+              </section>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    import '../scripts/app.js';
+  </script>
+</BaseLayout>

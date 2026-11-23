@@ -1,0 +1,49 @@
+---
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = useTranslations(Astro.props.lang);
+const steps = [1, 2, 3, 4, 5];
+const principles = [
+  { icon: 'ri-file-list-3-line', key: 'principle1' },
+  { icon: 'ri-git-pull-request-line', key: 'principle2' },
+  { icon: 'ri-shield-check-line', key: 'principle3' },
+];
+---
+
+<section id="metodologia" class="metodologia">
+  <div class="metodologia-glow"></div>
+  <div class="container">
+    <div class="section-header">
+      <div class="tag-pill tag-emerald" set:html={t('comoTrabajo.tag')} />
+      <h2 class="section-title" set:html={t('comoTrabajo.title')} />
+      <p class="section-subtitle" set:html={t('comoTrabajo.subtitle')} />
+    </div>
+
+    <div class="metodologia-grid">
+      {
+        steps.map((n) => (
+          <div class="metodologia-card glassmorphism">
+            <div class="metodologia-step-num">{String(n).padStart(2, '0')}</div>
+            <h3 class="metodologia-card-title" set:html={t(`comoTrabajo.step${n}.title`)} />
+            <p class="metodologia-card-text" set:html={t(`comoTrabajo.step${n}.desc`)} />
+          </div>
+        ))
+      }
+    </div>
+
+    <ul class="metodologia-principles">
+      {
+        principles.map((p) => (
+          <li>
+            <i class={p.icon} />
+            <span set:html={t(`comoTrabajo.${p.key}`)} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

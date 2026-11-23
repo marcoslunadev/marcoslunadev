@@ -2133,6 +2133,8 @@ textarea {
   border-radius: 12px;
   transition: all var(--transition-fast);
   letter-spacing: 0.05em;
+  /* Son enlaces entre /, /en/…: mismo interlineado que tenían como <button> */
+  line-height: normal;
 }
 
 .lang-btn:hover {
@@ -2208,7 +2210,8 @@ textarea {
 .privacy-card .last-updated {
   font-size: 0.875rem;
   color: var(--text-main);
-  opacity: 0.7;
+  /* 0.78 en lugar de 0.7: contraste ≥ 4.5:1 (WCAG AA) sobre la tarjeta */
+  opacity: 0.78;
   margin-bottom: 3rem;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1.5rem;
@@ -2270,6 +2273,9 @@ textarea {
 .privacy-section a {
   color: var(--accent-cyan);
   transition: var(--transition-fast);
+  /* Subrayado: el color por sí solo no distingue el enlace del texto (WCAG 1.4.1) */
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .privacy-section a:hover {

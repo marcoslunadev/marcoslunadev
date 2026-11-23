@@ -70,15 +70,18 @@ This repository is organized as a decoupled monorepo:
 
 ```text
 marcoslunadev/
-├── frontend/                  # Static web application
-│   ├── assets/                # Brand logos, icons, diagrams
-│   ├── index.html             # Main landing page
-│   ├── aviso-legal.html       # Legal notice
-│   ├── politica-privacidad.html # Privacy policy
-│   ├── style.css              # Design tokens & glassmorphism system
-│   ├── app.js                 # Frontend logic, Turnstile & form gating
-│   ├── translations.js        # Multilingual dictionaries (ES / EN)
-│   └── CNAME                  # Custom domain configuration (marcoslunadev.com)
+├── frontend/                  # Static website built with Astro (0 JS framework runtime)
+│   ├── astro.config.mjs       # site, i18n (es at /, en at /en/), sitemap, build.format 'preserve'
+│   ├── public/                # Copied as-is: CNAME, robots.txt, assets/ (images), recursos/
+│   └── src/
+│       ├── pages/             # Routes: index, aviso-legal, politica-privacidad (+ en/)
+│       ├── views/             # HomePage and LegalPage, rendered once per language
+│       ├── layouts/           # BaseLayout: <head>, SEO, Open Graph, hreflang, JSON-LD
+│       ├── components/        # Header, Footer and the home sections
+│       ├── i18n/              # es.json / en.json texts + helpers and routes
+│       ├── data/              # Content collections: projects.json, ai-stack.json
+│       ├── styles/            # global.css + self-hosted fonts and Remix Icon
+│       └── scripts/           # Vanilla JS: app (menu, filters, form, Turnstile), GSAP animations, canvas background
 │
 ├── worker/                    # Cloudflare Worker (Serverless Backend)
 │   ├── src/index.js           # Contact API with Turnstile verification & EmailJS dispatch
@@ -87,5 +90,17 @@ marcoslunadev/
 │   └── .dev.vars.example      # Local development environment template
 │
 └── .github/workflows/
-    └── deploy.yml             # Automated GitHub Pages CI/CD from ./frontend
+    └── deploy.yml             # Builds ./frontend with Astro and deploys dist/ to GitHub Pages
 ```
+
+### 🧑‍💻 Local development (frontend)
+
+```bash
+cd frontend
+npm install
+npm run dev -- --port 8080   # hot reload; port 8080 is allowed by the Worker CORS
+npm run build    # static site in frontend/dist
+npm run preview -- --port 8080  # serves frontend/dist
+```
+
+Pages are generated in Spanish (`/`, `/aviso-legal.html`, `/politica-privacidad.html`) and English (`/en/`, `/en/aviso-legal.html`, `/en/politica-privacidad.html`). Texts live in `src/i18n/*.json`; portfolio projects and the AI stack live in `src/data/*.json`. Icons: write any Remix Icon class (`ri-*`) in `src/` and `scripts/build-icons.mjs` (run automatically before `dev` and `build`) adds that glyph to the self-hosted icon subset.

@@ -1,0 +1,168 @@
+---
+// Layout común a todas las páginas: <head> (SEO, Open Graph, hreflang), Header y Footer.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { routes, type Lang, type PageId } from '../i18n';
+
+// Fuentes e iconos autoalojados: Vite los empaqueta con hash (sin conexiones a terceros).
+import '../styles/vendor/fonts/fonts.css';
+import '../styles/vendor/remixicon/remixicon.css';
+import '../styles/global.css';
+import interLatin from '../styles/vendor/fonts/inter-latin.woff2?url';
+import outfitLatin from '../styles/vendor/fonts/outfit-latin.woff2?url';
+
+interface Props {
+  lang: Lang;
+  page: PageId;
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  keywords?: string;
+}
+
+const { lang, page, title, description, keywords } = Astro.props;
+const ogTitle = Astro.props.ogTitle ?? title;
+const ogDescription = Astro.props.ogDescription ?? description;
+const isHome = page === 'home';
+
+const site = Astro.site!;
+const abs = (path: string) => new URL(path, site).href;
+const canonical = abs(routes[page][lang]);
+const otherLang: Lang = lang === 'es' ? 'en' : 'es';
+const alternatePath = routes[page][otherLang];
+const ogImage = abs('/assets/logo-vertical-oscuro.png');
+const ogLocale = { es: 'es_ES', en: 'en_US' } as const;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://marcoslunadev.com/#person',
+      name: 'Marcos Daniel Luna Rodríguez',
+      alternateName: 'MarcosLunaDev',
+      url: 'https://marcoslunadev.com',
+      image: ogImage,
+      jobTitle: 'Lead Software Architect & Senior Full Stack Engineer',
+      worksFor: { '@type': 'Organization', name: 'VASS' },
+      sameAs: ['https://www.linkedin.com/in/marcosdlunarodriguez/', 'https://github.com/MarcosLunaDev'],
+      knowsAbout: [
+        'Software Architecture',
+        'Full Stack Development',
+        'Artificial Intelligence (IA / AI)',
+        'Spec-Driven Development (SDD)',
+        'Node.js',
+        'NestJS',
+        'Angular',
+        'React',
+        'TypeScript',
+        'Cloud & Microservices',
+        'Frontend Architecture',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://marcoslunadev.com/#website',
+      url: 'https://marcoslunadev.com',
+      name: 'MarcosLunaDev',
+      publisher: { '@id': 'https://marcoslunadev.com/#person' },
+      inLanguage: ['es', 'en'],
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <!-- Idioma preferido: si el visitante eligió otro idioma con el selector ES/EN
+         (localStorage "preferredLanguage"), se le lleva a la versión de esa página. -->
+    <script is:inline define:vars={{ pageLang: lang, alternatePath }}>
+      try {
+        var preferred = localStorage.getItem('preferredLanguage');
+        if ((preferred === 'es' || preferred === 'en') && preferred !== pageLang) {
+          location.replace(alternatePath + location.hash);
+        }
+      } catch (e) {}
+    </script>
+
+    <!-- Meta SEO -->
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href={abs(routes[page].es)} />
+    <link rel="alternate" hreflang="en" href={abs(routes[page].en)} />
+    <link rel="alternate" hreflang="x-default" href={abs(routes[page].es)} />
+
+    <!-- Open Graph / Facebook / WhatsApp / Teams -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale[lang]} />
+    <meta property="og:locale:alternate" content={ogLocale[otherLang]} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1600" />
+    <meta property="og:image:alt" content="MarcosLunaDev" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={ogTitle} />
+    <meta property="twitter:description" content={ogDescription} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon-512.png" />
+    <link rel="apple-touch-icon" href="/assets/favicon-512.png" />
+
+    <!-- Fuentes autoalojadas (sin conexiones a Google Fonts ni CDNs al cargar) -->
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={outfitLatin} as="font" type="font/woff2" crossorigin />
+
+    {
+      isHome && (
+        <>
+          {/* GSAP va en el bundle de la página (no bloquea el render). Si el usuario prefiere
+              movimiento reducido no se oculta nada; si las animaciones no arrancan en 3s se muestra todo. */}
+          <script is:inline>
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+              document.documentElement.classList.add('anim-pending');
+              setTimeout(function () { document.documentElement.classList.remove('anim-pending'); }, 3000);
+            }
+          </script>
+        </>
+      )
+    }
+
+    <!-- Evitar Flash de unstyled dark mode -->
+    <meta name="color-scheme" content="dark" />
+
+    {
+      isHome && (
+        <>
+          {/* Google Search Console Verification */}
+          <meta name="google-site-verification" content="AORtp7UV1EJRMBqyBd2kxIvMH303Es165rV-7t8dWuc" />
+          {/* Robots Indexing Directives */}
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+          {/* Datos Estructurados (Schema.org / JSON-LD) para Google Rich Results */}
+          <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+        </>
+      )
+    }
+  </head>
+
+  <body>
+    <Header lang={lang} page={page} />
+    <slot />
+    <Footer lang={lang} page={page} />
+  </body>
+</html>

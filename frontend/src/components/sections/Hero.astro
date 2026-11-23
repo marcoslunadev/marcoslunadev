@@ -1,0 +1,72 @@
+---
+import { useTranslations, type Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = useTranslations(Astro.props.lang);
+const stats = [1, 2, 3];
+---
+
+<section id="inicio" class="hero">
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="tag-pill" data-anim set:html={t('hero.tag')} />
+      <h1 class="hero-title" set:html={t('hero.title')} />
+      <p class="hero-subtitle" set:html={t('hero.subtitle')} />
+      <p class="hero-stack" data-anim set:html={t('hero.stack')} />
+      <div class="hero-actions" data-anim>
+        <a href="#contacto" class="btn btn-primary flex-btn">
+          <span set:html={t('hero.btnStart')} />
+          <i class="ri-arrow-right-line"></i>
+        </a>
+        <a href="#portafolio" class="btn btn-outline" set:html={t('hero.btnPortfolio')} />
+        <div class="hero-promise-wrapper">
+          <span class="hero-promise" set:html={t('hero.hook')} />
+        </div>
+      </div>
+
+      <div class="hero-stats" data-anim>
+        {
+          stats.map((n, i) => (
+            <>
+              {i > 0 && <div class="stat-divider" />}
+              <div class="stat-item">
+                <span class="stat-num" set:html={t(`hero.stat${n}Num`)} />
+                <span class="stat-label" set:html={t(`hero.stat${n}Label`)} />
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="hero-visual" data-anim>
+      <div class="glow-effect"></div>
+      <div class="code-editor-mockup">
+        <div class="editor-header">
+          <div class="editor-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="editor-tab">spec.md</div>
+        </div>
+        <div class="editor-body">
+          <pre><code><span class="keyword">## Feature:</span> <span class="function">Checkout</span>
+
+<span class="keyword">GIVEN</span> un carrito con stock disponible
+<span class="keyword">WHEN</span>  el cliente confirma el pago
+<span class="keyword">THEN</span>  se crea el pedido <span class="string">→ 201</span>
+ <span class="keyword">AND</span>  se emite <span class="property">OrderCreated</span>
+ <span class="keyword">AND</span>  el stock se reserva</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#servicios" class="scroll-down" aria-label="Ir a Servicios">
+    <i class="ri-arrow-down-line"></i>
+  </a>
+</section>

@@ -12,6 +12,7 @@
 # Dependencies
 node_modules/
 package-lock.json
+!frontend/package-lock.json
 
 # OS files
 .DS_Store
