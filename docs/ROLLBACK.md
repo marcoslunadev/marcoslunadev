@@ -54,7 +54,16 @@ También se puede desde la web: Actions → «Deploy static content to Pages» �
 Un re-run reutiliza **el commit y el workflow de aquel run**, es decir, la web antigua con su paso de Python, así que vuelve a publicar exactamente lo que había.
 
 - **Plazo:** GitHub solo permite el re-run hasta 30 días después del run original, en este caso hasta el **19-12-2026**. Pasada esa fecha, ve directamente al paso 3.
+- **Si falla con «Multiple artifacts named "github-pages"»:** el run ya tenía su propio artefacto y `deploy-pages` no sabe cuál usar (pasó el 23-11 al repetir un despliegue). No insistas: ve directamente al paso 3.
 - **Limitación:** `main` sigue teniendo el código de Astro, y el siguiente push que toque `frontend/**` lo volvería a publicar. Por eso, después, haz el paso 3.
+
+## Si el despliegue falla por un error transitorio de GitHub
+
+Esto no es un rollback: es volver a publicar el mismo commit cuando la build está bien pero falla el paso «Deploy to GitHub Pages» (por ejemplo, con «Found 0 artifact(s)»). En ese caso, **no repitas el run**: lanza uno nuevo, que empieza sin artefactos previos.
+
+```bash
+gh workflow run deploy.yml --ref main
+```
 
 ## 3. Rollback definitivo: revert en `main`
 
